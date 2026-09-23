@@ -1,0 +1,6 @@
+import VV.BBEKGlobalLowerCovariance
+#print axioms VV.BBEKLocalDiagonalCovariance.coordinateMeasureOf_translate
+#print axioms VV.BBEKLocalDiagonalCovariance.ae_localMeasure_translate
+#print axioms VV.BBEKSelectedDiagonal.ae_selectedMeasure_succ
+#print axioms VV.BBEKGlobalLowerCovariance.projective_restrict_scaling
+#print axioms VV.BBEKGlobalLowerCovariance.exists_global_lower_covariant_family

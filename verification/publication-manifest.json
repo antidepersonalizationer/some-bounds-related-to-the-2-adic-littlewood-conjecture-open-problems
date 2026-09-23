@@ -1,0 +1,1919 @@
+{
+  "repository": "antidepersonalizationer/some-bounds-related-to-the-2-adic-littlewood-conjecture-open-problems",
+  "originalPaper": "Dinis Vitorino and Ingrid Vukusic, Some Bounds Related to the 2-adic Littlewood Conjecture, arXiv:2506.04110v2",
+  "originalBuildInputsMatched": 268,
+  "leanFiles": 303,
+  "sourceSorryCount": 2,
+  "customAxiomOrOpaqueCount": 0,
+  "manifestScope": "Every publication file except this manifest itself; no new compilation was performed for this byte-identical source export.",
+  "files": [
+    {
+      "file": ".gitignore",
+      "bytes": 136,
+      "sha256": "26ac57295fadb2d3ad5c540fb7498b211f010d0e073659b09f2c07deb7dd0c06",
+      "gitBlobSha1": "7546e2ce0ebc1f7700d203cefca3d2acecd8b44a"
+    },
+    {
+      "file": "AI_DISCLOSURE.md",
+      "bytes": 1405,
+      "sha256": "d5d17bf14a08bf3092acbf038fa031fcdbe4e3c263bf2c1d91e332ae32fdb31c",
+      "gitBlobSha1": "61c7593794748a3787ca3f255aacc7f756442a8c"
+    },
+    {
+      "file": "Check-VV.ps1",
+      "bytes": 9133,
+      "sha256": "e3c26c13b3fad42bec8d3855897e7925301ff6ad4e2c832d0f7f2918f1073618",
+      "gitBlobSha1": "9ba98feea9fd9f9b6b9399ea13feeb82db4d9185"
+    },
+    {
+      "file": "CONTRIBUTING.md",
+      "bytes": 2261,
+      "sha256": "e258430bce34836766107b15d05e3e32eac889cac9139d52a6d5633d9bcba851",
+      "gitBlobSha1": "81c37994d83a72fb8a95b3fa9cbafbf3ab4b0b83"
+    },
+    {
+      "file": "lake-manifest.json",
+      "bytes": 3625,
+      "sha256": "31ff9a30ca1601fb7243a93929cf5f63c04c063f7be7fe6fc4615d03c5725b35",
+      "gitBlobSha1": "f0468054dda51a94465e3fb2d7d6019eb9c4c555"
+    },
+    {
+      "file": "lakefile.toml",
+      "bytes": 220,
+      "sha256": "3056ecfa74ac9ce30cd54d04b41174c00c1c52b600775e94d981628f16278790",
+      "gitBlobSha1": "c12196b20007a9a49e15693d3fda0e8df8a8005a"
+    },
+    {
+      "file": "lean-toolchain",
+      "bytes": 25,
+      "sha256": "c521ca252d205af363a01d8f477768ed00c5a57f3f86c19ee4ba4772ebaf4180",
+      "gitBlobSha1": "78adacde6f23d97c8be8f9fdb331aff9b61526f1"
+    },
+    {
+      "file": "PROOF_STATUS.md",
+      "bytes": 6383,
+      "sha256": "1155f05005cb800b7cae1c3f7d3f6893a045d79e68aeb29c94379175e8b2880d",
+      "gitBlobSha1": "018e9715cf53c588f98029cf2665b9dd693a24ab"
+    },
+    {
+      "file": "README.md",
+      "bytes": 6326,
+      "sha256": "8acabba48b1077baa0575bdd9e837b674699279312195e81778c0287eea6fd3a",
+      "gitBlobSha1": "d6439e16d2591e43ca53e6562b8fe0373244ddd8"
+    },
+    {
+      "file": "README.zh.md",
+      "bytes": 3989,
+      "sha256": "433cbbe604c861fbece68be4f8135590f738f6d1fb2cde3dc03ebf71612c53cb",
+      "gitBlobSha1": "439a0e012d86d697c00555fe702c0d4bb751c77a"
+    },
+    {
+      "file": "THIRD_PARTY.md",
+      "bytes": 3702,
+      "sha256": "af90dd2f2a19b1eecb2e5b266ab382cf6d941034ae5813bf0ab7225b90d5f689",
+      "gitBlobSha1": "8fe31887a71945b1637fdc4b8cd97289f01697f3"
+    },
+    {
+      "file": "verification/BBEK-entropy-geometry-check.lean",
+      "bytes": 758,
+      "sha256": "67a5c65de360c574c967af8786fd04a091b8cbae9fd0154656505e1d6822102c",
+      "gitBlobSha1": "72e6b6fc33b7db23c88fbb17957b6b979a584553"
+    },
+    {
+      "file": "verification/BBEK-local-chart-check.lean",
+      "bytes": 417,
+      "sha256": "48fe2ed194abb7947bea891c84690b89d07a0ccfdb420271645f03fddafe5f01",
+      "gitBlobSha1": "af2fd16c3a6d9e977f5c531ac86757dd3f104280"
+    },
+    {
+      "file": "verification/BBEK-Proposition51-check.lean",
+      "bytes": 433,
+      "sha256": "030a2da5bec36dd3baf9e56ef8d72cd9b4dda26dae8276d93f11185fbb9a4c0e",
+      "gitBlobSha1": "5a69535458a8bab52956ee2045edcb044bc66059"
+    },
+    {
+      "file": "verification/BBEKChartMeasureOverlapAxioms.lean",
+      "bytes": 289,
+      "sha256": "8f32e983f3644da4d0cdfac41d8782fd1be2251920b9da3214d8002fd133ba98",
+      "gitBlobSha1": "3229145cb48b48c8536ab16a41010c040cdca043"
+    },
+    {
+      "file": "verification/BBEKDiscreteAxioms.lean",
+      "bytes": 493,
+      "sha256": "82ad093f4a445ba3c73432a67bc9e53e60414e80406709394f9af3f525fc88ff",
+      "gitBlobSha1": "f696857e2049947c7ca5455be9ea60b9d2a4385c"
+    },
+    {
+      "file": "verification/BBEKEntropyAverageAxioms.lean",
+      "bytes": 680,
+      "sha256": "fed02ce7500c2fbe55eb2bb7695c3cd031c506939bbca563b38050f1be80ed18",
+      "gitBlobSha1": "5d6de9fa4401dec6ed8cad50948387112200a771"
+    },
+    {
+      "file": "verification/BBEKExpandedKernelAxioms.lean",
+      "bytes": 453,
+      "sha256": "e7db489d0615f95bb02846acfa599e0d753c41ed032c9eba14d0499a00613343",
+      "gitBlobSha1": "8aa6124b6368d117e4645cc6b6c19db353cac594"
+    },
+    {
+      "file": "verification/BBEKFiniteQuotientsAxioms.lean",
+      "bytes": 279,
+      "sha256": "e0b4f2524bf1d6d00b3e15ba8551767f9076eef771a89fc9db863e396e5ba61d",
+      "gitBlobSha1": "4a6e4de43537d14d038230a4424fe050ba2de3c5"
+    },
+    {
+      "file": "verification/BBEKGaussTransitionAxioms.lean",
+      "bytes": 278,
+      "sha256": "10672118e829eb39305e3e76dd232645070675f522cac0c28765f6475322ca14",
+      "gitBlobSha1": "189c29d7d0b57dd31ba7380628defcade14de7b6"
+    },
+    {
+      "file": "verification/BBEKGlobalCovarianceAxioms.lean",
+      "bytes": 396,
+      "sha256": "6dca722656e96569fe0c887fc85adce943fd2fcd907a442c85b2a77806a64d0d",
+      "gitBlobSha1": "9baaa2dadf2a576c1b7d4616bdc40711557a71df"
+    },
+    {
+      "file": "verification/BBEKGlobalLowerAxioms.lean",
+      "bytes": 414,
+      "sha256": "d5ffe7bfc516341dc5ed4f2ed232fa18a35fb2ee6633f27b5c36a464cd68d828",
+      "gitBlobSha1": "840ccfa7dd8e540fa70f7d63f759e6fa4158de0b"
+    },
+    {
+      "file": "verification/BBEKKernelEmbeddingAxioms.lean",
+      "bytes": 157,
+      "sha256": "2bac084e8374149b66f3612022a0d239e7e723098b389837c867928369a4831e",
+      "gitBlobSha1": "1e2e53930da03a87b5b3e534deb166d1ff6ed3e4"
+    },
+    {
+      "file": "verification/BBEKKernelFiberRestrictionAxioms.lean",
+      "bytes": 224,
+      "sha256": "39564e8a7525e66ef1c6d9bbd255852c726ad587c5163de1f148262a167babe9",
+      "gitBlobSha1": "b768f27e0fc6cff90e6167b4cb2d19ef5063bad6"
+    },
+    {
+      "file": "verification/BBEKKernelRestrictionAxioms.lean",
+      "bytes": 337,
+      "sha256": "14393552dabf532d2dc85b7712e1012408949ab55b814c2b41c9e7045ad1980c",
+      "gitBlobSha1": "7ea0d8abdb7f9b47a5c77deea21056a63b9b7f31"
+    },
+    {
+      "file": "verification/BBEKKernelSkewAxioms.lean",
+      "bytes": 191,
+      "sha256": "79d44462e7093ab68a51898852690a44c3b9ec2c8ca3bd86c17fab6a6bfda922",
+      "gitBlobSha1": "0c0162c782969a5495de57e46e116e3988426a70"
+    },
+    {
+      "file": "verification/BBEKLeafAtomAxioms.lean",
+      "bytes": 764,
+      "sha256": "c93a72c42b1b1649208b4feeac37ccafee6553bf5131a7a095ad96e9ad306a6c",
+      "gitBlobSha1": "0eb63df6387a840587f3a6ea12129b3b9473d98d"
+    },
+    {
+      "file": "verification/BBEKLeafwiseAtlasAxioms.lean",
+      "bytes": 195,
+      "sha256": "bce9a489a756086f0ace3bc74c4f52d8e72fb351dc593237cca4bdb6f2ebb21f",
+      "gitBlobSha1": "ce7da9cd5940602bb19b521e544d66477d3a6c95"
+    },
+    {
+      "file": "verification/BBEKLeafwiseChartAxioms.lean",
+      "bytes": 220,
+      "sha256": "3dfa6eb6e34e0969d7bbc46bf5f116b0d1fe348e1083fe72dca3da069ad391ec",
+      "gitBlobSha1": "305d85ea8af35ea50f2a3e5ffc6beecfc4ea3de3"
+    },
+    {
+      "file": "verification/BBEKLeafwiseKernelAxioms.lean",
+      "bytes": 321,
+      "sha256": "14d51591d02237d087720c3f3583133d5e5cb5ecdf138f829d43bc53bc167d03",
+      "gitBlobSha1": "be5d28be87333bda48ca5415fe913fd21145bbcc"
+    },
+    {
+      "file": "verification/BBEKLeafwiseOverlapAxioms.lean",
+      "bytes": 150,
+      "sha256": "6a5fbbd4e72f036847b50b4edc5863973ca38e1c5ba89cb1d7534f1354bafebe",
+      "gitBlobSha1": "dea4213cc71a48a7118b30748310bac94e132170"
+    },
+    {
+      "file": "verification/BBEKLeafwiseStabilizerAxioms.lean",
+      "bytes": 1555,
+      "sha256": "e4978c75c61891bd7f8b438116639167f3356c4983ea3e337eba05dbfd6f4fce",
+      "gitBlobSha1": "3e73d20bb833f8c788bf7d5819b45ee2f791bbbc"
+    },
+    {
+      "file": "verification/BBEKLeafwiseSupportAxioms.lean",
+      "bytes": 207,
+      "sha256": "58384bce6815e770bb35d7831342bdf448bf962959755c6c1cd6f192c53d055d",
+      "gitBlobSha1": "99161f9d2cddc32b50435dc14a27d26f74d74090"
+    },
+    {
+      "file": "verification/BBEKMeasureAverageAxioms.lean",
+      "bytes": 558,
+      "sha256": "c4b84a69ced129172b2a9e07ca7b44d863417d49aa1c97eb4f5601c3e0be3a67",
+      "gitBlobSha1": "f13c066d3cb32d66ead83279a063adf8db29c70b"
+    },
+    {
+      "file": "verification/BBEKMeasureGlueAxioms.lean",
+      "bytes": 216,
+      "sha256": "11c170056c1aac8e6b88ad1e6aa536985f50e5d6162f8fce23fa0fc0357cc54a",
+      "gitBlobSha1": "9a3befbce99319c52c64525b6576aa45cdfe86ab"
+    },
+    {
+      "file": "verification/BBEKPlaqueGeometryAxioms.lean",
+      "bytes": 315,
+      "sha256": "0863935880c9c6b64ad26baf0fd6e5dde0565e0c5c56064d39b237bce124b538",
+      "gitBlobSha1": "a5fea5f89e51cfe8e32024359d7f8f5a2c49c3f6"
+    },
+    {
+      "file": "verification/BBEKProjectiveGlueAxioms.lean",
+      "bytes": 162,
+      "sha256": "5e94c70ff54d753e56e73f6e6c2ead851d4cf2aa136d71783c2ce7645194943c",
+      "gitBlobSha1": "8d0965f254ba54a95f5fdb39cbdeabbfe58caecc"
+    },
+    {
+      "file": "verification/BBEKRootLeafKernelAxioms.lean",
+      "bytes": 285,
+      "sha256": "fa159fbe259f5b931a382da839eb5b46d8838bebb2bb201864f645b176e8e6f5",
+      "gitBlobSha1": "4c06d90878fc9509e9d3d58f3c532e1256070a67"
+    },
+    {
+      "file": "verification/BBEKRootSubgroupsAxioms.lean",
+      "bytes": 277,
+      "sha256": "97248225040316ac8080e7d88ae56950d26e00eb5d7795331173e222cef018f0",
+      "gitBlobSha1": "bb8e634ea8514fbcb9bd2ea4a33b61ec78aa1782"
+    },
+    {
+      "file": "verification/BBEKVariationalAxioms.lean",
+      "bytes": 144,
+      "sha256": "e042a008623b75354550958c6144ff9e13572e8f2e971ff8eba98885524cb224",
+      "gitBlobSha1": "badde88f546e571471a49ed151c319d0c804fb8d"
+    },
+    {
+      "file": "verification/BBEKZeroHitAxioms.lean",
+      "bytes": 321,
+      "sha256": "43e61cdc0845eab2919286f37062199487dc3d9790964cfdc98018bd54b35ac7",
+      "gitBlobSha1": "005235ce2089f0419ce18a5f617e757f91cf6618"
+    },
+    {
+      "file": "verification/ConditionalEntropyAxioms.lean",
+      "bytes": 1402,
+      "sha256": "82b1531b0dafc0f2d894279b2ff41e5261039f8bd3c792c2e02dd613b82d3e0d",
+      "gitBlobSha1": "3c1115d124c2597db9262d2351c56abe5a997862"
+    },
+    {
+      "file": "verification/EntropyBowenAxioms.lean",
+      "bytes": 614,
+      "sha256": "efb8f5b369019758abdb8a4453bc3cdfa54792b914d4ac2c1c3366b5f10e180d",
+      "gitBlobSha1": "50ea4003ff83114c02002c79f7e17875900caeaa"
+    },
+    {
+      "file": "verification/EntropyConeMixtureAxioms.lean",
+      "bytes": 409,
+      "sha256": "6902930824739294447173654da6b0b73259461efa64fa881c31e78d8b33baf7",
+      "gitBlobSha1": "52e14eb4f31651014bd98ae09a018b431e7b8b47"
+    },
+    {
+      "file": "verification/EntropyCoreAxioms.lean",
+      "bytes": 437,
+      "sha256": "fbc30c2141b880fecbe2f65133be405c2bbc2ecaa7e49f4493560e648d5d0d33",
+      "gitBlobSha1": "de2f5b67277f9a61e491420414b8be208c241747"
+    },
+    {
+      "file": "verification/EntropyMixtureAxioms.lean",
+      "bytes": 490,
+      "sha256": "e60d7c4d92718a61822b766198b2b74742a4b44fbeb6fdd4ec89c0d580b54df3",
+      "gitBlobSha1": "82e5893ca0a51d9b1e24e6bb9e2ac279b7b2c037"
+    },
+    {
+      "file": "verification/EntropyOrbitAxioms.lean",
+      "bytes": 450,
+      "sha256": "8578bb1dc487b89b5f007ee180e2c6a439ce552e634a29b91af8499b3467921b",
+      "gitBlobSha1": "410a43279e57340bfbb3f9629bd5d73fbe51d92f"
+    },
+    {
+      "file": "verification/EntropyOrbitMixtureAxioms.lean",
+      "bytes": 388,
+      "sha256": "5f61cf7b502b8ee8766727259e8fccc6b7249f0f2b1e8271daae1ba257eb3708",
+      "gitBlobSha1": "aa39aa1127594602cf3ec550583ca9306d69762a"
+    },
+    {
+      "file": "verification/EntropyVariationalAxioms.lean",
+      "bytes": 643,
+      "sha256": "6b44dc2d5cf9def347a487fd0e5b9029a4111313f6c3ef45dce4304790cf9ec2",
+      "gitBlobSha1": "ffc2e685c103329cd61feb731700be3beaa46ecb"
+    },
+    {
+      "file": "verification/EntropyWeakAxioms.lean",
+      "bytes": 363,
+      "sha256": "1b1b084e25b3ae2c41fe9f7b829ad9262056676ac8b8574be620f1e10d708583",
+      "gitBlobSha1": "589d725f6a17af69ad016c9266d61a9f9b4e327a"
+    },
+    {
+      "file": "verification/final-axioms.txt",
+      "bytes": 2527,
+      "sha256": "0ff5b694a95c965945e491377d5f964d6cca5a74d5a83e49e335ce585061cf63",
+      "gitBlobSha1": "56820d22346f5b4a3ea678452dc351ea0eb33ac9"
+    },
+    {
+      "file": "verification/P5CoverageAxioms.lean",
+      "bytes": 547,
+      "sha256": "9e3da4754d98565a38ea4d0b4d4576444c44e616eed546d8215ee143ce6b4d77",
+      "gitBlobSha1": "905c756de3e08d1873e40b2fed02a50ae8950a36"
+    },
+    {
+      "file": "verification/Problem5Axioms.lean",
+      "bytes": 1082,
+      "sha256": "0580e70b037b626c22efaac4d0672a9ce6092afcf17f92bb6e927159bf88c920",
+      "gitBlobSha1": "849fc3d538cd8e2bced4aaa4eca3a8859479c88b"
+    },
+    {
+      "file": "verification/report.json",
+      "bytes": 41703,
+      "sha256": "2e34ed307a5b8d6be44bd0d527c7fee890bec12e6e7f13ec962075002db83ee8",
+      "gitBlobSha1": "7922ea80829bdcfd786aee29ec728c53a0e56465"
+    },
+    {
+      "file": "VV.lean",
+      "bytes": 7610,
+      "sha256": "c7be66a0f1da415d2c094ccb1bec4cd9bdbc0cd09df4965f5a014cbe8ee375ba",
+      "gitBlobSha1": "84bd21a12dadc529cdd2bc0c55ae433a49fbb618"
+    },
+    {
+      "file": "VV/Audit.lean",
+      "bytes": 10494,
+      "sha256": "aa48fba6989729a12ddc3054948a0ef33a08a848770aa90eb44b9696bc938cf7",
+      "gitBlobSha1": "953b60e369a2efef2dddecd2b3fee916acf000b5"
+    },
+    {
+      "file": "VV/BBEKActualKernelOverlap.lean",
+      "bytes": 8382,
+      "sha256": "1d770a638fe1c1cb6c7c92c5202922944be76a1ccfeca797a7ee0d8bc280b513",
+      "gitBlobSha1": "df5058314a70374bbd2d65d52a0db32ce3c17380"
+    },
+    {
+      "file": "VV/BBEKAlgebraicOrbit.lean",
+      "bytes": 5144,
+      "sha256": "6a673a11485a26445c1bf3d3fb1fd13ccdd72acb79385ca1b52a63cdb2924b3a",
+      "gitBlobSha1": "6169a3b01b5fab1815fd2ed54139725200775731"
+    },
+    {
+      "file": "VV/BBEKAlgebraicTangent.lean",
+      "bytes": 4564,
+      "sha256": "a48ca476f856d7b72477f4ff92437dc223e8dd510a80cdbf6d5d73cf474b66cc",
+      "gitBlobSha1": "3bd2340bf66b8d56d8ed6d3838792aa50e5bd389"
+    },
+    {
+      "file": "VV/BBEKAlgebraicTrichotomy.lean",
+      "bytes": 8524,
+      "sha256": "3c9ed82764dafe074d7981dfda0e30419c39b7c3134fc0d6f39b4bc63eb12ebf",
+      "gitBlobSha1": "5cb0560c09879fca15ac2ad8ceb7019d56944288"
+    },
+    {
+      "file": "VV/BBEKAveragedSupport.lean",
+      "bytes": 1335,
+      "sha256": "6ad50ab282ef836bb556bbc065fc5e1191a9bee298fe81ff53cccc9ad25db4dd",
+      "gitBlobSha1": "839e75a6489a9f1ff58e93a09d6200c47c4d7bc6"
+    },
+    {
+      "file": "VV/BBEKBoundedStabilizerField.lean",
+      "bytes": 6436,
+      "sha256": "c754052bf6568a641215411d5a58a30c37ae817b6ed832c1608e4a1d6fef7c9f",
+      "gitBlobSha1": "559ef8cf9048178099b033e00e56320d41342364"
+    },
+    {
+      "file": "VV/BBEKBowenCover.lean",
+      "bytes": 2690,
+      "sha256": "f5cf79ba4bd4192eb042f76ced62c0447fb7285f2df2dafe838c55234f1eac59",
+      "gitBlobSha1": "66bf4717f7a36b1891bc52c2e8486a0f9663d282"
+    },
+    {
+      "file": "VV/BBEKBowenLift.lean",
+      "bytes": 6923,
+      "sha256": "2fc8e8e8b2d35ff257ac0055c1100d9cb5616b3609eb7e8a528bee44962eaa0f",
+      "gitBlobSha1": "d7193fde82880a9a2eb0f14557de858df59ff408"
+    },
+    {
+      "file": "VV/BBEKBowenMetric.lean",
+      "bytes": 4360,
+      "sha256": "3aea4730eb72b196105da4dfc2c8a66adcdf7fa343a41d406488c8e8b5146a7e",
+      "gitBlobSha1": "1bb8a7bd42d5b112ab6810e584c3e7364d57db46"
+    },
+    {
+      "file": "VV/BBEKCenteredOverlap.lean",
+      "bytes": 2909,
+      "sha256": "9497a35fc99fbd6200d699e7bc33b3a657ebe5979b056ada2ac4a7f8f91ccf26",
+      "gitBlobSha1": "4017e5fd2f7063ced8d8ca1965352e8b6abeb3b2"
+    },
+    {
+      "file": "VV/BBEKChartMeasureOverlap.lean",
+      "bytes": 4610,
+      "sha256": "0ee0e0bf6ec3cbeedd8d5333f4068e446fca5ebe56cc6308b6351cd212b0a84b",
+      "gitBlobSha1": "062d9d48b975af2eb52a80dc524a798f3e3d38ff"
+    },
+    {
+      "file": "VV/BBEKCompactEntropy.lean",
+      "bytes": 6036,
+      "sha256": "dba4238fc7e4c6a8b865e639603202f95231d5db4e33b2f505858f8ee30deced",
+      "gitBlobSha1": "366e68fce29c27b6f2f95ae5fdf5858ed6733e19"
+    },
+    {
+      "file": "VV/BBEKCompactPreservation.lean",
+      "bytes": 2141,
+      "sha256": "1a2f46a7c27fcbf3f83dad1e22ce0c8b3a762f8192f2788ede5e1bd7da009293",
+      "gitBlobSha1": "4b9b317b407fd0b0eb18ee3fa00502840c709e1d"
+    },
+    {
+      "file": "VV/BBEKCompactZeroHit.lean",
+      "bytes": 6641,
+      "sha256": "43e47462e65ed8d61ac68999f7f38502cb2cd824532b1c1a67ca83eb84b327e0",
+      "gitBlobSha1": "d572b0401a902a3b0dd38e121c505025cd244f3b"
+    },
+    {
+      "file": "VV/BBEKConditionalInvariance.lean",
+      "bytes": 5240,
+      "sha256": "437a7703509599fe81bc671aa7c1b690a31a59380a30f9591e4675d5071e9124",
+      "gitBlobSha1": "5fc20d83590fefefc98ff7c8c4c71e8f3718ea50"
+    },
+    {
+      "file": "VV/BBEKConeAverage.lean",
+      "bytes": 4192,
+      "sha256": "d7b4b1142fe61d1d87f4593e1da497254c506a6147beec619e8f803bfb3231d1",
+      "gitBlobSha1": "cef6a5347a974a2b9362a34f0e927834c6ca1eca"
+    },
+    {
+      "file": "VV/BBEKConeEntropy.lean",
+      "bytes": 4459,
+      "sha256": "ed25f4b293383fa757ce3d305b74c6bd4220045639c5727bacddd6d97f0ca2df",
+      "gitBlobSha1": "b372a3c3d9a14fa39aa7c4bac2cc154d705a57c9"
+    },
+    {
+      "file": "VV/BBEKConeGenerators.lean",
+      "bytes": 4629,
+      "sha256": "ba282fbda7d4a1f33c8228c16bbe48dc85157e67efc6cdaaf2af3f4148c612e1",
+      "gitBlobSha1": "a2b50da3186fd779f50d710053978c825b5994b3"
+    },
+    {
+      "file": "VV/BBEKDiagonal.lean",
+      "bytes": 7440,
+      "sha256": "86806db4ea509f7c3e6b05eab80772d9a63141ad726b1bf0808152a64f153aa2",
+      "gitBlobSha1": "07fac1fa762b246c7a7673d6aad2895ea28d876e"
+    },
+    {
+      "file": "VV/BBEKDiagonalAverage.lean",
+      "bytes": 2886,
+      "sha256": "27fd4e304208e87cc69c67dcff454ea9d0a1ff847b3f80a7d028682d7d21a1df",
+      "gitBlobSha1": "12271f8207af52f725a5952e00375ef09fc8a469"
+    },
+    {
+      "file": "VV/BBEKDiagonalDensity.lean",
+      "bytes": 4903,
+      "sha256": "22665d9b9fb8e9f34a6dbc213743580002fdb947860faf9fb80c5e154c5156df",
+      "gitBlobSha1": "66869612bae58ce75469e35ba5a9de9371284824"
+    },
+    {
+      "file": "VV/BBEKDiscrete.lean",
+      "bytes": 6607,
+      "sha256": "9c3fe0b24da3a69a4ae1b9406e2196de4092abcf8f23645e91b14ba186ff6c71",
+      "gitBlobSha1": "1a025b9d0b6b2486bd51c67280403099efbc3676"
+    },
+    {
+      "file": "VV/BBEKDyadic.lean",
+      "bytes": 3130,
+      "sha256": "e8bb1e9fdcd385634b00d1067c83b7d2be68e8d2382fdbec451b5556ca5f74a5",
+      "gitBlobSha1": "0ec401251b5f7e79e03f2bd4190f672afac286ff"
+    },
+    {
+      "file": "VV/BBEKDynamics.lean",
+      "bytes": 11679,
+      "sha256": "7b3727cdaa9ec5248c959b84b25518b71429c6a431ff0e94081a17e66eb596bf",
+      "gitBlobSha1": "835e9c0ecee23ab85a305b2bc736281da8557c27"
+    },
+    {
+      "file": "VV/BBEKEntropyBox.lean",
+      "bytes": 11250,
+      "sha256": "30a90f3050c4f8b68545a05ff0b554abe59e14f88bb68caa5ea33feb033d9a33",
+      "gitBlobSha1": "208f60e8a51a0c7e9e73240969d040c77bfc5af7"
+    },
+    {
+      "file": "VV/BBEKEntropyExpansion.lean",
+      "bytes": 7010,
+      "sha256": "c29725a22527e362d380591bf9832ad7ea64b52933d84b956be68e21bb7fc26c",
+      "gitBlobSha1": "ce5f5ba8692884a746afef9cedf572cf6bf2fafc"
+    },
+    {
+      "file": "VV/BBEKEntropyExpansive.lean",
+      "bytes": 7963,
+      "sha256": "b5b4c1f8ef4c523e841467d8d8ea43fe5d7044deed97ad3a10ae5ac5622d4a37",
+      "gitBlobSha1": "793107d57902c69bac4b4841422c75d7f60c4b62"
+    },
+    {
+      "file": "VV/BBEKEntropyGeometry.lean",
+      "bytes": 5334,
+      "sha256": "c5ffe08556baa85cbb0431dadd346f27abf990913109cf1d7f90f3f5c2318f90",
+      "gitBlobSha1": "b3d8d0ff58ade7574721e94ffb9309f1688ead0b"
+    },
+    {
+      "file": "VV/BBEKEntropyNets.lean",
+      "bytes": 7709,
+      "sha256": "f9a41095aeafd952c028b9e390aebeb2143ef36f774cfdf698d364c19cea30f6",
+      "gitBlobSha1": "70b664aae8731048f041e268bdeb67b6bb418b79"
+    },
+    {
+      "file": "VV/BBEKEntropySeed.lean",
+      "bytes": 2046,
+      "sha256": "9ea747c9830d7b17794116865ba5df18af6441321b38cb6d665a74a150b77519",
+      "gitBlobSha1": "4f37dee3994d8b3296b052eddfb5377e765c531a"
+    },
+    {
+      "file": "VV/BBEKEntropySemicontinuity.lean",
+      "bytes": 2407,
+      "sha256": "f84bd3562b887e6056b371e1a8b3f47b457e4e6ace87b6cd0dffc1e5127490da",
+      "gitBlobSha1": "55218f04f57ea76f5b1f49cba36c38e9baaf6545"
+    },
+    {
+      "file": "VV/BBEKEntropyTrapped.lean",
+      "bytes": 3961,
+      "sha256": "a1191c6fd79842a80b0610e109596ad9c49094e4d6f9f03fec08a15be34dbec4",
+      "gitBlobSha1": "07a3245109c72a2383c469940b8a15376cf5ba39"
+    },
+    {
+      "file": "VV/BBEKErgodicPositive.lean",
+      "bytes": 6243,
+      "sha256": "ea6f746172863abd5f5acb23995db64a42ed509873109c3b53b844f14b631c34",
+      "gitBlobSha1": "2872e577c96de1c59147416e2f00d1339aea1bbb"
+    },
+    {
+      "file": "VV/BBEKExpandedPlaques.lean",
+      "bytes": 5695,
+      "sha256": "6ea5a27d8b3f6194c7a119340c63689e563e26bdf7baa7cd05d97803aba80a5f",
+      "gitBlobSha1": "a2222ccdd275fd22be3c90aed17c60268ff7392f"
+    },
+    {
+      "file": "VV/BBEKFactorEscape.lean",
+      "bytes": 16357,
+      "sha256": "f7c71cd2dc87be613cfe0fcf1143c7ca436662f0adbeaf6d711929deac4c8f5d",
+      "gitBlobSha1": "3f4d62d5c754e202fc310fbd80c44dbb3779b173"
+    },
+    {
+      "file": "VV/BBEKFinal.lean",
+      "bytes": 3944,
+      "sha256": "e18cc596909f6aed45b6525dbf3c53b7055d73c470e323fad23277e16647b791",
+      "gitBlobSha1": "8312d075b48c98cccf66cd2e8f804748db00d6f6"
+    },
+    {
+      "file": "VV/BBEKFiniteBowen.lean",
+      "bytes": 7710,
+      "sha256": "809dd9de4bd2316e125af3ea9fed79423b8036995b2b947d33af6bd0c8578386",
+      "gitBlobSha1": "3e446254b5da2bd72777fd34c58c7715c9a3c914"
+    },
+    {
+      "file": "VV/BBEKFiniteCover.lean",
+      "bytes": 1900,
+      "sha256": "2ea3c957e7170cc47cd370075e24165c8acfebd201bcc8d3318a0f4600c68e73",
+      "gitBlobSha1": "5208ac9d9419c5965972709178ea42a2bf6c3294"
+    },
+    {
+      "file": "VV/BBEKFiniteQuotients.lean",
+      "bytes": 5971,
+      "sha256": "10fabbbe5c130a125079206fb0fe307614a8111486656a5e38b5eae96520bff3",
+      "gitBlobSha1": "17233c604683a80627cba1ce64c8351977ab8d7e"
+    },
+    {
+      "file": "VV/BBEKFuturePlaques.lean",
+      "bytes": 6412,
+      "sha256": "5cd9d6f43505b942a5bca0db13787f987fb6dc34dc6aca770b780c1d39708577",
+      "gitBlobSha1": "29ea55af2506488c614353fc39888a78e0fb34f7"
+    },
+    {
+      "file": "VV/BBEKGaussChart.lean",
+      "bytes": 11930,
+      "sha256": "298d957a8bad47ed90f8b8dc5cf90bca6f43071c3bb0b71c8fb241c112d539c1",
+      "gitBlobSha1": "50793edad4ec8b49cebb3bb2e3979ee2924d6b6c"
+    },
+    {
+      "file": "VV/BBEKGaussTransition.lean",
+      "bytes": 10150,
+      "sha256": "6bb10d5f52818b8e121dd7985f2814724b3d6bb48c2c405f353fc8bd47442892",
+      "gitBlobSha1": "a580a54f15f2b102675671d7b7f9e56b14bd4ea2"
+    },
+    {
+      "file": "VV/BBEKGlobalLowerAtoms.lean",
+      "bytes": 5036,
+      "sha256": "39ada0dd763431d49d2b04d75c9f2925dc8600ac3b551803ff0cce90843a0ee8",
+      "gitBlobSha1": "978ad49403d7ec3762242ee3938b6fa5cf1d5595"
+    },
+    {
+      "file": "VV/BBEKGlobalLowerCovariance.lean",
+      "bytes": 11281,
+      "sha256": "50d580af2dfc9efad32386f583f37adcbecd7bd2cae7411cdc3788492934c825",
+      "gitBlobSha1": "3629c4bc3c33e6f9986ad9f74cda7a475601a82d"
+    },
+    {
+      "file": "VV/BBEKGlobalLowerMeasure.lean",
+      "bytes": 5903,
+      "sha256": "a9a49620636cf16ed02d0f41214b09c510847b74a52eb8932d282474bccbbe74",
+      "gitBlobSha1": "5c71be864ea31a5591c1ca8efde89a1acb9a507d"
+    },
+    {
+      "file": "VV/BBEKGrowingGlue.lean",
+      "bytes": 4606,
+      "sha256": "f280173a8b14916456f8ebb1eb1fe608c530d9db027b90bb8b651264439ca185",
+      "gitBlobSha1": "a2ae4f232d810296b7c48d38be36e79aff30600a"
+    },
+    {
+      "file": "VV/BBEKHomogeneousErgodic.lean",
+      "bytes": 5753,
+      "sha256": "f6c7325cad6edc5029e8a18cd17099c493ef03459009fbb687947b40d66b73bf",
+      "gitBlobSha1": "133c0f1ffce2b58a599b36bc876af42b8d77b4df"
+    },
+    {
+      "file": "VV/BBEKInvariantSupport.lean",
+      "bytes": 2855,
+      "sha256": "3661fcb7ee7ca2e62065fc01a1eed06a73d973d9ca20a7dab96ba5984ecc1650",
+      "gitBlobSha1": "08f7d8abc7b1b1404a0c85ae67573b2a8bd960f3"
+    },
+    {
+      "file": "VV/BBEKInverseFuturePlaques.lean",
+      "bytes": 6645,
+      "sha256": "791311b5bb1c14c5b683432c2bd8c4cc93d5acd1adc528ee20c64ae4a60e455a",
+      "gitBlobSha1": "5abf9f26270b48b17fd8250ff86ce13e049708d7"
+    },
+    {
+      "file": "VV/BBEKKernelAtoms.lean",
+      "bytes": 2186,
+      "sha256": "c0f6cc318eb225d9f5ae60801761462620f38db1b544ae52a12073b408229e4a",
+      "gitBlobSha1": "6d7f1393ea9dbc4a2b8cbaad456f07dfa29caf89"
+    },
+    {
+      "file": "VV/BBEKKernelEmbedding.lean",
+      "bytes": 3114,
+      "sha256": "8a551b0a140e384a8e26c10921adcefb336a547f6ef9926a9be179a907ec38c3",
+      "gitBlobSha1": "7ff381742ce68457ee3896408b8abdd04a243e22"
+    },
+    {
+      "file": "VV/BBEKKernelFiberRestriction.lean",
+      "bytes": 5289,
+      "sha256": "cd060e73df915713ce8c42b704d7436d06d3a4ac4b3e71d208b3ce7eeec152b8",
+      "gitBlobSha1": "da1a25c248cff67669ad844ea340b16d242cff84"
+    },
+    {
+      "file": "VV/BBEKKernelRestriction.lean",
+      "bytes": 5466,
+      "sha256": "a4e11765fe161958ceaffb1247611b62ce84f6a1fa661cfe9e790c9b884acf40",
+      "gitBlobSha1": "2469239c65e57ce6b60a76ec4be883ec0d84cdce"
+    },
+    {
+      "file": "VV/BBEKKernelSkew.lean",
+      "bytes": 4747,
+      "sha256": "db40f13b046f5ce771b4afdc0cfa9374cf4fa02f0711efd799e6680e47d49ffd",
+      "gitBlobSha1": "ca8f7259dece5e19060cf7d224e337d213249c00"
+    },
+    {
+      "file": "VV/BBEKLattice.lean",
+      "bytes": 4147,
+      "sha256": "631354df8abc3887784dff295077775aca8d5e1389d7e423254abdb6bbd06178",
+      "gitBlobSha1": "3f5a39a5c53ee50c86152f0075f6842de8e1f1fb"
+    },
+    {
+      "file": "VV/BBEKLeafAtomDichotomy.lean",
+      "bytes": 13194,
+      "sha256": "812adae5d317d2eedc6c990d9ac6c28aa6cf9ad65f9505c9544d60f81f52f0af",
+      "gitBlobSha1": "af1c92428472392aec7f270f3e61abb365f1d57a"
+    },
+    {
+      "file": "VV/BBEKLeafwiseAtlas.lean",
+      "bytes": 3342,
+      "sha256": "00c251e8a3b2c4453ece0333ff5f525ce3a974a8f4723207908f76d164f6d812",
+      "gitBlobSha1": "2efb148a1ba15c709db229df1b9c0c11ebfaa375"
+    },
+    {
+      "file": "VV/BBEKLeafwiseChart.lean",
+      "bytes": 4706,
+      "sha256": "d5f4ed4a27854acf7e7231ec92bb5165725e288604cce70a29e4eba6666c44f9",
+      "gitBlobSha1": "d53a1481094e284a4d3025b2576046d0449e8e42"
+    },
+    {
+      "file": "VV/BBEKLeafwiseKernel.lean",
+      "bytes": 9416,
+      "sha256": "6316e710656d97ba78ea2454b4f8cb4d84db5db9235832aaa8d80e684edc95aa",
+      "gitBlobSha1": "03d4f996fa6e87632dfdf99a3a97d7e21afe07bb"
+    },
+    {
+      "file": "VV/BBEKLeafwiseOverlap.lean",
+      "bytes": 3865,
+      "sha256": "3916f2dea03ccb6ad007b6d37bbe3a1b1fb08e119f94c236d65163f78440c4a1",
+      "gitBlobSha1": "f5d3b426bac0e4170b12613903ac1e1bbabbb0f7"
+    },
+    {
+      "file": "VV/BBEKLeafwiseRecurrence.lean",
+      "bytes": 9833,
+      "sha256": "67e22737231c903f7496e894934a8609422949eef64f0402d891e538a1c600e0",
+      "gitBlobSha1": "efa70f648449739efb33c09397f9c5f3908293ef"
+    },
+    {
+      "file": "VV/BBEKLeafwiseStabilizer.lean",
+      "bytes": 9623,
+      "sha256": "5b28dc10e8d7ef041d4256ed1a607dcfc1c45bf8baad80e4abd23943e54b91b9",
+      "gitBlobSha1": "7aa7b0ca18b271fd5cca69dddf1c6c52de49a8fd"
+    },
+    {
+      "file": "VV/BBEKLeafwiseSupport.lean",
+      "bytes": 4815,
+      "sha256": "248ab78becfdc952069fa88e7e0d5157ea8b4915660e173be2d939a698697cfe",
+      "gitBlobSha1": "73dd9dd56efdda363dfb1e9e03d8c93790222c53"
+    },
+    {
+      "file": "VV/BBEKLeafwiseTrapped.lean",
+      "bytes": 3419,
+      "sha256": "dd349541944152078d4ab3c68972d287975e0d351a367e88d25e7e962765966b",
+      "gitBlobSha1": "5de2abce8693edc31f9d0866f462460d62d4535b"
+    },
+    {
+      "file": "VV/BBEKLocalChart.lean",
+      "bytes": 3486,
+      "sha256": "45da308b1b302bee3d350ac80f0b554fb5c1ffb839bc0670544d327a37ccfd42",
+      "gitBlobSha1": "532824f0972c6f91dca06a920f20f6840758b39e"
+    },
+    {
+      "file": "VV/BBEKLocalDiagonalCovariance.lean",
+      "bytes": 5564,
+      "sha256": "2b16eedfa8e7f47ae37cbd76fb999500f47a50f5fbe2e95badca54c6b30a6d48",
+      "gitBlobSha1": "4e2d1979ba25de08e4bbf0a066c369b524d648d3"
+    },
+    {
+      "file": "VV/BBEKLocalRootFamily.lean",
+      "bytes": 3058,
+      "sha256": "6eb7bc9fdf7d1cdf93ce7c4d181a0a91a9f9f4540a5df2bbda0d9afa4215ec9b",
+      "gitBlobSha1": "7d596c1074afc285d7acb53598e5aeffc51c929d"
+    },
+    {
+      "file": "VV/BBEKLowEntropyCore.lean",
+      "bytes": 1912,
+      "sha256": "add99332445771cc131f87f2dfc8081f62303af74aaace8126a439cccc56bf2f",
+      "gitBlobSha1": "0c164ee618419ce52aa7b1a583ee004a4548ac3f"
+    },
+    {
+      "file": "VV/BBEKMahler.lean",
+      "bytes": 2075,
+      "sha256": "0b7ddc97831a1e89adf6fb10b97a43dd73216198f09e32e2fc801bf49b8e58f3",
+      "gitBlobSha1": "163a18cd4686d91908fcbf87eb4b2e0951ce8f3b"
+    },
+    {
+      "file": "VV/BBEKMahlerBounds.lean",
+      "bytes": 2638,
+      "sha256": "5f6a8b953da1df767481345358505fa45e60848f63bae5e38414e6257dad4103",
+      "gitBlobSha1": "6aa1c7e5bac3d0a0c5ee5042b24adac860267a78"
+    },
+    {
+      "file": "VV/BBEKMahlerBridge.lean",
+      "bytes": 3375,
+      "sha256": "cf67b40d73e4743d7eb60fe5bb4d538f435ce394c613efdd348a654e3e40ef97",
+      "gitBlobSha1": "5c16597385bb099f2446f730fb4e68aa2b8b3e1c"
+    },
+    {
+      "file": "VV/BBEKMahlerPadic.lean",
+      "bytes": 9115,
+      "sha256": "25f8e9a20491a422107caaec2048f1a4f5fbed62843c54d88b657a53c35f15e5",
+      "gitBlobSha1": "ff7f70dfe909aaaeb5c3ec371efaf42b666e6228"
+    },
+    {
+      "file": "VV/BBEKMahlerReal.lean",
+      "bytes": 9468,
+      "sha256": "a95685ab13a8cfacb5eaea335a13aa0e27e4543adf9c44e9c906c0b31aac02b0",
+      "gitBlobSha1": "53690913b5010de4afe29c65f5f3125c26cfa993"
+    },
+    {
+      "file": "VV/BBEKMatrixReductive.lean",
+      "bytes": 4957,
+      "sha256": "da3097e15dc2c9dc9abe262dbc39095cc9d88e9373a92ab7034770e80761aeb7",
+      "gitBlobSha1": "d59f7a51afb6169f7ffb40849412ef1c6b51872d"
+    },
+    {
+      "file": "VV/BBEKMautner.lean",
+      "bytes": 7597,
+      "sha256": "415e26dfd3abc7cfb575dd3974f6540882d4636e23ec2992c4da5bbf58f3b6fd",
+      "gitBlobSha1": "65959099b3afca083465bff6248185b0f81a1277"
+    },
+    {
+      "file": "VV/BBEKMautnerLp.lean",
+      "bytes": 4356,
+      "sha256": "959fb73b38da9415e20352c584a9be3751016e654f86d406c08418355d88126a",
+      "gitBlobSha1": "49fe25a3d2450ba135f5b00992f2be9bdbf39361"
+    },
+    {
+      "file": "VV/BBEKMeasureAverage.lean",
+      "bytes": 13310,
+      "sha256": "e282967d7cb1cda79c312a8fd78dcb631e85c00e65c94c1be7cb547fa5535417",
+      "gitBlobSha1": "70c19cc6ac5fec6e7a302b35641817d42a7d9f23"
+    },
+    {
+      "file": "VV/BBEKMeasureCovarianceInverse.lean",
+      "bytes": 2225,
+      "sha256": "3eac22295a208865a7f04067e5704119bf1ceccee53e33627c7d2a69a306e93a",
+      "gitBlobSha1": "2578f7f06eb277d69050bdec32f5a910a646ed6c"
+    },
+    {
+      "file": "VV/BBEKMeasureGlue.lean",
+      "bytes": 3804,
+      "sha256": "efa241c9e2a97fd46022f9405ec5b4be7e1fc268bcfda431e74bcac8412cb593",
+      "gitBlobSha1": "6ec0904a3da8ce15eeaa6162de09b586a90e9f51"
+    },
+    {
+      "file": "VV/BBEKMeasureStabilizer.lean",
+      "bytes": 8484,
+      "sha256": "51e3c0b1b4f766a36ae41ba51836e17dfd0b66573c6b264bb71cb2c7a97fdb45",
+      "gitBlobSha1": "47fb5397d7a1dad8b31a36ae506256940f6db3a3"
+    },
+    {
+      "file": "VV/BBEKNilpotentTangent.lean",
+      "bytes": 6509,
+      "sha256": "a94bc96dfae6d5e831310a04ac7ce35af70bff681e740adeb0cff6dc1ffbadcb",
+      "gitBlobSha1": "db6e676d92e128a6007ce5fc682a27f4bf70b50b"
+    },
+    {
+      "file": "VV/BBEKNoncompact.lean",
+      "bytes": 2717,
+      "sha256": "82fe292455bc9c7ecdd79aa4105b505950483da4b642426c86008e62494bed1c",
+      "gitBlobSha1": "91f47aeaeb744c920240471617d4f06a0480a54c"
+    },
+    {
+      "file": "VV/BBEKNormalizerExclusion.lean",
+      "bytes": 3499,
+      "sha256": "ad7caaf41141be8cb9e8b4fbd9cf406d7f77e468ef342afe62a8b7fd2586dcbe",
+      "gitBlobSha1": "28be436db52f32d206b464ca30c1fd06c44d9333"
+    },
+    {
+      "file": "VV/BBEKNormalizerOrbit.lean",
+      "bytes": 10000,
+      "sha256": "9d00ffee24afe1329fd31c2766f89a6869b532a154c4977de9d834b77b54b4e6",
+      "gitBlobSha1": "913999e7ec4623d9fe24f576a6e55581cb836f86"
+    },
+    {
+      "file": "VV/BBEKOneRootChartAgreement.lean",
+      "bytes": 6417,
+      "sha256": "ab58a33f43633ea7448f08bc3eb657e4dc49e3c5adc17b7ba830c8ab0cb871e9",
+      "gitBlobSha1": "1f73282c59838f415ed6810fd8ac6015f2aecec7"
+    },
+    {
+      "file": "VV/BBEKOneRootCovariance.lean",
+      "bytes": 13098,
+      "sha256": "c29b8725838c4d9b2088f9103c5e3efc147a52e6dac94c55396781df6da3808e",
+      "gitBlobSha1": "0c5d03228c4104e61a16ffb7dd87d151b4ee2694"
+    },
+    {
+      "file": "VV/BBEKOneRootGeometry.lean",
+      "bytes": 7227,
+      "sha256": "df77c8f218faf9a43a1c8157b85513fc0eb915fa8c85b9678e5c51172097183f",
+      "gitBlobSha1": "3bb2aea06830860c784ccfd4b8c656cafc0e166b"
+    },
+    {
+      "file": "VV/BBEKOneRootGlobal.lean",
+      "bytes": 10328,
+      "sha256": "76e2e2280468dfb834b7c3f236591099453909188685a5eacec1e16e4dfd2b4b",
+      "gitBlobSha1": "0a5d896ad4928a19b715a907914b9b251417a520"
+    },
+    {
+      "file": "VV/BBEKOneRootLocal.lean",
+      "bytes": 5420,
+      "sha256": "2573e84e0af06081ea43274d88dbc256dfaac523bca15df575a8a95f15d6d49b",
+      "gitBlobSha1": "e44800627a899d5b3d887f764b607256c1eda0d7"
+    },
+    {
+      "file": "VV/BBEKOneRootLocalDiagonal.lean",
+      "bytes": 4256,
+      "sha256": "ff4f16a4a995ef79ea22a138be6d0f1bb90c214de945c28229653a2f2f7cbccb",
+      "gitBlobSha1": "94957dd190fc2cb1eee5b0f4b826e726eebe6460"
+    },
+    {
+      "file": "VV/BBEKOneRootOverlap.lean",
+      "bytes": 9970,
+      "sha256": "7ed3b623fee66754294b6f1011dcffcbd6dafa19b74220e10130c1aa85e55d2a",
+      "gitBlobSha1": "32bd4ea7c6931f5b8b38e3af04207979df0418a8"
+    },
+    {
+      "file": "VV/BBEKOneRootSafe.lean",
+      "bytes": 11692,
+      "sha256": "909d3b941b504b99b1d6e6108e681f4f2be22a61144f05d526135d0071cba89b",
+      "gitBlobSha1": "9e7ec1ea63ad36af6a831a7637c081edebf5541d"
+    },
+    {
+      "file": "VV/BBEKOneRootSelectedDiagonal.lean",
+      "bytes": 3237,
+      "sha256": "a829caeebd9c320bfece1d7454a85faa97c569cee4e3d7af74027a214583cd23",
+      "gitBlobSha1": "b3309087b8adcda46fb772a16c027be370a9daa4"
+    },
+    {
+      "file": "VV/BBEKOneRootUpper.lean",
+      "bytes": 7465,
+      "sha256": "681b21d4b75149f9f001b335903a2c9c836ea889c398c81a09d410b786890393",
+      "gitBlobSha1": "f77e0f93e270ab08c64d76abefd14ece1af47cc0"
+    },
+    {
+      "file": "VV/BBEKOpenOrbit.lean",
+      "bytes": 2557,
+      "sha256": "80b299367b5245e8b6ff56d5b1494a6cc624bbcafc8b659678a0e636b0efdf70",
+      "gitBlobSha1": "8bac2399d4da303f1faf127603963997fb693d6a"
+    },
+    {
+      "file": "VV/BBEKOrbit.lean",
+      "bytes": 5895,
+      "sha256": "f552791ea52c9ca80a58171325a125103d7dd0da6d719ae05f0f60de56578682",
+      "gitBlobSha1": "00d89f965b18f82e5f4d7890ba82595dbe9f2cae"
+    },
+    {
+      "file": "VV/BBEKOrbitBaire.lean",
+      "bytes": 3387,
+      "sha256": "559a973d9bff2c45c14e5ea5e7f5e8a8340cc25105d8f43e664c5eccfeac2e8c",
+      "gitBlobSha1": "435e117fee5accc25dc26892d151d415370b0fa3"
+    },
+    {
+      "file": "VV/BBEKOverlapDescent.lean",
+      "bytes": 9866,
+      "sha256": "f580fae154613d0d216fe246b0118892af314395c5eb06a822c28b4259262e61",
+      "gitBlobSha1": "d3a71c3b2a2f2ecb080caee4f3b2e654b05b398a"
+    },
+    {
+      "file": "VV/BBEKPadicStabilizerField.lean",
+      "bytes": 4619,
+      "sha256": "90aa5e4963b9d46be4ccd62b49050880fe3826b3af8bf4aebb704cc5426d70c1",
+      "gitBlobSha1": "9062d3f2b4cfc80da8590e7cbab9c122e0f70fbc"
+    },
+    {
+      "file": "VV/BBEKParameter.lean",
+      "bytes": 2525,
+      "sha256": "2b4a211b092e24e7460e1fa017f5cf151a51e8939fd279b231aa60fa716f378d",
+      "gitBlobSha1": "f3e6df7b4a13a3af578fdc6d2e54fe90d0d673e7"
+    },
+    {
+      "file": "VV/BBEKPeriodicAmbient.lean",
+      "bytes": 4184,
+      "sha256": "32ac6f0a59aafd8c20001716365ace032fe50da95990efdec2ecfbfa8e47f8e1",
+      "gitBlobSha1": "faf24c4aa29bd4f76e1f70887c7622015309713e"
+    },
+    {
+      "file": "VV/BBEKPeriodicEntropy.lean",
+      "bytes": 3996,
+      "sha256": "e62aa0d2195b40368f7f69d0c15807ac6e0dec3518b8f0e2172c334d7b0d3e4c",
+      "gitBlobSha1": "777a19f992d985cbcc5eeebb6f76bc467537214a"
+    },
+    {
+      "file": "VV/BBEKPeriodicOrbit.lean",
+      "bytes": 3874,
+      "sha256": "552f4ae2ee48d04d9cafbea18840642cfbfa839652cdea802dbfd976d681df3a",
+      "gitBlobSha1": "090795039555355df60e6109d71466debde9963c"
+    },
+    {
+      "file": "VV/BBEKPeriodicSupport.lean",
+      "bytes": 2260,
+      "sha256": "3c6b4cc3bc9367caa3bf1be27d5906e9ba067e5e1d1ffa89c6c8eae63d97ec6e",
+      "gitBlobSha1": "1eebdc41dab5ba4f6186c11cd3be41170298a51d"
+    },
+    {
+      "file": "VV/BBEKPlaqueSelection.lean",
+      "bytes": 4737,
+      "sha256": "3289a3aa1c10887872074bd6791c4c1c38bfc74b933f483cfdede5bc807cfb1f",
+      "gitBlobSha1": "255ffc3f0935b835ab971846b20d9681b000717d"
+    },
+    {
+      "file": "VV/BBEKPolynomialDifferential.lean",
+      "bytes": 2928,
+      "sha256": "77c325f6159f5d7e5954fc467f312aa6e7f0ee272a2dd3c67bd4b84870791304",
+      "gitBlobSha1": "6db7ebf05b4189c3207c0ad4cfb1b3d996669bf6"
+    },
+    {
+      "file": "VV/BBEKPositiveDiagonal.lean",
+      "bytes": 2779,
+      "sha256": "95270e7a1642ad21094c06af4d8397aff2bd3a740893d7dfe64b5e3f66044003",
+      "gitBlobSha1": "5f35b568f524cd004ce123218af4126cc25f42c5"
+    },
+    {
+      "file": "VV/BBEKPositiveExclusion.lean",
+      "bytes": 2923,
+      "sha256": "94794bca349c2aa353d4933a071b0743a7abc115db92b1099a8365d7f0d6ff06",
+      "gitBlobSha1": "2d0e87e3422d865ce539d5b4a200eee1b33f4f0e"
+    },
+    {
+      "file": "VV/BBEKPositiveFullDiagonal.lean",
+      "bytes": 2546,
+      "sha256": "3f828cd6c82697f4f9d9e16a9384078688b75dc8c08c09ff60d415aeffe8442c",
+      "gitBlobSha1": "3b4e704230e2b82d1cf6d82fe94ef9b0c0916dd6"
+    },
+    {
+      "file": "VV/BBEKPositiveFuture.lean",
+      "bytes": 1412,
+      "sha256": "194fc49873627f5c57da92bc5629ef7383c50520a3556ed29520bd88f4dcc690",
+      "gitBlobSha1": "fec50a1bb406f2b5846e1e27483271d4e576ab8f"
+    },
+    {
+      "file": "VV/BBEKProjectiveGlue.lean",
+      "bytes": 3595,
+      "sha256": "0b86e0f3accdd49b42f1c6af2a2a7e0050586419de262a5c56d3d940793fca39",
+      "gitBlobSha1": "aa98570be08e717f5979b38cc484995b00be9bd5"
+    },
+    {
+      "file": "VV/BBEKPsiEntropy.lean",
+      "bytes": 2672,
+      "sha256": "fdfae57e8c2b0e8ddf41d9452620c3f1940baaca4c39aa3f37030d19ed115884",
+      "gitBlobSha1": "ad8d2d9a687b63fd7a78323dfe40c1516a2acb2b"
+    },
+    {
+      "file": "VV/BBEKQuotient.lean",
+      "bytes": 3214,
+      "sha256": "98c1106eff2dffa3b847d1e7f52a26a0078dd5c3fe85352e83646cde4318207e",
+      "gitBlobSha1": "50ac36249c0b2f12250047358487e53cc8bfa01d"
+    },
+    {
+      "file": "VV/BBEKRadonModification.lean",
+      "bytes": 3598,
+      "sha256": "21a49ec66992716d79806223a61e70815477255c92bfcbec8a3348d6a0260ec3",
+      "gitBlobSha1": "2e26ea529373b058901f019d83522e4002b13c99"
+    },
+    {
+      "file": "VV/BBEKRationalReductive.lean",
+      "bytes": 10384,
+      "sha256": "3a6acfc6cd0121264095594187fcac537fec457a583f0f23dfaa655a711753c2",
+      "gitBlobSha1": "1cc1ba7c7347e2528e2b7c2a49d88c871bbb7f1c"
+    },
+    {
+      "file": "VV/BBEKRealStabilizerField.lean",
+      "bytes": 8987,
+      "sha256": "cc27f159d779c6c442e1117e65949397ba0511b345fdf2910eb9cfdb09f1ca5d",
+      "gitBlobSha1": "c7fc9c5132ae2aa82f4cda4b3d27abb875d1da1c"
+    },
+    {
+      "file": "VV/BBEKReduction.lean",
+      "bytes": 4161,
+      "sha256": "ff2933cfb3bfdbc44de753b4ad8ebab0f3397c63c930b3ad34e4b1370c9c5729",
+      "gitBlobSha1": "d64c0f2872edd46e45c34de8f1d703824db8e7c9"
+    },
+    {
+      "file": "VV/BBEKReductiveConjugation.lean",
+      "bytes": 8471,
+      "sha256": "a8ae654c125f1c82124de0328439e73c6c72d226c9fc68bddd8da0347f4e41fc",
+      "gitBlobSha1": "26f8f4359ade605707863368f7748e9cbd3a43d1"
+    },
+    {
+      "file": "VV/BBEKRigidityEscape.lean",
+      "bytes": 3168,
+      "sha256": "29c754a697bacb63cf77f2387ac2d70f17325e53abc472163dd9de19eba569fb",
+      "gitBlobSha1": "a35c1340f21344e938f07eee307d222e7765210a"
+    },
+    {
+      "file": "VV/BBEKRootEscape.lean",
+      "bytes": 20957,
+      "sha256": "71badf6d0b0271526c91585fe42849f49f84ed7a5e06b02cc8ea3da93a30c66e",
+      "gitBlobSha1": "edf2147d22390fddaec350cc17326daefd2b19c5"
+    },
+    {
+      "file": "VV/BBEKRootGrowingGlue.lean",
+      "bytes": 4933,
+      "sha256": "0bb940679b52debc6af211404d1183e1bae42c589dbc1b32ae45c2f734635af5",
+      "gitBlobSha1": "adb27447cdecc5c0c17b1dc05864938835fc7ff7"
+    },
+    {
+      "file": "VV/BBEKRootLeafKernel.lean",
+      "bytes": 6419,
+      "sha256": "7ad633bd73640712f35294ed37b5288be329fd997f1ceb09662c67ad29ed3a3e",
+      "gitBlobSha1": "d64734886d909584d1423fe1f96a8b12d47bcc5e"
+    },
+    {
+      "file": "VV/BBEKRootStabilizer.lean",
+      "bytes": 2418,
+      "sha256": "e8af2f662e7da7318af3bcd24111ce7bc3730aa5f5c0ce6906da553902b8bebe",
+      "gitBlobSha1": "ab08955a11ded4411d6574056d9d789fe053744f"
+    },
+    {
+      "file": "VV/BBEKRootSubgroups.lean",
+      "bytes": 3801,
+      "sha256": "3fa0b36ba44f3ed20be61864d8592425279224ae66d885b1f0c67299e862c9e2",
+      "gitBlobSha1": "4847edc24fb3e2b91ef5844d1a0b234d0751ac14"
+    },
+    {
+      "file": "VV/BBEKRootWeyl.lean",
+      "bytes": 4213,
+      "sha256": "60644f42ee5e6d52932966cbf743a4ab3563715247f6b2a93ef493087f95f715",
+      "gitBlobSha1": "508e082041e7f536752e635c1f2eb8e6f8df12b0"
+    },
+    {
+      "file": "VV/BBEKSafeBallCompatibility.lean",
+      "bytes": 5238,
+      "sha256": "ad3ef20b3124675bf6c2e4a647d1e6ec2f31287599ea256710323e17def0b138",
+      "gitBlobSha1": "1ab35f2bc8699f166749a3d9fddc29adadfefaa8"
+    },
+    {
+      "file": "VV/BBEKSelectedDiagonal.lean",
+      "bytes": 2725,
+      "sha256": "3ef0cf04decd3b789fdaf2f42d065c78c1e9452abf4948b7fc125cebb3ac7b08",
+      "gitBlobSha1": "60809661b53cdcc4550969052e694920bd0736c7"
+    },
+    {
+      "file": "VV/BBEKSelectedPlaques.lean",
+      "bytes": 6576,
+      "sha256": "7271991ed1d5d4ad4d23097bb930ba072aaf9199804dd161ae3829ed8a1156fa",
+      "gitBlobSha1": "2935a05374aba2e2465cd6612a0b646238112621"
+    },
+    {
+      "file": "VV/BBEKShortVector.lean",
+      "bytes": 17293,
+      "sha256": "23a326c21d5a3525109783ec2aa8bb4ec4ea0463ceb154265e2cb588a76bac9a",
+      "gitBlobSha1": "d7a2473771c481dcc036fea98c7272a0583cecf5"
+    },
+    {
+      "file": "VV/BBEKSl2Normalizer.lean",
+      "bytes": 4332,
+      "sha256": "4fd56bef7868e6e2e3f230bc117814356c5954e39ab63804de16c15a11628536",
+      "gitBlobSha1": "b501d11589f73b35ad1372670bef3728d44fa6cc"
+    },
+    {
+      "file": "VV/BBEKSl2Reductive.lean",
+      "bytes": 8014,
+      "sha256": "4f08b4cf9165a16a1b9d0aa5239409327ac923b27073b377fc2c9f59f9a673da",
+      "gitBlobSha1": "7fa61f3c2f5d890f3c8106ecee0a9dc7aafc8431"
+    },
+    {
+      "file": "VV/BBEKSl2Shear.lean",
+      "bytes": 5772,
+      "sha256": "cf056db694888c221afa16b60a72cdd5f2a3c894b35e05d4f14efd0a36d784a2",
+      "gitBlobSha1": "13b0fba9f0405951be2f6a92f680a70188e9f389"
+    },
+    {
+      "file": "VV/BBEKStabilizerErgodic.lean",
+      "bytes": 4264,
+      "sha256": "0a69225b906c4b05ffceee10ddb812cc6764c558038eeb3ee00cfa0641f11fce",
+      "gitBlobSha1": "2100382fa79b0549abf604aae635f5eae9d65558"
+    },
+    {
+      "file": "VV/BBEKStabilizerRecurrence.lean",
+      "bytes": 2294,
+      "sha256": "f3e8c5c1c6ca079fea56d95a1fc38488c110ee30d82a1e32401d2650a1e37011",
+      "gitBlobSha1": "f8722175f6048a27198847abb86dda84b14b89fd"
+    },
+    {
+      "file": "VV/BBEKStandardBorel.lean",
+      "bytes": 1951,
+      "sha256": "a254a549d93230563f43bf7c9c9bf51ecbce9d05ba6bda27a8f853096c277cdc",
+      "gitBlobSha1": "d2289bc2f9112baca5ea4b5607a8b5beafe936f9"
+    },
+    {
+      "file": "VV/BBEKTangentDiagonal.lean",
+      "bytes": 3296,
+      "sha256": "f47a28cfa07828a3ba88da6dc863297838afd13841f33a834f6ccdbbc96fa8ce",
+      "gitBlobSha1": "acfc6d61f7f33671f10784de76bd02fe1f83cb61"
+    },
+    {
+      "file": "VV/BBEKTangentLie.lean",
+      "bytes": 4923,
+      "sha256": "c9cc054e015335af485c3875bb5ee69c82d70bdfe098eff0707ce72924c99189",
+      "gitBlobSha1": "b03153f09121a1f055ceb7661c25ffab24ba490a"
+    },
+    {
+      "file": "VV/BBEKTimeInverse.lean",
+      "bytes": 2295,
+      "sha256": "024df9ea09685f444b331f0d427fced79c8801e36ae6da75b2fd207cf35944a0",
+      "gitBlobSha1": "8375ed1c683434473e5ed66cd40a337af7dd9f93"
+    },
+    {
+      "file": "VV/BBEKTopology.lean",
+      "bytes": 1261,
+      "sha256": "a1c6f481746dc7a8c45b118234e5e487919167c102d7606c794b4db45ecd7aee",
+      "gitBlobSha1": "5e69b9149d194fc06e9906770535427d6e770857"
+    },
+    {
+      "file": "VV/BBEKUniformPlaques.lean",
+      "bytes": 4327,
+      "sha256": "c2bef17c3ce15e419daaff1d3273d78e90c8267b460b6768e7474a55760721ff",
+      "gitBlobSha1": "28a77eb26e6ebb0e4a7860f96ae2e6b4e5389132"
+    },
+    {
+      "file": "VV/BBEKUpperRootSubgroups.lean",
+      "bytes": 3784,
+      "sha256": "edf05e61dd88a7f42704b23fba35b3b9bb99a0f82615bfbdcfea0003f157a3f1",
+      "gitBlobSha1": "daeb220ba8a48aeec0325ec9eb2448e07b3d6ee1"
+    },
+    {
+      "file": "VV/BBEKVariational.lean",
+      "bytes": 1806,
+      "sha256": "74f956e44c302ff51b159f718fa48d2ccd0919f6c9bc627ba1b6fe2bd88e1249",
+      "gitBlobSha1": "982c38294445126aaa1468280e41d9d369629940"
+    },
+    {
+      "file": "VV/BBEKZariskiRoots.lean",
+      "bytes": 6581,
+      "sha256": "f86050a505b1ec307376849e19b633bf0e4c9a7eeff4a5feea8c01475c640926",
+      "gitBlobSha1": "80243c56bd24897be5895f2581772d5bd911d0fe"
+    },
+    {
+      "file": "VV/Classification.lean",
+      "bytes": 4422,
+      "sha256": "25bfc6d09fda60c373b96a9499c72918f8b9cc2407062ba58c0cb896c5ed787d",
+      "gitBlobSha1": "acb82430edec126246850ae26a9a0feed927fbc9"
+    },
+    {
+      "file": "VV/CylinderGeometry.lean",
+      "bytes": 5489,
+      "sha256": "cc9cf8cdb74a94763eb5658fdfa33e592db2afaa1f35daaa981e31f7aba6f086",
+      "gitBlobSha1": "59b18909bf92049437b4dbfff51f75d3381ad718"
+    },
+    {
+      "file": "VV/CylinderSeparation.lean",
+      "bytes": 9951,
+      "sha256": "da9602b0b0a67f6083bca2b4e21c4d60b2547fdf327e66b138f3abdec56bb8f6",
+      "gitBlobSha1": "6106d3526c8d80203029d8ba82ef00e2f42ebb9b"
+    },
+    {
+      "file": "VV/Definitions.lean",
+      "bytes": 2621,
+      "sha256": "71e1c18837193b92175ab9c13be997d9241dac9cf08d05b5bf08aed33de6487a",
+      "gitBlobSha1": "406963e03e64256522b74657486ba04715e6da2a"
+    },
+    {
+      "file": "VV/Entropy/AverageEntropy.lean",
+      "bytes": 3177,
+      "sha256": "7adc2c21f9ec720bb94b1639276fc2519ac08765545f2b420f311acb086e0216",
+      "gitBlobSha1": "aa25810592905e0014075ccda177996898034465"
+    },
+    {
+      "file": "VV/Entropy/BadSymbol.lean",
+      "bytes": 7346,
+      "sha256": "814b9e38117655c1e03c41559ab153144941f475726ce6f47e4cc270e4cd5805",
+      "gitBlobSha1": "ade29e6aa07c6178aa6730d54136e910c44ada42"
+    },
+    {
+      "file": "VV/Entropy/BinaryMixture.lean",
+      "bytes": 2332,
+      "sha256": "a7d2afc7d83fc78f9e5cadfa6ee9276dea89a7d53b5c6dd359aee4a61afb1f12",
+      "gitBlobSha1": "b217b6cb608ec8873ab6e038c5ae53432fb159a6"
+    },
+    {
+      "file": "VV/Entropy/BlockEstimate.lean",
+      "bytes": 5724,
+      "sha256": "f0aa4749d99c609499b1f5541ecf5d519bb9c54b475fef056462990f55bbcca4",
+      "gitBlobSha1": "53473a2f9d758f625bce65089f2b4569da67702f"
+    },
+    {
+      "file": "VV/Entropy/BowenGenerator.lean",
+      "bytes": 5452,
+      "sha256": "768140962daebf004049782f562d77d6591e12e7119edcad2a0c58b981d575c0",
+      "gitBlobSha1": "4a6d008f2159d55875b5af04e4f9cc946d9ff917"
+    },
+    {
+      "file": "VV/Entropy/BowenPartition.lean",
+      "bytes": 8269,
+      "sha256": "992a52abc9ee8c711d3e72bbbc3b0d13a6d19a6e07ec3770247b11597b9e4f10",
+      "gitBlobSha1": "f1183d0f672820955fe71ab2e8e91960a1e8e6f1"
+    },
+    {
+      "file": "VV/Entropy/BowenSemicontinuity.lean",
+      "bytes": 2385,
+      "sha256": "6a8d718d962cb6f594a3e9c4d2e9c1dc909b5738fed2a4102fafbc41c0cbb69a",
+      "gitBlobSha1": "38ef3789c0b9ca7c680b0f95282298d19ae7001c"
+    },
+    {
+      "file": "VV/Entropy/CommutingAverage.lean",
+      "bytes": 5699,
+      "sha256": "ceeabdaba634794fc0b3c3ea952192fbf598f1ce5d347e4d851dcb81564bd11e",
+      "gitBlobSha1": "aac4ef8094ddb1ec60565a7a01b1d616b1627744"
+    },
+    {
+      "file": "VV/Entropy/CompactAverageEntropy.lean",
+      "bytes": 6490,
+      "sha256": "0c3105cc5e33a38327319270326dd5fc94920aaaed718f5cd944937abb82a008",
+      "gitBlobSha1": "2f96c2d3dde668e2d08e924ff41a07d1baeeec3d"
+    },
+    {
+      "file": "VV/Entropy/CompactCores.lean",
+      "bytes": 3336,
+      "sha256": "f8f70325b0ea18d759f162bcef04d8dbbf0f79bc4b58c444be87b60d408c2003",
+      "gitBlobSha1": "5f74a6f48db804aada8f851fb2fa423166e9040f"
+    },
+    {
+      "file": "VV/Entropy/CompactProbability.lean",
+      "bytes": 7568,
+      "sha256": "b94a41290846a709849e32e2cbb60756eef31364f61e05fb5b7ef03d426af66f",
+      "gitBlobSha1": "aea662e620badce6e802663ee6755af7ff38fbc9"
+    },
+    {
+      "file": "VV/Entropy/CondBlockSubadditive.lean",
+      "bytes": 6989,
+      "sha256": "b5d557ae83a32574f6ee5dff5d4b528acff5ae234a5c5d16eb2fcff2ac77a0e0",
+      "gitBlobSha1": "177e67e5c659bddd4056e8b3f9bbe7a0445f5a43"
+    },
+    {
+      "file": "VV/Entropy/CondChainRule.lean",
+      "bytes": 6041,
+      "sha256": "2d358d623ff8a4e967bcc3e67a3afeec1286d5aa818909dac2d8974e98feb564",
+      "gitBlobSha1": "3281d2e8980746e99b7b064abcb27a01cac9f42a"
+    },
+    {
+      "file": "VV/Entropy/CondChainRuleSup.lean",
+      "bytes": 30956,
+      "sha256": "4d08eb33cf8f7bde4f8482b1e3f619a52093b01f1953b931c3e81d2288db24de",
+      "gitBlobSha1": "834dfff792d797012e72a3f3a1a86fb6bfbbd2bd"
+    },
+    {
+      "file": "VV/Entropy/CondEntropyContinuous.lean",
+      "bytes": 8216,
+      "sha256": "ae8dfd2e3b7b4d6ac8c379b9dd8e2dbf6b627ede99c743b8148e1882c9a10fa1",
+      "gitBlobSha1": "9870a5756003899599c46cf0cb51f446c6a87bd4"
+    },
+    {
+      "file": "VV/Entropy/CondExpEquivariant.lean",
+      "bytes": 3235,
+      "sha256": "776df6a7ea453f9ab870ae9006fba7996eeeef7018358cabf1d7d810994c22ff",
+      "gitBlobSha1": "3b686c6f35270dad154ed41ca2d0b78cadf3836e"
+    },
+    {
+      "file": "VV/Entropy/CondGivenPartitionBridge.lean",
+      "bytes": 20162,
+      "sha256": "0a91fa55caf3bac3f7fdcd76c56b298d180c7012809a7a40cf2f198aca975e5e",
+      "gitBlobSha1": "dd9586275f9c401546456ea3d86664d4f266e49e"
+    },
+    {
+      "file": "VV/Entropy/ConditionalEntropy.lean",
+      "bytes": 2931,
+      "sha256": "211676fcd7fb9f02487ce24dddfd39a033324b2e8787de099a066ca0ed311fec",
+      "gitBlobSha1": "bdb338c3eeb949e112261e23fe0d8c1f586333e6"
+    },
+    {
+      "file": "VV/Entropy/ConditionalEntropyNontrivial.lean",
+      "bytes": 3291,
+      "sha256": "6ba28356fcaeb4256f77ec258648444a88fd499e7b26b92148343fc089d61bfc",
+      "gitBlobSha1": "007a4d07a7fe8681bd05dad60332c65b6eab450a"
+    },
+    {
+      "file": "VV/Entropy/CondJointPullback.lean",
+      "bytes": 11986,
+      "sha256": "7bf123fe953a00c7f6ff6e8d8b1411cdbbd8a7fdb46ab4e7a6c5fac8bafa5f79",
+      "gitBlobSha1": "29d94ec88244ca4ad837dc6a013d645f8b3503c1"
+    },
+    {
+      "file": "VV/Entropy/CondKSEntropy.lean",
+      "bytes": 17992,
+      "sha256": "4b196f97d424533cd0d18ad71385b430ee0244fb3fb02dc68f910e6cbdfdb739",
+      "gitBlobSha1": "3ccc3f3414b7d648645ef2daf2466e77f1cbf111"
+    },
+    {
+      "file": "VV/Entropy/CondKSEntropySystem.lean",
+      "bytes": 5623,
+      "sha256": "ec15f95048ab7e93b808f652fa74aa4130f61b3110b218454282b07b2dec2c4e",
+      "gitBlobSha1": "db1decd83fba074972a7d0f6041a126ef9c15b39"
+    },
+    {
+      "file": "VV/Entropy/CondMono.lean",
+      "bytes": 7192,
+      "sha256": "6d8d96e2111aa0f60c47f21a96f23b0f7bc0cc6f0c6b84d67cddbb8a20431492",
+      "gitBlobSha1": "cb5980a79a00019fca56b43815218cac7e1acae1"
+    },
+    {
+      "file": "VV/Entropy/CondPartition.lean",
+      "bytes": 16404,
+      "sha256": "d0e8c515be6dab67bf84c8760ce395b9b9ead641c88be12921d5831bffbfc173",
+      "gitBlobSha1": "4ecdb9fd49af01278bff353be3651e65f0baaa73"
+    },
+    {
+      "file": "VV/Entropy/CondPullback.lean",
+      "bytes": 6477,
+      "sha256": "90c9ebe3c661cc2da1fffccdb2756d80c2d1c565814708e97ac5c0be7dc18c67",
+      "gitBlobSha1": "c36aff26ac6885cbd2c2f2189145792041b16e8c"
+    },
+    {
+      "file": "VV/Entropy/EmbeddingEntropy.lean",
+      "bytes": 3802,
+      "sha256": "d61550fa330dd51baf9016b07bbea95f1f57a8584960910e3c3828edeb8ad2a8",
+      "gitBlobSha1": "f4be7af20e17161914c3d9ac6e5352a48ae384d9"
+    },
+    {
+      "file": "VV/Entropy/EntropyExtreme.lean",
+      "bytes": 5629,
+      "sha256": "27d61dd4c42e376fe4f835c1a534fe24766ed0733b6aefd3b64e87e36368a2f8",
+      "gitBlobSha1": "3f0b8854080f6010a6931ad9648c963019d94f68"
+    },
+    {
+      "file": "VV/Entropy/ExtremeMaximum.lean",
+      "bytes": 4818,
+      "sha256": "b8f187dc221198fabe3d0b2d4bdf5d130aa320c8e0b1c52939c181eaa7b72b14",
+      "gitBlobSha1": "1fce7ce949a57b1a3ca426c81ccf8648e66c6290"
+    },
+    {
+      "file": "VV/Entropy/FactorEntropy.lean",
+      "bytes": 6570,
+      "sha256": "d05e89a795262e7ec26041b6c2e4e311735bcb0e81e1dad1077dbca9c7844d5e",
+      "gitBlobSha1": "4232ab10b7500061ae53f870dc080c03b1e51722"
+    },
+    {
+      "file": "VV/Entropy/FactorGeneratorSaturate.lean",
+      "bytes": 6430,
+      "sha256": "6bb51f33f53d9c60e1ceb155101070e4c3e8b45bfee4de3f51815cf3a388f095",
+      "gitBlobSha1": "314d72669fc8b9139b3dc69d32345340fb17af23"
+    },
+    {
+      "file": "VV/Entropy/FactorMap.lean",
+      "bytes": 5277,
+      "sha256": "8ce0a0b63494975b9323097a2a15b6885172ac5c4c9386c707b9e23540eaf82f",
+      "gitBlobSha1": "bc46763b858991426f7f416ddc55379e31721788"
+    },
+    {
+      "file": "VV/Entropy/Fekete.lean",
+      "bytes": 3513,
+      "sha256": "f864314dfd0384327329958a8f23271a31ed32ddbb0175e62515592fbcaef500",
+      "gitBlobSha1": "66248b767c3d383712f3c031119dbe413411d6af"
+    },
+    {
+      "file": "VV/Entropy/FiberCount.lean",
+      "bytes": 7636,
+      "sha256": "eba5d65814d20f607f4be3e1456aebe993662c3c899780d96e6a55cae9e62e1b",
+      "gitBlobSha1": "e72a07d3c0aff0374c65a89cd9effc7ed4c83299"
+    },
+    {
+      "file": "VV/Entropy/FiniteConditionalEntropy.lean",
+      "bytes": 6629,
+      "sha256": "d24dd558d5a815b1a7a71ce2951414bcfc292c7e345fdb3b02800dd45cede8fe",
+      "gitBlobSha1": "356f1dd94826d5d300de57b4a9ec1e34a67c269b"
+    },
+    {
+      "file": "VV/Entropy/FiniteEntropy.lean",
+      "bytes": 6316,
+      "sha256": "74260a0d7b7ae5cab691d4800f089269d8eb110d8d28ff7306e526285a7abe49",
+      "gitBlobSha1": "2d203cf304fd0b6438fb48977dc824c3968fed04"
+    },
+    {
+      "file": "VV/Entropy/FiniteProbabilityApprox.lean",
+      "bytes": 5885,
+      "sha256": "8ad02f5157c57d348883a27e9c675384bbbf25751b32e9e61b96e4a5d4ae8ffc",
+      "gitBlobSha1": "c71a8a53a2039200a7a1c224b42d3fdbb25d4ba2"
+    },
+    {
+      "file": "VV/Entropy/FixedRefinement.lean",
+      "bytes": 7076,
+      "sha256": "35f105750e213ebbbd69ddb10f2cca562bb7c35db6046343c96a8d8233c6a034",
+      "gitBlobSha1": "7b5158b901c93b2c6aa775522f97abd220d2e123"
+    },
+    {
+      "file": "VV/Entropy/FutureKernelSupport.lean",
+      "bytes": 3915,
+      "sha256": "f0a7fbc8d8b468b8198450c102bcb2de663b5febc2be2e52b8394df16a668692",
+      "gitBlobSha1": "1dcc1ea8f1461919b0f70a278fe127da49d9e4ce"
+    },
+    {
+      "file": "VV/Entropy/Generator.lean",
+      "bytes": 5519,
+      "sha256": "a09311fea4204cd119f03217c59962fc09c887812de904eaf1dad97ee6aea199",
+      "gitBlobSha1": "a9b744e2f645398a368899533fdc7ec317be3010"
+    },
+    {
+      "file": "VV/Entropy/GroupExtreme.lean",
+      "bytes": 2850,
+      "sha256": "dcfa0cf9c40099391d864867f2b75601fd23931e3ecaa2c82a2a0e76e7f008e3",
+      "gitBlobSha1": "763b6ab37cb7ee1c693daf2a8e3d633a727b9454"
+    },
+    {
+      "file": "VV/Entropy/InvariantExtreme.lean",
+      "bytes": 3763,
+      "sha256": "3d455cff13e0deaa3f494ecdcf451533cca72574b25529118172a9cc87a272f7",
+      "gitBlobSha1": "be91b63d01a148c7681b51d60bbc0126a3c5138a"
+    },
+    {
+      "file": "VV/Entropy/Join.lean",
+      "bytes": 3435,
+      "sha256": "a4233dd89bd2a9cd1963eba6358bc1bf0f3f8b0b5c302d45592adff9e7c8c449",
+      "gitBlobSha1": "8c8e3322290923f35eb091f4bc94681fe8e493bb"
+    },
+    {
+      "file": "VV/Entropy/JoinSigmaAlgebra.lean",
+      "bytes": 12391,
+      "sha256": "9dbfe9576055d46a9f0f68ceab512f60cb0ef8af9edea2041be9167d8232322d",
+      "gitBlobSha1": "13cefbdcedfed6206d75cf1372d0b9f6e7eec8e2"
+    },
+    {
+      "file": "VV/Entropy/KSEntropy.lean",
+      "bytes": 13650,
+      "sha256": "90bf677713accebf36f8715b46466363ae354213bcd43cacfe5e83e701d8872a",
+      "gitBlobSha1": "c83c41fb50b6c265f1a79246179d325a53a5cd7e"
+    },
+    {
+      "file": "VV/Entropy/KSEntropyBounds.lean",
+      "bytes": 5356,
+      "sha256": "8f079a8eb5b674458c351de429cb24e7b0e6abe7e160972baa8f96135c407baa",
+      "gitBlobSha1": "c7e867358d5b9097c630d93cb310af61245c49a1"
+    },
+    {
+      "file": "VV/Entropy/KSEntropyConjugacy.lean",
+      "bytes": 3798,
+      "sha256": "5b8a961a2eb49bc652b59706835130c63a4e7ca9154f3f0c979198305c40f1ad",
+      "gitBlobSha1": "c7e390920023362a6de620ae2b91cf43a0ca223c"
+    },
+    {
+      "file": "VV/Entropy/KSEntropyFuture.lean",
+      "bytes": 4927,
+      "sha256": "c3fc79cda7c86f86a79850326bded0eb13030434b4415f0198b157c38979bd56",
+      "gitBlobSha1": "b9f621ef6fbb8100ec91b14bdc58d97b0bf040d8"
+    },
+    {
+      "file": "VV/Entropy/KSEntropyInverse.lean",
+      "bytes": 4737,
+      "sha256": "286f61517da320acdd307c744b468b93de6fd41758a20c4322db64d8814c5ccf",
+      "gitBlobSha1": "b7e9ffdf1bdcf0c2aafd815b1e753be5145129e8"
+    },
+    {
+      "file": "VV/Entropy/KSEntropyJoin.lean",
+      "bytes": 9079,
+      "sha256": "6a91fcd6134c58f94150dc2d190576ee178c10af5319f52f704785b3026d7233",
+      "gitBlobSha1": "c800a7911ff8775a56179217ad3d82f834b6e7e9"
+    },
+    {
+      "file": "VV/Entropy/KSEntropyMono.lean",
+      "bytes": 9171,
+      "sha256": "84d73ebcac0741a50acff962f9910f84364a7ec0f32792972e3c8102df7dfd2e",
+      "gitBlobSha1": "994087edfd1796543844335f6f0a0d8b90b8c8e0"
+    },
+    {
+      "file": "VV/Entropy/KSEntropySystem.lean",
+      "bytes": 5028,
+      "sha256": "24c724bdde6fe788b85e0d266b70cd801ebf6a29c57f04c81568e5355f89b824",
+      "gitBlobSha1": "3d1edf01e429ae16b944ad72aa2cd502de3ea7f9"
+    },
+    {
+      "file": "VV/Entropy/LICENSE",
+      "bytes": 11560,
+      "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5",
+      "gitBlobSha1": "75b52484ea471f882c29e02693b4f02dba175b5e"
+    },
+    {
+      "file": "VV/Entropy/MixtureEntropy.lean",
+      "bytes": 13046,
+      "sha256": "317961d823be7234605dc037322a9c23636b90a81e13899c0916a2067ab265df",
+      "gitBlobSha1": "06f881287eaaae84bab012334a1ca1ca1af822ba"
+    },
+    {
+      "file": "VV/Entropy/NOTICE",
+      "bytes": 3400,
+      "sha256": "2b33489ee6c57db4131037f89b52802758ecd74e58a714aaddeed3c8646b3234",
+      "gitBlobSha1": "901820210b3a9dd45adf9d0d8d1729f2ddd5f4d8"
+    },
+    {
+      "file": "VV/Entropy/OrbitAverage.lean",
+      "bytes": 8060,
+      "sha256": "1a59b0e1220112a0a5c91e18d3789fd76c2454ac9474279c78e29cf931b6c3c1",
+      "gitBlobSha1": "eb34c86295b691e6dec0cc80861ee7a5b971b923"
+    },
+    {
+      "file": "VV/Entropy/OrbitMixture.lean",
+      "bytes": 8616,
+      "sha256": "59cb2af497b4ea61173a2b52cef137882307668856646b566cbe4a392cfac71c",
+      "gitBlobSha1": "f022a60edcfee4bc8458111dc4712329dab4acb2"
+    },
+    {
+      "file": "VV/Entropy/Partition.lean",
+      "bytes": 6827,
+      "sha256": "eb5a3f2cb16485c046ddeea2808a5033591aeb5ea17335cdeaa17f153ba3823c",
+      "gitBlobSha1": "e253f8e564ce062458e4c8fc40e2006020b7977a"
+    },
+    {
+      "file": "VV/Entropy/ProbabilityMoments.lean",
+      "bytes": 3289,
+      "sha256": "4f240046d215c31351032ee0372cca2230e1366602a1054d5a30d44920a202a8",
+      "gitBlobSha1": "cbd7456a621a20cf6b1bf7e6e276f5d1e32e5340"
+    },
+    {
+      "file": "VV/Entropy/SeparatedSequence.lean",
+      "bytes": 4149,
+      "sha256": "302743f3bb3bde7f2fd51ae1c02326bc686bd7c8957413c0a25eff05b3437742",
+      "gitBlobSha1": "a272a8f19ee657431aada32b563591aba1d974b9"
+    },
+    {
+      "file": "VV/Entropy/SmallPartition.lean",
+      "bytes": 4086,
+      "sha256": "3b3afe0f2117c7bccc6edf8779ec2506f5ee9f9ced2c8aef96b972fedede0f30",
+      "gitBlobSha1": "102d7b42935f6d0f405aef138596e59c58f47730"
+    },
+    {
+      "file": "VV/Entropy/SmallPositivePartition.lean",
+      "bytes": 1286,
+      "sha256": "dd81b2644e84cb7e3d17a09191ae84cd30a4cebef43a95e4f49d805337ce7742",
+      "gitBlobSha1": "69d0c041353869c2740e8b501cf424e79a1ab3f7"
+    },
+    {
+      "file": "VV/Entropy/Subadditive.lean",
+      "bytes": 2606,
+      "sha256": "fc0179073cbce3df28d5acf4faa55ecbc4b6b1dd8acf6c8f68c431cc8901c9ef",
+      "gitBlobSha1": "07212d41f00d3b59326cb42cbdfff19ea9be6098"
+    },
+    {
+      "file": "VV/Entropy/Subadditive2.lean",
+      "bytes": 11139,
+      "sha256": "fb949735123c0a6f96b5326797c7f06b742fd79668c03a963b05d1c3e4b75d69",
+      "gitBlobSha1": "b0f8cce9409070446aefaf36c810026a8bd97d7a"
+    },
+    {
+      "file": "VV/Entropy/UniformEntropy.lean",
+      "bytes": 2876,
+      "sha256": "ff8dd60b348e45ccbf84bef76417379454f9f5736109f1525f854d74d5542854",
+      "gitBlobSha1": "b634c4c92d605e86e6fa5bb5351afd86eda8dc4a"
+    },
+    {
+      "file": "VV/Entropy/VariationalPrinciple.lean",
+      "bytes": 4851,
+      "sha256": "af11144d817746670670ee8a566c3b0d908b7771dae84919cc2ad551346e893e",
+      "gitBlobSha1": "6761eb2927aa07ea8283b0a1e525f92baed6d832"
+    },
+    {
+      "file": "VV/Entropy/WeakContinuity.lean",
+      "bytes": 9973,
+      "sha256": "084cca2bbc7e3628ec78b403aaae6c2808888d002c898da3b248f7dca3df2eaf",
+      "gitBlobSha1": "c30c25862440cd7fc9ebf3c7a33d00dcbe018731"
+    },
+    {
+      "file": "VV/Hurwitz.lean",
+      "bytes": 10483,
+      "sha256": "1200d8fdbce4d8afb29f897bab1b04841a8db97fdf384d6528ab0af78cfb6bf8",
+      "gitBlobSha1": "b2b835725cfac70199668686877cc512c4435949"
+    },
+    {
+      "file": "VV/HurwitzValue.lean",
+      "bytes": 5275,
+      "sha256": "2be069b6ebb4bd3ac09115b52418c56bda130c1207218d4464ed8e473c45e3fe",
+      "gitBlobSha1": "57fb92e12738a4c063e1ad27aa9193ee33deecdb"
+    },
+    {
+      "file": "VV/MathlibBridge.lean",
+      "bytes": 729,
+      "sha256": "81c511dcf1a3638effa5be5a9f9cc898855fa952826504bf9db4115f06d450c9",
+      "gitBlobSha1": "5258f5038ae0fc631d36e0eb81fad1d64f2e4a22"
+    },
+    {
+      "file": "VV/MobiusGenerators.lean",
+      "bytes": 3932,
+      "sha256": "3da2db88f9fd2ec196dc30653f4cb6e15575d03cce544ccd0a4738c792f715d3",
+      "gitBlobSha1": "674bfc2d61e268102d2622620889360c3daf0942"
+    },
+    {
+      "file": "VV/P4Alignment.lean",
+      "bytes": 2009,
+      "sha256": "059b7b40198e17b30baa3f297bbf4121e20f4ac793cb3047c70ce80a015830af",
+      "gitBlobSha1": "02a96873a8d006a39fb0f2e4568656b349ef865a"
+    },
+    {
+      "file": "VV/P4ColumnOwner.lean",
+      "bytes": 5198,
+      "sha256": "bc05978e750ab9c92cadbb7c3b735eb1bd06aa52848bcb52952f623df19eda39",
+      "gitBlobSha1": "2483be69c6c49ce1c399aaea6e0e5dfb5599ad96"
+    },
+    {
+      "file": "VV/P4Columns.lean",
+      "bytes": 6599,
+      "sha256": "24d29862a70bd93f751b01ebcdd348e3e9601a78d77d4647e87401d0f100a9b0",
+      "gitBlobSha1": "95c5cd0815923952e1de8f85806f267c88efe5db"
+    },
+    {
+      "file": "VV/P4Counting.lean",
+      "bytes": 6313,
+      "sha256": "9b4fcd0864a6cad95e0fa3aeefc9588e1fc74094ef1edf71a5a7c6db4d5b162f",
+      "gitBlobSha1": "7475025178fc99af3abf280dfb92ee23c35a8319"
+    },
+    {
+      "file": "VV/P4Cyclic.lean",
+      "bytes": 7001,
+      "sha256": "813e92c551a43af14eaf850dca4a546d204823990a706529f06d619f506416fd",
+      "gitBlobSha1": "4dfcf4f1019b12e68267fe68773c3a0cbbcdbc39"
+    },
+    {
+      "file": "VV/P4Encoding.lean",
+      "bytes": 8584,
+      "sha256": "d3fce5c001876d348b84af37ca6e3f35c7975bc80b60ae9ce79d7bde858f8775",
+      "gitBlobSha1": "28b614d767e4007fafad6ae54b76d73f82add1c5"
+    },
+    {
+      "file": "VV/P4Kernel.lean",
+      "bytes": 5554,
+      "sha256": "20f55d53d5efc11100cdc24c5202b1500ded460480af08bd89d04af5ac575d74",
+      "gitBlobSha1": "7266990cf37fcc035f769bcee9b8b9380bcf6949"
+    },
+    {
+      "file": "VV/P4Output.lean",
+      "bytes": 6829,
+      "sha256": "252bf018c65756b02c71781793ebce663625f59818725492ac145a54cec684be",
+      "gitBlobSha1": "7d8c4dfe6e07e67c1d4e534760b80fe6ab11660f"
+    },
+    {
+      "file": "VV/P4Period.lean",
+      "bytes": 7304,
+      "sha256": "fb29abf558fd8053e200e471837f88c10dff3579c7664e643ee92bb938916249",
+      "gitBlobSha1": "1c87a011e26385983e2fee4b001896b0010e31c1"
+    },
+    {
+      "file": "VV/P4SmallPeriods.lean",
+      "bytes": 3822,
+      "sha256": "e336019254447bcc88f4efae065642194d0b5ee5bb318928262bea1006acb38f",
+      "gitBlobSha1": "2d51a55a9376142482103cb0c1135b024282e209"
+    },
+    {
+      "file": "VV/P4Symbolic.lean",
+      "bytes": 5583,
+      "sha256": "da6cc7388ef05a1e2bcc5f9227b2db9ad5e7a47908a5fdb5ecb3e8a6e585eef2",
+      "gitBlobSha1": "1b41142e31e8b8af971b6bdf7fa2592c446f5b15"
+    },
+    {
+      "file": "VV/P4SymbolicClean.lean",
+      "bytes": 6972,
+      "sha256": "0aa71fa494120a3a717313cbf8e5ec33ed3e1bb64ec2fdeb2b509bba87aad0f6",
+      "gitBlobSha1": "86d89bd6d2129a0a4b44ca99e25835539e47c14f"
+    },
+    {
+      "file": "VV/P4SymbolicOutput.lean",
+      "bytes": 6493,
+      "sha256": "78fbf24e861c915c0d852cfe2aa8e352e889d426bde8f97101955d126a5c6244",
+      "gitBlobSha1": "fdbfa3c835ea1186db0043aedf515633c46cc03d"
+    },
+    {
+      "file": "VV/P4Trace.lean",
+      "bytes": 3489,
+      "sha256": "f9cc6b1b1f526adb672694488986c914eb588535f8fe57760dbf39d0d015c5d8",
+      "gitBlobSha1": "cc671192a3842f00a0cfd5271ea12c0f1d6c1543"
+    },
+    {
+      "file": "VV/P5Buffer.lean",
+      "bytes": 4095,
+      "sha256": "7eb0ae1d104f6d1b958b0bbb550825212d56d82d5f0b4dc7d16274b4264a2890",
+      "gitBlobSha1": "cb0fff32a0f4b54c31d4670db5f0bfb0ccde1a67"
+    },
+    {
+      "file": "VV/P5Coverage.lean",
+      "bytes": 6827,
+      "sha256": "de8df5c1eb263151aa6249a0a3294b37bedaaf5e8cb2fb5534d8e75eadb116aa",
+      "gitBlobSha1": "0b404aecc8231206a4614a24a0b52c01ad11ca8d"
+    },
+    {
+      "file": "VV/P5Cursor.lean",
+      "bytes": 5963,
+      "sha256": "6dbc6c53e2941954605ee9f4796e7174ec6bcd9b9266fe4381896a0193d243f2",
+      "gitBlobSha1": "9e8498fbaacff6910441d9fe26c0bac73d8bf176"
+    },
+    {
+      "file": "VV/P5Deterministic.lean",
+      "bytes": 3222,
+      "sha256": "0e9083ce5f6db6668cd67df50597dda859d503095401a30d4cc956c91250e900",
+      "gitBlobSha1": "c7596ea887511f923ecd37af1588cd4aa7d0f803"
+    },
+    {
+      "file": "VV/P5FiniteCheck.lean",
+      "bytes": 2121,
+      "sha256": "692a206dc9deba3164d5704504df548e74eb8b54ef756d05d0020334945e8f38",
+      "gitBlobSha1": "cde07c083f82a7a3c2608a8c41e348c38d019e82"
+    },
+    {
+      "file": "VV/P5Graph.lean",
+      "bytes": 7941,
+      "sha256": "25aa1138ba819962934280420012f7ff308b970dda955ea41fc95f4000ed2b55",
+      "gitBlobSha1": "6e9d35877b20b45d3349c9ddb84ba56536b45246"
+    },
+    {
+      "file": "VV/P5Machine.lean",
+      "bytes": 6607,
+      "sha256": "a119bec338a91ee1afb566ac7658553fc6191da6ed77893b3f6b55fd5c7164ac",
+      "gitBlobSha1": "44af846076c865948b0bb3cdf2ce5fe19a40d388"
+    },
+    {
+      "file": "VV/P5MachineGraph.lean",
+      "bytes": 4157,
+      "sha256": "e8287bd4c4e69964a532870deaca23d0827da375694a5824ec031f8b9aadd66c",
+      "gitBlobSha1": "d41e1e27d8cf648af523360b39b99c8254472781"
+    },
+    {
+      "file": "VV/P5Period.lean",
+      "bytes": 11143,
+      "sha256": "34ec06909be8077a73e00a107bce0bac6f88f908da55ce01804e32dc2359b7ae",
+      "gitBlobSha1": "b1e8fe7ebe9d3138c61d5fc6cfe2434a42c442fb"
+    },
+    {
+      "file": "VV/P5RealCursor.lean",
+      "bytes": 7303,
+      "sha256": "6fd6e0ff18c3718e945e2f1e9783bee0cbc52a617578d7e68083d0e23153fd66",
+      "gitBlobSha1": "9f8655fc1b12f85990d35ba26dd59cea7abc2116"
+    },
+    {
+      "file": "VV/P5Stream.lean",
+      "bytes": 7985,
+      "sha256": "f6972c0fab8f6640f8532115a335ff8002918fc49ace4ec3a3252f57ef9b0000",
+      "gitBlobSha1": "7d1735dfb3a1a3673e65e4dbae0820331b920c8c"
+    },
+    {
+      "file": "VV/P5Synchronize.lean",
+      "bytes": 6079,
+      "sha256": "f865235da85cda916f5307b34eb94586221ab1339063e472fd9b0ed825778f7c",
+      "gitBlobSha1": "a20153d1b66a4110866c1a91dd4fb2a188b3f536"
+    },
+    {
+      "file": "VV/P5TailAlignment.lean",
+      "bytes": 4696,
+      "sha256": "b9e49bc0ba00c7a455724cdc551324cc9d39cc4890f66e21e4fa86e541b16cab",
+      "gitBlobSha1": "1d520d6ee276365b73b17607f3e4f4c00b03b3a4"
+    },
+    {
+      "file": "VV/P5Window.lean",
+      "bytes": 8245,
+      "sha256": "1ced92a457ca0998d5ebfe9fbf864265b34efdc02b4a6a0e8c53df88c7f0b9e6",
+      "gitBlobSha1": "8d65ce8a0787fd5b5e8e09634be2e65a931f01f6"
+    },
+    {
+      "file": "VV/P7AdicLimits.lean",
+      "bytes": 20220,
+      "sha256": "a93f5207323bad9cc942d0deb02e88d6a5337046ef3ef866ca11af85c2161d6c",
+      "gitBlobSha1": "5354a168df3d38d1754b8a84010140a2662e1165"
+    },
+    {
+      "file": "VV/P7Approximation.lean",
+      "bytes": 11528,
+      "sha256": "33745d8d2bf91c3a21b7339370868d4b7580b93ac66d445e0e0710d332a7b0bd",
+      "gitBlobSha1": "fac2ec71a33360136d857b2a42d346e69b2f3337"
+    },
+    {
+      "file": "VV/P7BoxCover.lean",
+      "bytes": 6007,
+      "sha256": "f662d973057f43f115546ea328323c68e079720812061abc72d03f4212ae03b9",
+      "gitBlobSha1": "084e4546171821ed3be926dee40268a8990da151"
+    },
+    {
+      "file": "VV/P7Convergents.lean",
+      "bytes": 12759,
+      "sha256": "31a5025a2369503449d2bebe59b09061c10ef2e15b215b1ad2d5c7120673d986",
+      "gitBlobSha1": "43d7c01c38ba874eddd6551aa460b0e5f7cf638b"
+    },
+    {
+      "file": "VV/P7RigidityReduction.lean",
+      "bytes": 7621,
+      "sha256": "fa52acff94faf3fc71e56cc0cfd1fa77c2ba9a7f080f1c8e3efdfcafe3776fe7",
+      "gitBlobSha1": "c897c9db0d875f7e973b357a68891fbd08ac1b19"
+    },
+    {
+      "file": "VV/P7TailLimits.lean",
+      "bytes": 8749,
+      "sha256": "4462e69f61edd5d33e1f186e59fffd3b5ba30e725932ed47d5f629b7620343a4",
+      "gitBlobSha1": "abd35391398c52c1dcfd5979d07d67859faf8c5e"
+    },
+    {
+      "file": "VV/Problem3.lean",
+      "bytes": 18972,
+      "sha256": "c7d22dc5ee9ba5d8f87180e14c7879e17a11c9fa221e0823b78eb3fbd69b707f",
+      "gitBlobSha1": "2d1381996c948a3ef386447c503313ba4620cd69"
+    },
+    {
+      "file": "VV/Problem4.lean",
+      "bytes": 4199,
+      "sha256": "08f681b4376f1a0b6b554e9d70833dcd3a12933e1e123f35f778c1a6d544f53b",
+      "gitBlobSha1": "de9779b65b7378ff66ed5832cc10c0f6a39cbe76"
+    },
+    {
+      "file": "VV/Problem4Real.lean",
+      "bytes": 4143,
+      "sha256": "bfa9c889cebfec01271c8be5681e7470887f09348d4a9388f2509814cd6cea51",
+      "gitBlobSha1": "5f6652b0419e27097e2d4e36d8e9cc9bd85127d4"
+    },
+    {
+      "file": "VV/Problem5.lean",
+      "bytes": 14401,
+      "sha256": "0285d1082b19421eee0bf5ba968c26f9ec814751069f0d698bb6fd759ff34180",
+      "gitBlobSha1": "b488c9243cc102ce305b962e1296c58be4cec551"
+    },
+    {
+      "file": "VV/Problem5Real.lean",
+      "bytes": 5844,
+      "sha256": "ce965bc43ce7c5101d3ef686880f6bc19a5387498437dd70e8b6d5d7150d7e98",
+      "gitBlobSha1": "9c136e3114fa0a0c65c6f21dad26def2083a0968"
+    },
+    {
+      "file": "VV/Problem7.lean",
+      "bytes": 21057,
+      "sha256": "ada083c65bb178c0ca5952febb30bcd83e95a4bdc9323260449ea0713ccfbb2d",
+      "gitBlobSha1": "406a788b14e3fe1a99bced172970be9e00c36251"
+    },
+    {
+      "file": "VV/QuadraticScaling.lean",
+      "bytes": 8970,
+      "sha256": "a58577e4999e47f09aac1170a23f58ef671d39e93810e74bbf672f17ace122b2",
+      "gitBlobSha1": "cdeae876c8ae564cb8226e5da60dba6e18cd06de"
+    },
+    {
+      "file": "VV/Semantics.lean",
+      "bytes": 4407,
+      "sha256": "587c09c2a968c13fad8a65f0a18f9f439df71403765506aaaed7d4b53ad724d0",
+      "gitBlobSha1": "64b595b35f25e202936d16e8330dff48bab8a931"
+    },
+    {
+      "file": "VV/TailEquivalence.lean",
+      "bytes": 3061,
+      "sha256": "8dc7bdf098f4d47e432cdac7471a8c222ee9fdf8f40c1b9c0e2778fa1ee7a1d3",
+      "gitBlobSha1": "04ff1839630a225a930cde7f14043ef86aceada6"
+    },
+    {
+      "file": "VV/TailGenerators.lean",
+      "bytes": 2922,
+      "sha256": "f65b6ea533273b9f797d642e65c2e5281b5174458172fce9b069b0c69e6720b3",
+      "gitBlobSha1": "3c38820d79e3d7301ba665a966658749f5e8a0a1"
+    },
+    {
+      "file": "VV/TailMobius.lean",
+      "bytes": 2732,
+      "sha256": "b850dea90fb7c6aa7193364d8d16653eb85bbbf6a1a3d373c4faac350c152af3",
+      "gitBlobSha1": "f10c0f27da7afc85b326ef2bf5f5939ae544759e"
+    }
+  ]
+}

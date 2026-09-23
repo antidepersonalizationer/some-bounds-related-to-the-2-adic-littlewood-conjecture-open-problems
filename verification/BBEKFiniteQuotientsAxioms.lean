@@ -1,0 +1,6 @@
+import VV.BBEKFiniteQuotients
+
+#print axioms VV.BBEKFiniteQuotients.sl2_hom_finite_eq_one
+#print axioms VV.BBEKFiniteQuotients.sl2_finiteIndex_eq_top
+#print axioms VV.BBEKFiniteQuotients.prod_sl2_hom_finite_eq_one
+#print axioms VV.BBEKFiniteQuotients.prod_sl2_finiteIndex_eq_top

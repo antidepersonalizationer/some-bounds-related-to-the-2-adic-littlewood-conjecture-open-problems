@@ -1,0 +1,8 @@
+import VV.BBEKSelectedPlaques
+import VV.BBEKActualKernelOverlap
+#print axioms VV.BBEKExpandedPlaques.compact_expanding_plaques
+#print axioms VV.BBEKLocalRootFamily.ae_localMeasure_ball_pos
+#print axioms VV.BBEKSelectedPlaques.exists_measurable_expanding_local_family
+#print axioms VV.BBEKActualKernelOverlap.map_branch_source
+#print axioms VV.BBEKActualKernelOverlap.map_branch_target
+#print axioms VV.BBEKActualKernelOverlap.actual_condKernel_overlap

@@ -1,0 +1,12 @@
+import VV.Entropy.VariationalPrinciple
+
+#print axioms ErgodicTheory.Entropy.entropy_concave_of_apply
+#print axioms ErgodicTheory.Entropy.intervalEntropy_add_le
+#print axioms ErgodicTheory.Entropy.interval_blocking_estimate_of_le
+#print axioms ErgodicTheory.Entropy.blockEntropy_le_average
+#print axioms ErgodicTheory.Entropy.blockEntropy_uniform_eq_log_card
+#print axioms ErgodicTheory.Entropy.separatedEntropyWitness_of_pos
+#print axioms ErgodicTheory.Entropy.exists_pos_ksEntropy_of_separated
+#print axioms ErgodicTheory.Entropy.exists_pos_ksEntropy_of_pos_coverEntropy
+
+#check ErgodicTheory.Entropy.exists_pos_ksEntropy_of_pos_coverEntropy

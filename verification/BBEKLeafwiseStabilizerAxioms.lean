@@ -1,0 +1,23 @@
+import VV.BBEKRealStabilizerField
+import VV.BBEKPadicStabilizerField
+
+#print axioms VV.BBEKLeafwiseStabilizer.translationStabilizer
+#print axioms VV.BBEKLeafwiseStabilizer.projectiveTranslationStabilizer
+#print axioms VV.BBEKLeafwiseStabilizer.isClosed_translationStabilizer
+#print axioms VV.BBEKLeafwiseStabilizer.translationStabilizer_projective_map
+#print axioms VV.BBEKLeafwiseStabilizer.eigen_pow_le_ball_two
+#print axioms VV.BBEKLeafwiseStabilizer.ae_translation_multiplier_eq_one
+#print axioms VV.BBEKLeafwiseStabilizer.ae_projectiveTranslationStabilizer_eq
+#print axioms VV.BBEKLeafwiseStabilizer.ae_translation_multiplier_eq_one_of_rootDilation
+#print axioms VV.BBEKLeafwiseStabilizer.ae_observable_recurrent_subseq
+#print axioms VV.BBEKLeafwiseStabilizer.real_closed_subgroup_eq_top_of_contraction
+#print axioms VV.BBEKLeafwiseStabilizer.real_connected_closed_subgroup_eq_top
+#print axioms VV.BBEKLeafwiseStabilizer.ae_eq_of_contracting_covariance
+#print axioms VV.BBEKLeafwiseStabilizer.measurable_realPeriod
+#print axioms VV.BBEKLeafwiseStabilizer.ae_real_subgroup_bot_or_top
+#print axioms VV.BBEKLeafwiseStabilizer.ae_real_projectiveTranslationStabilizer_bot_or_top
+#print axioms VV.BBEKLeafwiseStabilizer.measurable_subgroupSize
+#print axioms VV.BBEKLeafwiseStabilizer.ae_subgroup_bot_or_unbounded
+#print axioms VV.BBEKLeafwiseStabilizer.padic_closed_subgroup_eq_top_of_unbounded
+#print axioms VV.BBEKLeafwiseStabilizer.ae_padic_subgroup_bot_or_top
+#print axioms VV.BBEKLeafwiseStabilizer.ae_padic_projectiveTranslationStabilizer_bot_or_top

@@ -1,0 +1,6 @@
+import VV.BBEKLeafwiseTrapped
+import VV.BBEKPlaqueSelection
+#print axioms VV.BBEKLeafwiseTrapped.lower_fixed_iff_zero
+#print axioms VV.BBEKLeafwiseTrapped.ae_lower_fixed_iff_zero
+#print axioms VV.BBEKUniformPlaques.compact_uniform_safe_plaques
+#print axioms VV.BBEKPlaqueSelection.compact_measurable_safe_selection

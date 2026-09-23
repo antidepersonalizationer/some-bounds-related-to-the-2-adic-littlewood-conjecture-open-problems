@@ -1,0 +1,3 @@
+import VV.BBEKProjectiveGlue
+#print axioms VV.BBEKProjectiveGlue.normalize_restrict_of_projective
+#print axioms VV.BBEKProjectiveGlue.exists_normalized_extension

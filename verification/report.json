@@ -1,0 +1,1120 @@
+{
+  "checkedUtc": "2026-09-23T09:16:48.1990514Z",
+  "status": "verified-with-two-specified-admissions",
+  "buildPassed": true,
+  "trustAuditPassed": true,
+  "fullySorryFree": false,
+  "leanToolchain": "leanprover/lean4:v4.20.1",
+  "compilerVersionOutput": "Lean (version 4.20.0, x86_64-w64-windows-gnu, commit b02228b03f65, Release)",
+  "compilerCommit": "b02228b03f655c0cd051d82280ad5758359ec8ba",
+  "mathlibCommit": "5c0c94b3f563ed756b48b9439788c53b0d56a897",
+  "dependencyPackagesReused": true,
+  "auditedTheoremDeclarations": 3392,
+  "auditedDefinitions": 837,
+  "permittedAxioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "sorryDeclarations": 2,
+  "customAxiomOrOpaqueDeclarations": 0,
+  "admittedFiniteComputation": "VV.P5FiniteCheck.rank_check_10_14",
+  "admittedELCore": "VV.BBEKLowEntropyCore.rootAlternative_of_positive_entropy",
+  "finiteComputationType": "(VV.P5Window.windowGraph 10 14).checkEventuallyDeterministic = true",
+  "finiteComputationExecuted": false,
+  "theoryAuditMethod": "Validate the exact types of the finite check and EL core; abstract only those two proof declarations; audit every other project declaration and transitive dependency.",
+  "problem3": "closed: VV.problem3_classification",
+  "problem4": "partial answer: VV.Problem4.problem4_all_periods; finiteness and class count <= 3*l*4^l; not a complete answer to the paper question",
+  "problem5": "all theory closed; one unexecuted finite check: VV.P5FiniteCheck.rank_check_10_14",
+  "problem7": "VV.problem7 : VV.Problem7.Statement; no external hypotheses; depends only on the named EL-core admission beyond the standard axioms",
+  "bbekTheorem42": "VV.bbekTheorem42 : VV.P7BoxCover.BBEKTheorem42; internally constructed",
+  "problem7Axioms": [
+    "propext",
+    "sorryAx",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "bbekOriginalSource": "Badziahin-Bugeaud-Einsiedler-Kleinbock, arXiv:1405.5545v2, Theorem 4.2 and Section 5",
+  "bbekProposition51": "closed for p=2 on the actual S-arithmetic quotient: VV.BBEKOrbit.proposition51",
+  "bbekNewTheorySorryDeclarations": 1,
+  "bbekMahlerCompactness": "closed: VV.BBEKMahler.compact_K",
+  "bbekTopologicalEntropy": "closed: actual trapped parameter positive box dimension implies positive cover entropy",
+  "bbekRemainingTheory": [
+    "The single EL low-entropy core: leafwise entropy, shearing, and exceptional-branch elimination imply a nonzero invariant root element"
+  ],
+  "sourceHashes": [
+    {
+      "file": "VV.lean",
+      "sha256": "C7BE66A0F1DA415D2C094CCB1BEC4CD9BDBC0CD09DF4965F5A014CBE8EE375BA"
+    },
+    {
+      "file": "VV\\Audit.lean",
+      "sha256": "AA48FBA6989729A12DDC3054948A0EF33A08A848770AA90EB44B9696BC938CF7"
+    },
+    {
+      "file": "VV\\BBEKActualKernelOverlap.lean",
+      "sha256": "1D770A638FE1C1CB6C7C92C5202922944BE76A1CCFECA797A7EE0D8BC280B513"
+    },
+    {
+      "file": "VV\\BBEKAlgebraicOrbit.lean",
+      "sha256": "6A673A11485A26445C1BF3D3FB1FD13CCDD72ACB79385CA1B52A63CDB2924B3A"
+    },
+    {
+      "file": "VV\\BBEKAlgebraicTangent.lean",
+      "sha256": "A48CA476F856D7B72477F4FF92437DC223E8DD510A80CDBF6D5D73CF474B66CC"
+    },
+    {
+      "file": "VV\\BBEKAlgebraicTrichotomy.lean",
+      "sha256": "3C9ED82764DAFE074D7981DFDA0E30419C39B7C3134FC0D6F39B4BC63EB12EBF"
+    },
+    {
+      "file": "VV\\BBEKAveragedSupport.lean",
+      "sha256": "6AD50AB282EF836BB556BBC065FC5E1191A9BEE298FE81FF53CCCC9AD25DB4DD"
+    },
+    {
+      "file": "VV\\BBEKBoundedStabilizerField.lean",
+      "sha256": "C754052BF6568A641215411D5A58A30C37AE817B6ED832C1608E4A1D6FEF7C9F"
+    },
+    {
+      "file": "VV\\BBEKBowenCover.lean",
+      "sha256": "F5CF79BA4BD4192EB042F76CED62C0447FB7285F2DF2DAFE838C55234F1EAC59"
+    },
+    {
+      "file": "VV\\BBEKBowenLift.lean",
+      "sha256": "2FC8E8E8B2D35FF257AC0055C1100D9CB5616B3609EB7E8A528BEE44962EAA0F"
+    },
+    {
+      "file": "VV\\BBEKBowenMetric.lean",
+      "sha256": "3AEA4730EB72B196105DA4DFC2C8A66ADCDF7FA343A41D406488C8E8B5146A7E"
+    },
+    {
+      "file": "VV\\BBEKCenteredOverlap.lean",
+      "sha256": "9497A35FC99FBD6200D699E7BC33B3A657EBE5979B056ADA2AC4A7F8F91CCF26"
+    },
+    {
+      "file": "VV\\BBEKChartMeasureOverlap.lean",
+      "sha256": "0EE0E0BF6EC3CBEEDD8D5333F4068E446FCA5EBE56CC6308B6351CD212B0A84B"
+    },
+    {
+      "file": "VV\\BBEKCompactEntropy.lean",
+      "sha256": "DBA4238FC7E4C6A8B865E639603202F95231D5DB4E33B2F505858F8EE30DECED"
+    },
+    {
+      "file": "VV\\BBEKCompactPreservation.lean",
+      "sha256": "1A2F46A7C27FCBF3F83DAD1E22CE0C8B3A762F8192F2788EDE5E1BD7DA009293"
+    },
+    {
+      "file": "VV\\BBEKCompactZeroHit.lean",
+      "sha256": "43E47462E65ED8D61AC68999F7F38502CB2CD824532B1C1A67CA83EB84B327E0"
+    },
+    {
+      "file": "VV\\BBEKConditionalInvariance.lean",
+      "sha256": "437A7703509599FE81BC671AA7C1B690A31A59380A30F9591E4675D5071E9124"
+    },
+    {
+      "file": "VV\\BBEKConeAverage.lean",
+      "sha256": "D7B4B1142FE61D1D87F4593E1DA497254C506A6147BEEC619E8F803BFB3231D1"
+    },
+    {
+      "file": "VV\\BBEKConeEntropy.lean",
+      "sha256": "ED25F4B293383FA757CE3D305B74C6BD4220045639C5727BACDDD6D97F0CA2DF"
+    },
+    {
+      "file": "VV\\BBEKConeGenerators.lean",
+      "sha256": "BA282FBDA7D4A1F33C8228C16BBE48DC85157E67EFC6CDAAF2AF3F4148C612E1"
+    },
+    {
+      "file": "VV\\BBEKDiagonal.lean",
+      "sha256": "86806DB4EA509F7C3E6B05EAB80772D9A63141AD726B1BF0808152A64F153AA2"
+    },
+    {
+      "file": "VV\\BBEKDiagonalAverage.lean",
+      "sha256": "27FD4E304208E87CC69C67DCFF454EA9D0A1FF847B3F80A7D028682D7D21A1DF"
+    },
+    {
+      "file": "VV\\BBEKDiagonalDensity.lean",
+      "sha256": "22665D9B9FB8E9F34A6DBC213743580002FDB947860FAF9FB80C5E154C5156DF"
+    },
+    {
+      "file": "VV\\BBEKDiscrete.lean",
+      "sha256": "9C3FE0B24DA3A69A4AE1B9406E2196DE4092ABCF8F23645E91B14BA186FF6C71"
+    },
+    {
+      "file": "VV\\BBEKDyadic.lean",
+      "sha256": "E8BB1E9FDCD385634B00D1067C83B7D2BE68E8D2382FDBEC451B5556CA5F74A5"
+    },
+    {
+      "file": "VV\\BBEKDynamics.lean",
+      "sha256": "7B3727CDAA9EC5248C959B84B25518B71429C6A431FF0E94081A17E66EB596BF"
+    },
+    {
+      "file": "VV\\BBEKEntropyBox.lean",
+      "sha256": "30A90F3050C4F8B68545A05FF0B554ABE59E14F88BB68CAA5EA33FEB033D9A33"
+    },
+    {
+      "file": "VV\\BBEKEntropyExpansion.lean",
+      "sha256": "C29725A22527E362D380591BF9832AD7EA64B52933D84B956BE68E21BB7FC26C"
+    },
+    {
+      "file": "VV\\BBEKEntropyExpansive.lean",
+      "sha256": "B5B4C1F8EF4C523E841467D8D8EA43FE5D7044DEED97AD3A10AE5AC5622D4A37"
+    },
+    {
+      "file": "VV\\BBEKEntropyGeometry.lean",
+      "sha256": "C5FFE08556BAA85CBB0431DADD346F27ABF990913109CF1D7F90F3F5C2318F90"
+    },
+    {
+      "file": "VV\\BBEKEntropyNets.lean",
+      "sha256": "F9A41095AEAFD952C028B9E390AEBEB2143EF36F774CFDF698D364C19CEA30F6"
+    },
+    {
+      "file": "VV\\BBEKEntropySeed.lean",
+      "sha256": "9EA747C9830D7B17794116865BA5DF18AF6441321B38CB6D665A74A150B77519"
+    },
+    {
+      "file": "VV\\BBEKEntropySemicontinuity.lean",
+      "sha256": "F84BD3562B887E6056B371E1A8B3F47B457E4E6ACE87B6CD0DFFC1E5127490DA"
+    },
+    {
+      "file": "VV\\BBEKEntropyTrapped.lean",
+      "sha256": "A1191C6FD79842A80B0610E109596AD9C49094E4D6F9F03FEC08A15BE34DBEC4"
+    },
+    {
+      "file": "VV\\BBEKErgodicPositive.lean",
+      "sha256": "EA6F746172863ABD5F5ACB23995DB64A42ED509873109C3B53B844F14B631C34"
+    },
+    {
+      "file": "VV\\BBEKExpandedPlaques.lean",
+      "sha256": "6EA5A27D8B3F6194C7A119340C63689E563E26BDF7BAA7CD05D97803ABA80A5F"
+    },
+    {
+      "file": "VV\\BBEKFactorEscape.lean",
+      "sha256": "F7C71CD2DC87BE613CFE0FCF1143C7CA436662F0ADBEAF6D711929DEAC4C8F5D"
+    },
+    {
+      "file": "VV\\BBEKFinal.lean",
+      "sha256": "E18CC596909F6AED45B6525DBF3C53B7055D73C470E323FAD23277E16647B791"
+    },
+    {
+      "file": "VV\\BBEKFiniteBowen.lean",
+      "sha256": "809DD9DE4BD2316E125AF3EA9FED79423B8036995B2B947D33AF6BD0C8578386"
+    },
+    {
+      "file": "VV\\BBEKFiniteCover.lean",
+      "sha256": "2EA3C957E7170CC47CD370075E24165C8ACFEBD201BCC8D3318A0F4600C68E73"
+    },
+    {
+      "file": "VV\\BBEKFiniteQuotients.lean",
+      "sha256": "10FABBBE5C130A125079206FB0FE307614A8111486656A5E38B5EAE96520BFF3"
+    },
+    {
+      "file": "VV\\BBEKFuturePlaques.lean",
+      "sha256": "5CD9D6F43505B942A5BCA0DB13787F987FB6DC34DC6ACA770B780C1D39708577"
+    },
+    {
+      "file": "VV\\BBEKGaussChart.lean",
+      "sha256": "298D957A8BAD47ED90F8B8DC5CF90BCA6F43071C3BB0B71C8FB241C112D539C1"
+    },
+    {
+      "file": "VV\\BBEKGaussTransition.lean",
+      "sha256": "6BB10D5F52818B8E121DD7985F2814724B3D6BB48C2C405F353FC8BD47442892"
+    },
+    {
+      "file": "VV\\BBEKGlobalLowerAtoms.lean",
+      "sha256": "39ADA0DD763431D49D2B04D75C9F2925DC8600AC3B551803FF0CCE90843A0EE8"
+    },
+    {
+      "file": "VV\\BBEKGlobalLowerCovariance.lean",
+      "sha256": "50D580AF2DFC9EFAD32386F583F37ADCBECD7BD2CAE7411CDC3788492934C825"
+    },
+    {
+      "file": "VV\\BBEKGlobalLowerMeasure.lean",
+      "sha256": "A9A49620636CF16ED02D0F41214B09C510847B74A52EB8932D282474BCCBBE74"
+    },
+    {
+      "file": "VV\\BBEKGrowingGlue.lean",
+      "sha256": "F280173A8B14916456F8EBB1EB1FE608C530D9DB027B90BB8B651264439CA185"
+    },
+    {
+      "file": "VV\\BBEKHomogeneousErgodic.lean",
+      "sha256": "F6C7325CAD6EDC5029E8A18CD17099C493EF03459009FBB687947B40D66B73BF"
+    },
+    {
+      "file": "VV\\BBEKInvariantSupport.lean",
+      "sha256": "3661FCB7EE7CA2E62065FC01A1EED06A73D973D9CA20A7DAB96BA5984ECC1650"
+    },
+    {
+      "file": "VV\\BBEKInverseFuturePlaques.lean",
+      "sha256": "791311B5BB1C14C5B683432C2BD8C4CC93D5ACD1ADC528EE20C64AE4A60E455A"
+    },
+    {
+      "file": "VV\\BBEKKernelAtoms.lean",
+      "sha256": "C0F6CC318EB225D9F5AE60801761462620F38DB1B544AE52A12073B408229E4A"
+    },
+    {
+      "file": "VV\\BBEKKernelEmbedding.lean",
+      "sha256": "8A551B0A140E384A8E26C10921ADCEFB336A547F6EF9926A9BE179A907EC38C3"
+    },
+    {
+      "file": "VV\\BBEKKernelFiberRestriction.lean",
+      "sha256": "CD060E73DF915713CE8C42B704D7436D06D3A4AC4B3E71D208B3CE7EEEC152B8"
+    },
+    {
+      "file": "VV\\BBEKKernelRestriction.lean",
+      "sha256": "A4E11765FE161958CEAFFB1247611B62CE84F6A1FA661CFE9E790C9B884ACF40"
+    },
+    {
+      "file": "VV\\BBEKKernelSkew.lean",
+      "sha256": "DB40F13B046F5CE771B4AFDC0CFA9374CF4FA02F0711EFD799E6680E47D49FFD"
+    },
+    {
+      "file": "VV\\BBEKLattice.lean",
+      "sha256": "631354DF8ABC3887784DFF295077775ACA8D5E1389D7E423254ABDB6BBD06178"
+    },
+    {
+      "file": "VV\\BBEKLeafAtomDichotomy.lean",
+      "sha256": "812ADAE5D317D2EEDC6C990D9AC6C28AA6CF9AD65F9505C9544D60F81F52F0AF"
+    },
+    {
+      "file": "VV\\BBEKLeafwiseAtlas.lean",
+      "sha256": "00C251E8A3B2C4453ECE0333FF5F525CE3A974A8F4723207908F76D164F6D812"
+    },
+    {
+      "file": "VV\\BBEKLeafwiseChart.lean",
+      "sha256": "D5F4ED4A27854ACF7E7231EC92BB5165725E288604CCE70A29E4EBA6666C44F9"
+    },
+    {
+      "file": "VV\\BBEKLeafwiseKernel.lean",
+      "sha256": "6316E710656D97BA78EA2454B4F8CB4D84DB5DB9235832AAA8D80E684EDC95AA"
+    },
+    {
+      "file": "VV\\BBEKLeafwiseOverlap.lean",
+      "sha256": "3916F2DEA03CCB6AD007B6D37BBE3A1B1FB08E119F94C236D65163F78440C4A1"
+    },
+    {
+      "file": "VV\\BBEKLeafwiseRecurrence.lean",
+      "sha256": "67E22737231C903F7496E894934A8609422949EEF64F0402D891E538A1C600E0"
+    },
+    {
+      "file": "VV\\BBEKLeafwiseStabilizer.lean",
+      "sha256": "5B28DC10E8D7EF041D4256ED1A607DCFC1C45BF8BAAD80E4ABD23943E54B91B9"
+    },
+    {
+      "file": "VV\\BBEKLeafwiseSupport.lean",
+      "sha256": "248AB78BECFDC952069FA88E7E0D5157EA8B4915660E173BE2D939A698697CFE"
+    },
+    {
+      "file": "VV\\BBEKLeafwiseTrapped.lean",
+      "sha256": "DD349541944152078D4AB3C68972D287975E0D351A367E88D25E7E962765966B"
+    },
+    {
+      "file": "VV\\BBEKLocalChart.lean",
+      "sha256": "45DA308B1B302BEE3D350AC80F0B554FB5C1FFB839BC0670544D327A37CCFD42"
+    },
+    {
+      "file": "VV\\BBEKLocalDiagonalCovariance.lean",
+      "sha256": "2B16EEDFA8E7F47AE37CBD76FB999500F47A50F5FBE2E95BADCA54C6B30A6D48"
+    },
+    {
+      "file": "VV\\BBEKLocalRootFamily.lean",
+      "sha256": "6EB7BC9FDF7D1CDF93CE7C4D181A0A91A9F9F4540A5DF2BBDA0D9AFA4215EC9B"
+    },
+    {
+      "file": "VV\\BBEKLowEntropyCore.lean",
+      "sha256": "ADD99332445771CC131F87F2DFC8081F62303AF74AAACE8126A439CCCC56BF2F"
+    },
+    {
+      "file": "VV\\BBEKMahler.lean",
+      "sha256": "0B7DDC97831A1E89ADF6FB10B97A43DD73216198F09E32E2FC801BF49B8E58F3"
+    },
+    {
+      "file": "VV\\BBEKMahlerBounds.lean",
+      "sha256": "5F6A8B953DA1DF767481345358505FA45E60848F63BAE5E38414E6257DAD4103"
+    },
+    {
+      "file": "VV\\BBEKMahlerBridge.lean",
+      "sha256": "CF67B40D73E4743D7EB60FE5BB4D538F435CE394C613EFDD348A654E3E40EF97"
+    },
+    {
+      "file": "VV\\BBEKMahlerPadic.lean",
+      "sha256": "25F8E9A20491A422107CAAEC2048F1A4F5FBED62843C54D88B657A53C35F15E5"
+    },
+    {
+      "file": "VV\\BBEKMahlerReal.lean",
+      "sha256": "A95685AB13A8CFACB5EAEA335A13AA0E27E4543ADF9C44E9C906C0B31AAC02B0"
+    },
+    {
+      "file": "VV\\BBEKMatrixReductive.lean",
+      "sha256": "DA3097E15DC2C9DC9ABE262DBC39095CC9D88E9373A92AB7034770E80761AEB7"
+    },
+    {
+      "file": "VV\\BBEKMautner.lean",
+      "sha256": "415E26DFD3ABC7CFB575DD3974F6540882D4636E23EC2992C4DA5BBF58F3B6FD"
+    },
+    {
+      "file": "VV\\BBEKMautnerLp.lean",
+      "sha256": "959FB73B38DA9415E20352C584A9BE3751016E654F86D406C08418355D88126A"
+    },
+    {
+      "file": "VV\\BBEKMeasureAverage.lean",
+      "sha256": "E282967D7CB1CDA79C312A8FD78DCB631E85C00E65C94C1BE7CB547FA5535417"
+    },
+    {
+      "file": "VV\\BBEKMeasureCovarianceInverse.lean",
+      "sha256": "3EAC22295A208865A7F04067E5704119BF1CECCEE53E33627C7D2A69A306E93A"
+    },
+    {
+      "file": "VV\\BBEKMeasureGlue.lean",
+      "sha256": "EFA241C9E2A97FD46022F9405EC5B4BE7E1FC268BCFDA431E74BCAC8412CB593"
+    },
+    {
+      "file": "VV\\BBEKMeasureStabilizer.lean",
+      "sha256": "51E3C0B1B4F766A36AE41BA51836E17DFD0B66573C6B264BB71CB2C7A97FDB45"
+    },
+    {
+      "file": "VV\\BBEKNilpotentTangent.lean",
+      "sha256": "A94BC96DFAE6D5E831310A04AC7CE35AF70BFF681E740ADEB0CFF6DC1FFBADCB"
+    },
+    {
+      "file": "VV\\BBEKNoncompact.lean",
+      "sha256": "82FE292455BC9C7ECDD79AA4105B505950483DA4B642426C86008E62494BED1C"
+    },
+    {
+      "file": "VV\\BBEKNormalizerExclusion.lean",
+      "sha256": "AD7CAAF41141BE8CB9E8B4FBD9CF406D7F77E468EF342AFE62A8B7FD2586DCBE"
+    },
+    {
+      "file": "VV\\BBEKNormalizerOrbit.lean",
+      "sha256": "9D00FFEE24AFE1329FD31C2766F89A6869B532A154C4977DE9D834B77B54B4E6"
+    },
+    {
+      "file": "VV\\BBEKOneRootChartAgreement.lean",
+      "sha256": "AB58A33F43633EA7448F08BC3EB657E4DC49E3C5ADC17B7BA830C8AB0CB871E9"
+    },
+    {
+      "file": "VV\\BBEKOneRootCovariance.lean",
+      "sha256": "C29B8725838C4D9B2088F9103C5E3EFC147A52E6DAC94C55396781DF6DA3808E"
+    },
+    {
+      "file": "VV\\BBEKOneRootGeometry.lean",
+      "sha256": "DF77C8F218FAF9A43A1C8157B85513FC0EB915FA8C85B9678E5C51172097183F"
+    },
+    {
+      "file": "VV\\BBEKOneRootGlobal.lean",
+      "sha256": "76E2E2280468DFB834B7C3F236591099453909188685A5EACEC1E16E4DFD2B4B"
+    },
+    {
+      "file": "VV\\BBEKOneRootLocal.lean",
+      "sha256": "2573E84E0AF06081EA43274D88DBC256DFAAC523BCA15DF575A8A95F15D6D49B"
+    },
+    {
+      "file": "VV\\BBEKOneRootLocalDiagonal.lean",
+      "sha256": "FF4F16A4A995EF79EA22A138BE6D0F1BB90C214DE945C28229653A2F2F7CBCCB"
+    },
+    {
+      "file": "VV\\BBEKOneRootOverlap.lean",
+      "sha256": "7ED3B623FEE66754294B6F1011DCFFCBD6DAFA19B74220E10130C1AA85E55D2A"
+    },
+    {
+      "file": "VV\\BBEKOneRootSafe.lean",
+      "sha256": "909D3B941B504B99B1D6E6108E681F4F2BE22A61144F05D526135D0071CBA89B"
+    },
+    {
+      "file": "VV\\BBEKOneRootSelectedDiagonal.lean",
+      "sha256": "A829CAEEBD9C320BFECE1D7454A85FAA97C569CEE4E3D7AF74027A214583CD23"
+    },
+    {
+      "file": "VV\\BBEKOneRootUpper.lean",
+      "sha256": "681B21D4B75149F9F001B335903A2C9C836EA889C398C81A09D410B786890393"
+    },
+    {
+      "file": "VV\\BBEKOpenOrbit.lean",
+      "sha256": "80B299367B5245E8B6FF56D5B1494A6CC624BBCAFC8B659678A0E636B0EFDF70"
+    },
+    {
+      "file": "VV\\BBEKOrbit.lean",
+      "sha256": "F552791EA52C9CA80A58171325A125103D7DD0DA6D719AE05F0F60DE56578682"
+    },
+    {
+      "file": "VV\\BBEKOrbitBaire.lean",
+      "sha256": "559A973D9BFF2C45C14E5EA5E7F5E8A8340CC25105D8F43E664C5ECCFEAC2E8C"
+    },
+    {
+      "file": "VV\\BBEKOverlapDescent.lean",
+      "sha256": "F580FAE154613D0D216FE246B0118892AF314395C5EB06A822C28B4259262E61"
+    },
+    {
+      "file": "VV\\BBEKPadicStabilizerField.lean",
+      "sha256": "90AA5E4963B9D46BE4CCD62B49050880FE3826B3AF8BF4AEBB704CC5426D70C1"
+    },
+    {
+      "file": "VV\\BBEKParameter.lean",
+      "sha256": "2B4A211B092E24E7460E1FA017F5CF151A51E8939FD279B231AA60FA716F378D"
+    },
+    {
+      "file": "VV\\BBEKPeriodicAmbient.lean",
+      "sha256": "32AC6F0A59AAFD8C20001716365ACE032FE50DA95990EFDEC2ECFBFA8E47F8E1"
+    },
+    {
+      "file": "VV\\BBEKPeriodicEntropy.lean",
+      "sha256": "E62AA0D2195B40368F7F69D0C15807AC6E0DEC3518B8F0E2172C334D7B0D3E4C"
+    },
+    {
+      "file": "VV\\BBEKPeriodicOrbit.lean",
+      "sha256": "552F4AE2EE48D04D9CAFBEA18840642CFBFA839652CDEA802DBFD976D681DF3A"
+    },
+    {
+      "file": "VV\\BBEKPeriodicSupport.lean",
+      "sha256": "3C6B4CC3BC9367CAA3BF1BE27D5906E9BA067E5E1D1FFA89C6C8EAE63D97EC6E"
+    },
+    {
+      "file": "VV\\BBEKPlaqueSelection.lean",
+      "sha256": "3289A3AA1C10887872074BD6791C4C1C38BFC74B933F483CFDEDE5BC807CFB1F"
+    },
+    {
+      "file": "VV\\BBEKPolynomialDifferential.lean",
+      "sha256": "77C325F6159F5D7E5954FC467F312AA6E7F0EE272A2DD3C67BD4B84870791304"
+    },
+    {
+      "file": "VV\\BBEKPositiveDiagonal.lean",
+      "sha256": "95270E7A1642AD21094C06AF4D8397AFF2BD3A740893D7DFE64B5E3F66044003"
+    },
+    {
+      "file": "VV\\BBEKPositiveExclusion.lean",
+      "sha256": "94794BCA349C2AA353D4933A071B0743A7ABC115DB92B1099A8365D7F0D6FF06"
+    },
+    {
+      "file": "VV\\BBEKPositiveFullDiagonal.lean",
+      "sha256": "3F828CD6C82697F4F9D9E16A9384078688B75DC8C08C09FF60D415AEFFE8442C"
+    },
+    {
+      "file": "VV\\BBEKPositiveFuture.lean",
+      "sha256": "194FC49873627F5C57DA92BC5629EF7383C50520A3556ED29520BD88F4DCC690"
+    },
+    {
+      "file": "VV\\BBEKProjectiveGlue.lean",
+      "sha256": "0B86E0F3ACCDD49B42F1C6AF2A2A7E0050586419DE262A5C56D3D940793FCA39"
+    },
+    {
+      "file": "VV\\BBEKPsiEntropy.lean",
+      "sha256": "FDFAE57E8C2B0E8DDF41D9452620C3F1940BAACA4C39AA3F37030D19ED115884"
+    },
+    {
+      "file": "VV\\BBEKQuotient.lean",
+      "sha256": "98C1106EFF2DFFA3B847D1E7F52A26A0078DD5C3FE85352E83646CDE4318207E"
+    },
+    {
+      "file": "VV\\BBEKRadonModification.lean",
+      "sha256": "21A49EC66992716D79806223A61E70815477255C92BFCBEC8A3348D6A0260EC3"
+    },
+    {
+      "file": "VV\\BBEKRationalReductive.lean",
+      "sha256": "3A6ACFC6CD0121264095594187FCAC537FEC457A583F0F23DFAA655A711753C2"
+    },
+    {
+      "file": "VV\\BBEKRealStabilizerField.lean",
+      "sha256": "CC27F159D779C6C442E1117E65949397BA0511B345FDF2910EB9CFDB09F1CA5D"
+    },
+    {
+      "file": "VV\\BBEKReduction.lean",
+      "sha256": "FF2933CFB3BFDBC44DE753B4AD8EBAB0F3397C63C930B3AD34E4B1370C9C5729"
+    },
+    {
+      "file": "VV\\BBEKReductiveConjugation.lean",
+      "sha256": "A8AE654C125F1C82124DE0328439E73C6C72D226C9FC68BDDD8DA0347F4E41FC"
+    },
+    {
+      "file": "VV\\BBEKRigidityEscape.lean",
+      "sha256": "29C754A697BACB63CF77F2387AC2D70F17325E53ABC472163DD9DE19EBA569FB"
+    },
+    {
+      "file": "VV\\BBEKRootEscape.lean",
+      "sha256": "71BADF6D0B0271526C91585FE42849F49F84ED7A5E06B02CC8EA3DA93A30C66E"
+    },
+    {
+      "file": "VV\\BBEKRootGrowingGlue.lean",
+      "sha256": "0BB940679B52DEBC6AF211404D1183E1BAE42C589DBC1B32AE45C2F734635AF5"
+    },
+    {
+      "file": "VV\\BBEKRootLeafKernel.lean",
+      "sha256": "7AD633BD73640712F35294ED37B5288BE329FD997F1CEB09662C67AD29ED3A3E"
+    },
+    {
+      "file": "VV\\BBEKRootStabilizer.lean",
+      "sha256": "E8AF2F662E7DA7318AF3BCD24111CE7BC3730AA5F5C0CE6906DA553902B8BEBE"
+    },
+    {
+      "file": "VV\\BBEKRootSubgroups.lean",
+      "sha256": "3FA0B36BA44F3ED20BE61864D8592425279224AE66D885B1F0C67299E862C9E2"
+    },
+    {
+      "file": "VV\\BBEKRootWeyl.lean",
+      "sha256": "60644F42EE5E6D52932966CBF743A4AB3563715247F6B2A93EF493087F95F715"
+    },
+    {
+      "file": "VV\\BBEKSafeBallCompatibility.lean",
+      "sha256": "AD3EF20B3124675BF6C2E4A647D1E6EC2F31287599EA256710323E17DEF0B138"
+    },
+    {
+      "file": "VV\\BBEKSelectedDiagonal.lean",
+      "sha256": "3EF0CF04DECD3B789FDAF2F42D065C78C1E9452ABF4948B7FC125CEBB3AC7B08"
+    },
+    {
+      "file": "VV\\BBEKSelectedPlaques.lean",
+      "sha256": "7271991ED1D5D4AD4D23097BB930BA072AAF9199804DD161AE3829ED8A1156FA"
+    },
+    {
+      "file": "VV\\BBEKShortVector.lean",
+      "sha256": "23A326C21D5A3525109783EC2AA8BB4EC4EA0463CEB154265E2CB588A76BAC9A"
+    },
+    {
+      "file": "VV\\BBEKSl2Normalizer.lean",
+      "sha256": "4FD56BEF7868E6E2E3F230BC117814356C5954E39AB63804DE16C15A11628536"
+    },
+    {
+      "file": "VV\\BBEKSl2Reductive.lean",
+      "sha256": "4F08B4CF9165A16A1B9D0AA5239409327AC923B27073B377FC2C9F59F9A673DA"
+    },
+    {
+      "file": "VV\\BBEKSl2Shear.lean",
+      "sha256": "CF056DB694888C221AFA16B60A72CDD5F2A3C894B35E05D4F14EFD0A36D784A2"
+    },
+    {
+      "file": "VV\\BBEKStabilizerErgodic.lean",
+      "sha256": "0A69225B906C4B05FFCEEE10DDB812CC6764C558038EEB3EE00CFA0641F11FCE"
+    },
+    {
+      "file": "VV\\BBEKStabilizerRecurrence.lean",
+      "sha256": "F3E8C5C1C6CA079FEA56D95A1FC38488C110EE30D82A1E32401D2650A1E37011"
+    },
+    {
+      "file": "VV\\BBEKStandardBorel.lean",
+      "sha256": "A254A549D93230563F43BF7C9C9BF51ECBCE9D05BA6BDA27A8F853096C277CDC"
+    },
+    {
+      "file": "VV\\BBEKTangentDiagonal.lean",
+      "sha256": "F47A28CFA07828A3BA88DA6DC863297838AFD13841F33A834F6CCDBBC96FA8CE"
+    },
+    {
+      "file": "VV\\BBEKTangentLie.lean",
+      "sha256": "C9CC054E015335AF485C3875BB5EE69C82D70BDFE098EFF0707CE72924C99189"
+    },
+    {
+      "file": "VV\\BBEKTimeInverse.lean",
+      "sha256": "024DF9EA09685F444B331F0D427FCED79C8801E36AE6DA75B2FD207CF35944A0"
+    },
+    {
+      "file": "VV\\BBEKTopology.lean",
+      "sha256": "A1C6F481746DC7A8C45B118234E5E487919167C102D7606C794B4DB45ECD7AEE"
+    },
+    {
+      "file": "VV\\BBEKUniformPlaques.lean",
+      "sha256": "C2BEF17C3CE15E419DAAFF1D3273D78E90C8267B460B6768E7474A55760721FF"
+    },
+    {
+      "file": "VV\\BBEKUpperRootSubgroups.lean",
+      "sha256": "EDF05E61DD88A7F42704B23FBA35B3B9BB99A0F82615BFBDCFEA0003F157A3F1"
+    },
+    {
+      "file": "VV\\BBEKVariational.lean",
+      "sha256": "74F956E44C302FF51B159F718FA48D2CCD0919F6C9BC627BA1B6FE2BD88E1249"
+    },
+    {
+      "file": "VV\\BBEKZariskiRoots.lean",
+      "sha256": "F86050A505B1EC307376849E19B633BF0E4C9A7EEFF4A5FEEA8C01475C640926"
+    },
+    {
+      "file": "VV\\Classification.lean",
+      "sha256": "25BFC6D09FDA60C373B96A9499C72918F8B9CC2407062BA58C0CB896C5ED787D"
+    },
+    {
+      "file": "VV\\CylinderGeometry.lean",
+      "sha256": "CC9CF8CDB74A94763EB5658FDFA33E592DB2AFAA1F35DAAA981E31F7ABA6F086"
+    },
+    {
+      "file": "VV\\CylinderSeparation.lean",
+      "sha256": "DA9602B0B0A67F6083BCA2B4E21C4D60B2547FDF327E66B138F3ABDEC56BB8F6"
+    },
+    {
+      "file": "VV\\Definitions.lean",
+      "sha256": "71E1C18837193B92175AB9C13BE997D9241DAC9CF08D05B5BF08AED33DE6487A"
+    },
+    {
+      "file": "VV\\Hurwitz.lean",
+      "sha256": "1200D8FDBCE4D8AFB29F897BAB1B04841A8DB97FDF384D6528AB0AF78CFB6BF8"
+    },
+    {
+      "file": "VV\\HurwitzValue.lean",
+      "sha256": "2BE069B6EBB4BD3AC09115B52418C56BDA130C1207218D4464ED8E473C45E3FE"
+    },
+    {
+      "file": "VV\\MathlibBridge.lean",
+      "sha256": "81C511DCF1A3638EFFA5BE5A9F9CC898855FA952826504BF9DB4115F06D450C9"
+    },
+    {
+      "file": "VV\\MobiusGenerators.lean",
+      "sha256": "3DA2DB88F9FD2EC196DC30653F4CB6E15575D03CCE544CCD0A4738C792F715D3"
+    },
+    {
+      "file": "VV\\P4Alignment.lean",
+      "sha256": "059B7B40198E17B30BAA3F297BBF4121E20F4AC793CB3047C70CE80A015830AF"
+    },
+    {
+      "file": "VV\\P4ColumnOwner.lean",
+      "sha256": "BC05978E750AB9C92CADBB7C3B735EB1BD06AA52848BCB52952F623DF19EDA39"
+    },
+    {
+      "file": "VV\\P4Columns.lean",
+      "sha256": "24D29862A70BD93F751B01EBCDD348E3E9601A78D77D4647E87401D0F100A9B0"
+    },
+    {
+      "file": "VV\\P4Counting.lean",
+      "sha256": "9B4FCD0864A6CAD95E0FA3AEEFC9588E1FC74094EF1EDF71A5A7C6DB4D5B162F"
+    },
+    {
+      "file": "VV\\P4Cyclic.lean",
+      "sha256": "813E92C551A43AF14EAF850DCA4A546D204823990A706529F06D619F506416FD"
+    },
+    {
+      "file": "VV\\P4Encoding.lean",
+      "sha256": "D3FCE5C001876D348B84AF37CA6E3F35C7975BC80B60AE9CE79D7BDE858F8775"
+    },
+    {
+      "file": "VV\\P4Kernel.lean",
+      "sha256": "20F55D53D5EFC11100CDC24C5202B1500DED460480AF08BD89D04AF5AC575D74"
+    },
+    {
+      "file": "VV\\P4Output.lean",
+      "sha256": "252BF018C65756B02C71781793EBCE663625F59818725492AC145A54CEC684BE"
+    },
+    {
+      "file": "VV\\P4Period.lean",
+      "sha256": "FB29ABF558FD8053E200E471837F88C10DFF3579C7664E643EE92BB938916249"
+    },
+    {
+      "file": "VV\\P4SmallPeriods.lean",
+      "sha256": "E336019254447BCC88F4EFAE065642194D0B5EE5BB318928262BEA1006ACB38F"
+    },
+    {
+      "file": "VV\\P4Symbolic.lean",
+      "sha256": "DA6CC7388EF05A1E2BCC5F9227B2DB9AD5E7A47908A5FDB5ECB3E8A6E585EEF2"
+    },
+    {
+      "file": "VV\\P4SymbolicClean.lean",
+      "sha256": "0AA71FA494120A3A717313CBF8E5EC33ED3E1BB64EC2FDEB2B509BBA87AAD0F6"
+    },
+    {
+      "file": "VV\\P4SymbolicOutput.lean",
+      "sha256": "78FBF24E861C915C0D852CFE2AA8E352E889D426BDE8F97101955D126A5C6244"
+    },
+    {
+      "file": "VV\\P4Trace.lean",
+      "sha256": "F9CC6B1B1F526ADB672694488986C914EB588535F8FE57760DBF39D0D015C5D8"
+    },
+    {
+      "file": "VV\\P5Buffer.lean",
+      "sha256": "7EB0AE1D104F6D1B958B0BBB550825212D56D82D5F0B4DC7D16274B4264A2890"
+    },
+    {
+      "file": "VV\\P5Coverage.lean",
+      "sha256": "DE8DF5C1EB263151AA6249A0A3294B37BEDAAF5E8CB2FB5534D8E75EADB116AA"
+    },
+    {
+      "file": "VV\\P5Cursor.lean",
+      "sha256": "6DBC6C53E2941954605EE9F4796E7174EC6BCD9B9266FE4381896A0193D243F2"
+    },
+    {
+      "file": "VV\\P5Deterministic.lean",
+      "sha256": "0E9083CE5F6DB6668CD67DF50597DDA859D503095401A30D4CC956C91250E900"
+    },
+    {
+      "file": "VV\\P5FiniteCheck.lean",
+      "sha256": "692A206DC9DEBA3164D5704504DF548E74EB8B54EF756D05D0020334945E8F38"
+    },
+    {
+      "file": "VV\\P5Graph.lean",
+      "sha256": "25AA1138BA819962934280420012F7FF308B970DDA955EA41FC95F4000ED2B55"
+    },
+    {
+      "file": "VV\\P5Machine.lean",
+      "sha256": "A119BEC338A91EE1AFB566AC7658553FC6191DA6ED77893B3F6B55FD5C7164AC"
+    },
+    {
+      "file": "VV\\P5MachineGraph.lean",
+      "sha256": "E8287BD4C4E69964A532870DEACA23D0827DA375694A5824EC031F8B9AADD66C"
+    },
+    {
+      "file": "VV\\P5Period.lean",
+      "sha256": "34EC06909BE8077A73E00A107BCE0BAC6F88F908DA55CE01804E32DC2359B7AE"
+    },
+    {
+      "file": "VV\\P5RealCursor.lean",
+      "sha256": "6FD6E0FF18C3718E945E2F1E9783BEE0CBC52A617578D7E68083D0E23153FD66"
+    },
+    {
+      "file": "VV\\P5Stream.lean",
+      "sha256": "F6972C0FAB8F6640F8532115A335FF8002918FC49ACE4EC3A3252F57EF9B0000"
+    },
+    {
+      "file": "VV\\P5Synchronize.lean",
+      "sha256": "F865235DA85CDA916F5307B34EB94586221AB1339063E472FD9B0ED825778F7C"
+    },
+    {
+      "file": "VV\\P5TailAlignment.lean",
+      "sha256": "B9E49BC0BA00C7A455724CDC551324CC9D39CC4890F66E21E4FA86E541B16CAB"
+    },
+    {
+      "file": "VV\\P5Window.lean",
+      "sha256": "1CED92A457CA0998D5EBFE9FBF864265B34EFDC02B4A6A0E8C53DF88C7F0B9E6"
+    },
+    {
+      "file": "VV\\P7AdicLimits.lean",
+      "sha256": "A93F5207323BAD9CC942D0DEB02E88D6A5337046EF3EF866CA11AF85C2161D6C"
+    },
+    {
+      "file": "VV\\P7Approximation.lean",
+      "sha256": "33745D8D2BF91C3A21B7339370868D4B7580B93AC66D445E0E0710D332A7B0BD"
+    },
+    {
+      "file": "VV\\P7BoxCover.lean",
+      "sha256": "F662D973057F43F115546EA328323C68E079720812061ABC72D03F4212AE03B9"
+    },
+    {
+      "file": "VV\\P7Convergents.lean",
+      "sha256": "31A5025A2369503449D2BEBE59B09061C10EF2E15B215B1AD2D5C7120673D986"
+    },
+    {
+      "file": "VV\\P7RigidityReduction.lean",
+      "sha256": "FA52ACFF94FAF3FC71E56CC0CFD1FA77C2BA9A7F080F1C8E3EFDFCAFE3776FE7"
+    },
+    {
+      "file": "VV\\P7TailLimits.lean",
+      "sha256": "4462E69F61EDD5D33E1F186E59FFFD3B5BA30E725932ED47D5F629B7620343A4"
+    },
+    {
+      "file": "VV\\Problem3.lean",
+      "sha256": "C7D22DC5EE9BA5D8F87180E14C7879E17A11C9FA221E0823B78EB3FBD69B707F"
+    },
+    {
+      "file": "VV\\Problem4.lean",
+      "sha256": "08F681B4376F1A0B6B554E9D70833DCD3A12933E1E123F35F778C1A6D544F53B"
+    },
+    {
+      "file": "VV\\Problem4Real.lean",
+      "sha256": "BFA9C889CEBFEC01271C8BE5681E7470887F09348D4A9388F2509814CD6CEA51"
+    },
+    {
+      "file": "VV\\Problem5.lean",
+      "sha256": "0285D1082B19421EEE0BF5BA968C26F9EC814751069F0D698BB6FD759FF34180"
+    },
+    {
+      "file": "VV\\Problem5Real.lean",
+      "sha256": "CE965BC43CE7C5101D3EF686880F6BC19A5387498437DD70E8B6D5D7150D7E98"
+    },
+    {
+      "file": "VV\\Problem7.lean",
+      "sha256": "ADA083C65BB178C0CA5952FEBB30BCD83E95A4BDC9323260449EA0713CCFBB2D"
+    },
+    {
+      "file": "VV\\QuadraticScaling.lean",
+      "sha256": "A58577E4999E47F09AAC1170A23F58EF671D39E93810E74BBF672F17ACE122B2"
+    },
+    {
+      "file": "VV\\Semantics.lean",
+      "sha256": "587C09C2A968C13FAD8A65F0A18F9F439DF71403765506AAAED7D4B53AD724D0"
+    },
+    {
+      "file": "VV\\TailEquivalence.lean",
+      "sha256": "8DC7BDF098F4D47E432CDAC7471A8C222EE9FDF8F40C1B9C0E2778FA1EE7A1D3"
+    },
+    {
+      "file": "VV\\TailGenerators.lean",
+      "sha256": "F65B6EA533273B9F797D642E65C2E5281B5174458172FCE9B069B0C69E6720B3"
+    },
+    {
+      "file": "VV\\TailMobius.lean",
+      "sha256": "B850DEA90FB7C6AA7193364D8D16653EB85BBBF6A1A3D373C4FAAC350C152AF3"
+    },
+    {
+      "file": "VV\\Entropy\\AverageEntropy.lean",
+      "sha256": "7ADC2C21F9EC720BB94B1639276FC2519AC08765545F2B420F311ACB086E0216"
+    },
+    {
+      "file": "VV\\Entropy\\BadSymbol.lean",
+      "sha256": "814B9E38117655C1E03C41559AB153144941F475726CE6F47E4CC270E4CD5805"
+    },
+    {
+      "file": "VV\\Entropy\\BinaryMixture.lean",
+      "sha256": "A7D2AFC7D83FC78F9E5CADFA6EE9276DEA89A7D53B5C6DD359AEE4A61AFB1F12"
+    },
+    {
+      "file": "VV\\Entropy\\BlockEstimate.lean",
+      "sha256": "F0AA4749D99C609499B1F5541ECF5D519BB9C54B475FEF056462990F55BBCCA4"
+    },
+    {
+      "file": "VV\\Entropy\\BowenGenerator.lean",
+      "sha256": "768140962DAEBF004049782F562D77D6591E12E7119EDCAD2A0C58B981D575C0"
+    },
+    {
+      "file": "VV\\Entropy\\BowenPartition.lean",
+      "sha256": "992A52ABC9EE8C711D3E72BBBC3B0D13A6D19A6E07EC3770247B11597B9E4F10"
+    },
+    {
+      "file": "VV\\Entropy\\BowenSemicontinuity.lean",
+      "sha256": "6A8D718D962CB6F594A3E9C4D2E9C1DC909B5738FED2A4102FAFBC41C0CBB69A"
+    },
+    {
+      "file": "VV\\Entropy\\CommutingAverage.lean",
+      "sha256": "CEEABDABA634794FC0B3C3EA952192FBF598F1CE5D347E4D851DCB81564BD11E"
+    },
+    {
+      "file": "VV\\Entropy\\CompactAverageEntropy.lean",
+      "sha256": "0C3105CC5E33A38327319270326DD5FC94920AAAED718F5CD944937ABB82A008"
+    },
+    {
+      "file": "VV\\Entropy\\CompactCores.lean",
+      "sha256": "F8F70325B0EA18D759F162BCEF04D8DBBF0F79BC4B58C444BE87B60D408C2003"
+    },
+    {
+      "file": "VV\\Entropy\\CompactProbability.lean",
+      "sha256": "B94A41290846A709849E32E2CBB60756EEF31364F61E05FB5B7EF03D426AF66F"
+    },
+    {
+      "file": "VV\\Entropy\\CondBlockSubadditive.lean",
+      "sha256": "B5D557AE83A32574F6EE5DFF5D4B528ACFF5AE234A5C5D16EB2FCFF2AC77A0E0"
+    },
+    {
+      "file": "VV\\Entropy\\CondChainRule.lean",
+      "sha256": "2D358D623FF8A4E967BCC3E67A3AFEEC1286D5AA818909DAC2D8974E98FEB564"
+    },
+    {
+      "file": "VV\\Entropy\\CondChainRuleSup.lean",
+      "sha256": "4D08EB33CF8F7BDE4F8482B1E3F619A52093B01F1953B931C3E81D2288DB24DE"
+    },
+    {
+      "file": "VV\\Entropy\\CondEntropyContinuous.lean",
+      "sha256": "AE8DFD2E3B7B4D6AC8C379B9DD8E2DBF6B627EDE99C743B8148E1882C9A10FA1"
+    },
+    {
+      "file": "VV\\Entropy\\CondExpEquivariant.lean",
+      "sha256": "776DF6A7EA453F9AB870AE9006FBA7996EEEEF7018358CABF1D7D810994C22FF"
+    },
+    {
+      "file": "VV\\Entropy\\CondGivenPartitionBridge.lean",
+      "sha256": "0A91FA55CAF3BAC3F7FDCD76C56B298D180C7012809A7A40CF2F198ACA975E5E"
+    },
+    {
+      "file": "VV\\Entropy\\ConditionalEntropy.lean",
+      "sha256": "211676FCD7FB9F02487CE24DDDFD39A033324B2E8787DE099A066CA0ED311FEC"
+    },
+    {
+      "file": "VV\\Entropy\\ConditionalEntropyNontrivial.lean",
+      "sha256": "6BA28356FCAEB4256F77EC258648444A88FD499E7B26B92148343FC089D61BFC"
+    },
+    {
+      "file": "VV\\Entropy\\CondJointPullback.lean",
+      "sha256": "7BF123FE953A00C7F6FF6E8D8B1411CDBBD8A7FDB46AB4E7A6C5FAC8BAFA5F79"
+    },
+    {
+      "file": "VV\\Entropy\\CondKSEntropy.lean",
+      "sha256": "4B196F97D424533CD0D18AD71385B430EE0244FB3FB02DC68F910E6CBDFDB739"
+    },
+    {
+      "file": "VV\\Entropy\\CondKSEntropySystem.lean",
+      "sha256": "EC15F95048AB7E93B808F652FA74AA4130F61B3110B218454282B07B2DEC2C4E"
+    },
+    {
+      "file": "VV\\Entropy\\CondMono.lean",
+      "sha256": "6D8D96E2111AA0F60C47F21A96F23B0F7BC0CC6F0C6B84D67CDDBB8A20431492"
+    },
+    {
+      "file": "VV\\Entropy\\CondPartition.lean",
+      "sha256": "D0E8C515BE6DAB67BF84C8760CE395B9B9EAD641C88BE12921D5831BFFBFC173"
+    },
+    {
+      "file": "VV\\Entropy\\CondPullback.lean",
+      "sha256": "90C9EBE3C661CC2DA1FFFCCDB2756D80C2D1C565814708E97AC5C0BE7DC18C67"
+    },
+    {
+      "file": "VV\\Entropy\\EmbeddingEntropy.lean",
+      "sha256": "D61550FA330DD51BAF9016B07BBEA95F1F57A8584960910E3C3828EDEB8AD2A8"
+    },
+    {
+      "file": "VV\\Entropy\\EntropyExtreme.lean",
+      "sha256": "27D61DD4C42E376FE4F835C1A534FE24766ED0733B6AEFD3B64E87E36368A2F8"
+    },
+    {
+      "file": "VV\\Entropy\\ExtremeMaximum.lean",
+      "sha256": "B8F187DC221198FABE3D0B2D4BDF5D130AA320C8E0B1C52939C181EAA7B72B14"
+    },
+    {
+      "file": "VV\\Entropy\\FactorEntropy.lean",
+      "sha256": "D05E89A795262E7EC26041B6C2E4E311735BCB0E81E1DAD1077DBCA9C7844D5E"
+    },
+    {
+      "file": "VV\\Entropy\\FactorGeneratorSaturate.lean",
+      "sha256": "6BB51F33F53D9C60E1CEB155101070E4C3E8B45BFEE4DE3F51815CF3A388F095"
+    },
+    {
+      "file": "VV\\Entropy\\FactorMap.lean",
+      "sha256": "8CE0A0B63494975B9323097A2A15B6885172AC5C4C9386C707B9E23540EAF82F"
+    },
+    {
+      "file": "VV\\Entropy\\Fekete.lean",
+      "sha256": "F864314DFD0384327329958A8F23271A31ED32DDBB0175E62515592FBCAEF500"
+    },
+    {
+      "file": "VV\\Entropy\\FiberCount.lean",
+      "sha256": "EBA5D65814D20F607F4BE3E1456AEBE993662C3C899780D96E6A55CAE9E62E1B"
+    },
+    {
+      "file": "VV\\Entropy\\FiniteConditionalEntropy.lean",
+      "sha256": "D24DD558D5A815B1A7A71CE2951414BCFC292C7E345FDB3B02800DD45CEDE8FE"
+    },
+    {
+      "file": "VV\\Entropy\\FiniteEntropy.lean",
+      "sha256": "74260A0D7B7AE5CAB691D4800F089269D8EB110D8D28FF7306E526285A7ABE49"
+    },
+    {
+      "file": "VV\\Entropy\\FiniteProbabilityApprox.lean",
+      "sha256": "8AD02F5157C57D348883A27E9C675384BBBF25751B32E9E61B96E4A5D4AE8FFC"
+    },
+    {
+      "file": "VV\\Entropy\\FixedRefinement.lean",
+      "sha256": "35F105750E213EBBBD69DDB10F2CCA562BB7C35DB6046343C96A8D8233C6A034"
+    },
+    {
+      "file": "VV\\Entropy\\FutureKernelSupport.lean",
+      "sha256": "F0A7FBC8D8B468B8198450C102BCB2DE663B5FEBC2BE2E52B8394DF16A668692"
+    },
+    {
+      "file": "VV\\Entropy\\Generator.lean",
+      "sha256": "A09311FEA4204CD119F03217C59962FC09C887812DE904EAF1DAD97EE6AEA199"
+    },
+    {
+      "file": "VV\\Entropy\\GroupExtreme.lean",
+      "sha256": "DCFA0CF9C40099391D864867F2B75601FD23931E3ECAA2C82A2A0E76E7F008E3"
+    },
+    {
+      "file": "VV\\Entropy\\InvariantExtreme.lean",
+      "sha256": "3D455CFF13E0DEAA3F494ECDCF451533CCA72574B25529118172A9CC87A272F7"
+    },
+    {
+      "file": "VV\\Entropy\\Join.lean",
+      "sha256": "A4233DD89BD2A9CD1963EBA6358BC1BF0F3F8B0B5C302D45592ADFF9E7C8C449"
+    },
+    {
+      "file": "VV\\Entropy\\JoinSigmaAlgebra.lean",
+      "sha256": "9DBFE9576055D46A9F0F68CEAB512F60CB0EF8AF9EDEA2041BE9167D8232322D"
+    },
+    {
+      "file": "VV\\Entropy\\KSEntropy.lean",
+      "sha256": "90BF677713ACCEBF36F8715B46466363AE354213BCD43CACFE5E83E701D8872A"
+    },
+    {
+      "file": "VV\\Entropy\\KSEntropyBounds.lean",
+      "sha256": "8F079A8EB5B674458C351DE429CB24E7B0E6ABE7E160972BAA8F96135C407BAA"
+    },
+    {
+      "file": "VV\\Entropy\\KSEntropyConjugacy.lean",
+      "sha256": "5B8A961A2EB49BC652B59706835130C63A4E7CA9154F3F0C979198305C40F1AD"
+    },
+    {
+      "file": "VV\\Entropy\\KSEntropyFuture.lean",
+      "sha256": "C3FC79CDA7C86F86A79850326BDED0EB13030434B4415F0198B157C38979BD56"
+    },
+    {
+      "file": "VV\\Entropy\\KSEntropyInverse.lean",
+      "sha256": "286F61517DA320ACDD307C744B468B93DE6FD41758A20C4322DB64D8814C5CCF"
+    },
+    {
+      "file": "VV\\Entropy\\KSEntropyJoin.lean",
+      "sha256": "6A91FCD6134C58F94150DC2D190576EE178C10AF5319F52F704785B3026D7233"
+    },
+    {
+      "file": "VV\\Entropy\\KSEntropyMono.lean",
+      "sha256": "84D73EBCAC0741A50ACFF962F9910F84364A7EC0F32792972E3C8102DF7DFD2E"
+    },
+    {
+      "file": "VV\\Entropy\\KSEntropySystem.lean",
+      "sha256": "24C724BDDE6FE788B85E0D266B70CD801EBF6A29C57F04C81568E5355F89B824"
+    },
+    {
+      "file": "VV\\Entropy\\MixtureEntropy.lean",
+      "sha256": "317961D823BE7234605DC037322A9C23636B90A81E13899C0916A2067AB265DF"
+    },
+    {
+      "file": "VV\\Entropy\\OrbitAverage.lean",
+      "sha256": "1A59B0E1220112A0A5C91E18D3789FD76C2454AC9474279C78E29CF931B6C3C1"
+    },
+    {
+      "file": "VV\\Entropy\\OrbitMixture.lean",
+      "sha256": "59CB2AF497B4EA61173A2B52CEF137882307668856646B566CBE4A392CFAC71C"
+    },
+    {
+      "file": "VV\\Entropy\\Partition.lean",
+      "sha256": "EB5A3F2CB16485C046DDEEA2808A5033591AEB5EA17335CDEAA17F153BA3823C"
+    },
+    {
+      "file": "VV\\Entropy\\ProbabilityMoments.lean",
+      "sha256": "4F240046D215C31351032EE0372CCA2230E1366602A1054D5A30D44920A202A8"
+    },
+    {
+      "file": "VV\\Entropy\\SeparatedSequence.lean",
+      "sha256": "302743F3BB3BDE7F2FD51AE1C02326BC686BD7C8957413C0A25EFF05B3437742"
+    },
+    {
+      "file": "VV\\Entropy\\SmallPartition.lean",
+      "sha256": "3B3AFE0F2117C7BCCC6EDF8779EC2506F5EE9F9CED2C8AEF96B972FEDEDE0F30"
+    },
+    {
+      "file": "VV\\Entropy\\SmallPositivePartition.lean",
+      "sha256": "DD81B2644E84CB7E3D17A09191AE84CD30A4CEBEF43A95E4F49D805337CE7742"
+    },
+    {
+      "file": "VV\\Entropy\\Subadditive.lean",
+      "sha256": "FC0179073CBCE3DF28D5ACF4FAA55ECBC4B6B1DD8ACF6C8F68C431CC8901C9EF"
+    },
+    {
+      "file": "VV\\Entropy\\Subadditive2.lean",
+      "sha256": "FB949735123C0A6F96B5326797C7F06B742FD79668C03A963B05D1C3E4B75D69"
+    },
+    {
+      "file": "VV\\Entropy\\UniformEntropy.lean",
+      "sha256": "FF8DD60B348E45CCBF84BEF76417379454F9F5736109F1525F854D74D5542854"
+    },
+    {
+      "file": "VV\\Entropy\\VariationalPrinciple.lean",
+      "sha256": "AF11144D817746670670EE8A566C3B0D908B7771DAE84919CC2AD551346E893E"
+    },
+    {
+      "file": "VV\\Entropy\\WeakContinuity.lean",
+      "sha256": "084CCA2BBC7E3628EC78B403AAAE6C2808888D002C898DA3B248F7DCA3DF2EAF"
+    },
+    {
+      "file": "lakefile.toml",
+      "sha256": "3056ECFA74AC9CE30CD54D04B41174C00C1C52B600775E94D981628F16278790"
+    },
+    {
+      "file": "lake-manifest.json",
+      "sha256": "31FF9A30CA1601FB7243A93929CF5F63C04C063F7BE7FE6FC4615D03C5725B35"
+    },
+    {
+      "file": "lean-toolchain",
+      "sha256": "C521CA252D205AF363A01D8F477768ED00C5A57F3F86C19EE4BA4772EBAF4180"
+    },
+    {
+      "file": "Check-VV.ps1",
+      "sha256": "E3C26C13B3FAD42BEC8D3855897E7925301FF6AD4E2C832D0F7F2918F1073618"
+    },
+    {
+      "file": "VV\\Entropy\\LICENSE",
+      "sha256": "3DDF9BE5C28FE27DAD143A5DC76EEA25222AD1DD68934A047064E56ED2FA40C5"
+    },
+    {
+      "file": "VV\\Entropy\\NOTICE",
+      "sha256": "2B33489EE6C57DB4131037F89B52802758ECD74E58A714AADDEED3C8646B3234"
+    }
+  ],
+  "publicationNote": "Historical local build report. The private dependency path was replaced by a boolean and the task-specific requestedClosureComplete field omitted; Problem 4 wording was narrowed to its proved scope. All 268 recorded source hashes were preserved and matched the publication sources. This is not a new clean-clone build or a proof of the admitted assertions."
+}

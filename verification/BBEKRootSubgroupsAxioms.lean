@@ -1,0 +1,5 @@
+import VV.BBEKRootSubgroups
+#print axioms VV.BBEKRootSubgroups.additive_eq_top_of_square_stable
+#print axioms VV.BBEKRootSubgroups.all_lower_mem_of_diagonal_normalizes
+#print axioms VV.BBEKRootSubgroups.all_real_lower_mem
+#print axioms VV.BBEKRootSubgroups.all_padic_lower_mem

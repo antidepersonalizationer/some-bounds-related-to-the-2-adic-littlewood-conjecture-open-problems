@@ -1,0 +1,5 @@
+import VV.BBEKGaussTransition
+#print axioms VV.BBEKGaussTransition.matrixOf_rightParams
+#print axioms VV.BBEKGaussTransition.rightTransverseHomeomorph
+#print axioms VV.BBEKGaussTransition.quotient_transition
+#print axioms VV.BBEKGaussTransition.exists_transition_of_quotient_eq

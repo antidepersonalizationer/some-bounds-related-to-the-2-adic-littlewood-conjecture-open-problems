@@ -1,0 +1,50 @@
+These modules are adapted from Marcel Morgenstern, lean4-ergodic-theory.
+Upstream: https://github.com/marcmorningstar/lean4-ergodic-theory
+Source commit: 040fec2e0ddf4fcba49af9f76c866d295308dd7f
+Copyright (c) 2026 Marcel Morgenstern. Licensed under Apache-2.0; see LICENSE.
+Original module root: ErgodicTheory.Entropy; copied subset listed by local files.
+
+Local changes: imports moved to VV.Entropy and proofs ported to the project's
+pinned Lean 4.20.1 / mathlib 5c0c94b3f563ed756b48b9439788c53b0d56a897.
+The upstream toolchain was Lean 4.30.0-rc2 with mathlib
+34f7a6cd150fd7a166958d989d5abab56e9e3d15. No upstream compiled binaries are used.
+Initial copied upstream modules (eleven): Partition, Join, Subadditive,
+Subadditive2, Fekete, KSEntropy, KSEntropyBounds, KSEntropySystem, FactorMap,
+FactorEntropy, KSEntropyConjugacy.
+The concrete compatibility changes are the local import root and replacement
+of Fin.val_castAdd / Fin.val_natAdd by Fin.coe_castAdd / Fin.coe_natAdd.
+WeakContinuity.lean is newly written for this project, not copied upstream.
+SmallPartition.lean is newly written for this project, not copied upstream.
+CompactProbability.lean is adapted from the compact-space portion of mathlib4
+Mathlib/MeasureTheory/Measure/Prokhorov.lean at commit
+34f7a6cd150fd7a166958d989d5abab56e9e3d15.
+Copyright (c) 2025 Sébastien Gouëzel. Apache-2.0, see LICENSE.
+Upstream source: https://github.com/leanprover-community/mathlib4/blob/34f7a6cd150fd7a166958d989d5abab56e9e3d15/Mathlib/MeasureTheory/Measure/Prokhorov.lean
+Local adaptations: namespace, old RMK linear-map/positivity API, old Lean syntax
+and locally checked compatibility changes. This does not backport the general
+(noncompact-space) Prokhorov theorem.
+OrbitAverage.lean is newly written for this project, not copied upstream.
+KSEntropyJoin.lean and KSEntropyMono.lean are also copied from the same Marcel
+Morgenstern commit 040fec2e0ddf4fcba49af9f76c866d295308dd7f. In addition to the
+local import root, Mono imports the sufficient KSEntropyBounds dependency
+instead of the unused KSEntropyProps wrapper. Original Apache headers retained.
+FixedRefinement.lean and MixtureEntropy.lean are newly written for this project.
+OrbitMixture.lean is newly written for this project.
+
+Further conditional-entropy modules adapted from the same Marcel Morgenstern
+commit: CondPartition, CondPullback, CondChainRule, CondMono,
+CondEntropyContinuous, CondExpEquivariant, CondJointPullback, CondKSEntropy,
+CondBlockSubadditive, CondKSEntropySystem, Generator,
+CondGivenPartitionBridge, CondChainRuleSup, FactorGeneratorSaturate,
+JoinSigmaAlgebra. FiniteConditionalEntropy is the finite-partition portion
+split from upstream CondChainRule, with its original copyright header.
+Compatibility changes include the pinned finite-sum, integrability, and
+conditional-expectation APIs. Conditional Jensen in CondMono is proved here
+by applying ordinary integral Jensen to the actual conditional probability
+kernel; the newer ConditionalExpectation.CondJensen import is not available
+in the pinned mathlib. The conditional-expectation pull-out identities use
+the existing ConditionalExpectation.Real module.
+ConditionalEntropy.lean, KSEntropyFuture.lean and
+ConditionalEntropyNontrivial.lean are newly written for this project.
+FutureKernelSupport.lean and SmallPositivePartition.lean are also newly
+written for this project, not copied upstream.

@@ -1,0 +1,8 @@
+import VV.Entropy.MixtureEntropy
+#print axioms ErgodicTheory.Entropy.MeasurePartition.ksEntropy_exactify
+#print axioms ErgodicTheory.Entropy.ksEntropyPartition_le_iJoin
+#print axioms ErgodicTheory.Entropy.ksEntropy_mixture_ge
+#print axioms ErgodicTheory.Entropy.ksEntropyPartition_mixture_eq
+#print axioms ErgodicTheory.Entropy.ksEntropy_mixture_ge_weighted
+#print axioms ErgodicTheory.Entropy.ksEntropy_mixture_le_weighted
+#print axioms ErgodicTheory.Entropy.ksEntropy_mixture_eq_weighted
