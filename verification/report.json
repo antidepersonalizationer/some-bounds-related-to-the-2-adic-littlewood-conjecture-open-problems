@@ -1,5 +1,5 @@
 {
-  "checkedUtc": "2026-09-26T17:59:09.5121487Z",
+  "checkedUtc": "2026-09-26T19:02:38.8509826Z",
   "status": "verified-with-two-specified-admissions",
   "buildPassed": true,
   "trustAuditPassed": true,
@@ -10,9 +10,9 @@
   "compilerCommit": "b02228b03f655c0cd051d82280ad5758359ec8ba",
   "mathlibCommit": "5c0c94b3f563ed756b48b9439788c53b0d56a897",
   "dependencyPackagesReused": true,
-  "auditedSourceModules": 284,
-  "auditedTheoremDeclarations": 3899,
-  "auditedDefinitions": 879,
+  "auditedSourceModules": 291,
+  "auditedTheoremDeclarations": 3943,
+  "auditedDefinitions": 884,
   "permittedAxioms": [
     "propext",
     "Classical.choice",
@@ -47,11 +47,11 @@
   "sourceHashes": [
     {
       "file": "VV.lean",
-      "sha256": "8D6F476BD67C1FDFCBB000FADEC99AEC328A4AD661D5247AAC37672581A6B5E1"
+      "sha256": "3E30E2FA47406DC9E46CB58618D0F9039271BF00FF0DC7ED88AE9A631F43B468"
     },
     {
       "file": "VV\\Audit.lean",
-      "sha256": "ACC3BB900571196AF3A86F06DC589B7401A6DA81A8D120BEB73E9E05A701E963"
+      "sha256": "A242C7983D7D9060A178ADAD7303642635753D12EF979180E8F176828394BD36"
     },
     {
       "file": "VV\\BBEKActualKernelOverlap.lean",
@@ -100,6 +100,10 @@
     {
       "file": "VV\\BBEKCompactEntropy.lean",
       "sha256": "DBA4238FC7E4C6A8B865E639603202F95231D5DB4E33B2F505858F8EE30DECED"
+    },
+    {
+      "file": "VV\\BBEKCompactLeafStabilizers.lean",
+      "sha256": "A5A5974289C1651602F6443033A67753C63150234AF0745EEB3FBFDAE1250021"
     },
     {
       "file": "VV\\BBEKCompactPreservation.lean",
@@ -276,6 +280,26 @@
     {
       "file": "VV\\BBEKLeafAtomDichotomy.lean",
       "sha256": "812ADAE5D317D2EEDC6C990D9AC6C28AA6CF9AD65F9505C9544D60F81F52F0AF"
+    },
+    {
+      "file": "VV\\BBEKLeafEntropyDisintegration.lean",
+      "sha256": "C0683D437D3965EAA036DED3262979BB8BDD1FA31B29A5EFAC163472DF8841BF"
+    },
+    {
+      "file": "VV\\BBEKLeafMeasureTests.lean",
+      "sha256": "91120F847A68FEFA2E96C0435619FF20F3754E940ED54475438090AE5C0330EC"
+    },
+    {
+      "file": "VV\\BBEKLeafStabilizerDichotomy.lean",
+      "sha256": "33D6D61B8FD1CC4390CFA7904F3097DDF48963373310A7767A1C0F316200C223"
+    },
+    {
+      "file": "VV\\BBEKLeafStabilizerEscape.lean",
+      "sha256": "380358901B85BF5EDD63EA3A7344833A1E3736221080E2816C51EB084ED78999"
+    },
+    {
+      "file": "VV\\BBEKLeafStabilizerMeasurable.lean",
+      "sha256": "2E5D0AB3E07E60BAF42AFEC7039D94BA7D059123AD732459E4579B1B3677C254"
     },
     {
       "file": "VV\\BBEKLeafwiseAtlas.lean",
@@ -548,6 +572,10 @@
     {
       "file": "VV\\BBEKRigidityEscape.lean",
       "sha256": "29C754A697BACB63CF77F2387AC2D70F17325E53ABC472163DD9DE19EBA569FB"
+    },
+    {
+      "file": "VV\\BBEKRootContraction.lean",
+      "sha256": "F58EB3F913D61661DF745D71C2630385D0D9A16716358F0F6FB046702CDCFFF4"
     },
     {
       "file": "VV\\BBEKRootEscape.lean",
@@ -1195,7 +1223,7 @@
     },
     {
       "file": "Check-VV.ps1",
-      "sha256": "B40291C0DE4D82DAB350BA95C4935BE5D8A4B800270CAAC52D59033F2947B5AD"
+      "sha256": "EA640371923EEC31557AF95481FC396B9F8FA9C73B446ECA3A4A908D1B201B2E"
     },
     {
       "file": "VV\\Entropy\\LICENSE",

@@ -281,3 +281,11 @@ import VV.P5PrunedCertificate
 import VV.P5StateSize
 import VV.P5SmallCertificate
 import VV.P5SmallObstruction
+
+import VV.BBEKLeafMeasureTests
+import VV.BBEKLeafStabilizerMeasurable
+import VV.BBEKLeafStabilizerDichotomy
+import VV.BBEKLeafStabilizerEscape
+import VV.BBEKRootContraction
+import VV.BBEKLeafEntropyDisintegration
+import VV.BBEKCompactLeafStabilizers

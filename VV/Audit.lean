@@ -300,3 +300,85 @@ run_cmd do
       unless allowed.contains a do
         throwError "New unconditional endpoint {name} depends on forbidden axiom {a}"
   logInfo m!"UNCONDITIONAL CHECKPOINT ENDPOINTS: {endpoints.size}; no proof abstractions; {rawState.axioms}"
+
+-- EL increment: every new theorem is checked without abstracting either admission.
+#check VV.BBEKLeafMeasureTests.ext_of_compact_integrals
+#print axioms VV.BBEKLeafMeasureTests.ext_of_compact_integrals
+#check VV.BBEKLeafMeasureTests.continuous_integral_translate
+#print axioms VV.BBEKLeafMeasureTests.continuous_integral_translate
+#check VV.BBEKLeafMeasureTests.continuous_integral_supported
+#print axioms VV.BBEKLeafMeasureTests.continuous_integral_supported
+#check VV.BBEKLeafMeasureTests.measurable_integral_family
+#print axioms VV.BBEKLeafMeasureTests.measurable_integral_family
+#check VV.BBEKLeafMeasureTests.testFunction_compact
+#print axioms VV.BBEKLeafMeasureTests.testFunction_compact
+#check VV.BBEKLeafMeasureTests.ext_of_test_integrals
+#print axioms VV.BBEKLeafMeasureTests.ext_of_test_integrals
+#check VV.BBEKLeafStabilizerMeasurable.measurable_testDifference
+#print axioms VV.BBEKLeafStabilizerMeasurable.measurable_testDifference
+#check VV.BBEKLeafStabilizerMeasurable.continuous_testDifference
+#print axioms VV.BBEKLeafStabilizerMeasurable.continuous_testDifference
+#check VV.BBEKLeafStabilizerMeasurable.mem_stabilizer_iff_tests
+#print axioms VV.BBEKLeafStabilizerMeasurable.mem_stabilizer_iff_tests
+#check VV.BBEKLeafStabilizerMeasurable.measurableSet_stabilizer_hit
+#print axioms VV.BBEKLeafStabilizerMeasurable.measurableSet_stabilizer_hit
+#check VV.BBEKLeafStabilizerDichotomy.exists_regular_hit_version
+#print axioms VV.BBEKLeafStabilizerDichotomy.exists_regular_hit_version
+#check VV.BBEKLeafStabilizerDichotomy.stabilizer_covariance_of_ae_eq
+#print axioms VV.BBEKLeafStabilizerDichotomy.stabilizer_covariance_of_ae_eq
+#check VV.BBEKLeafStabilizerDichotomy.ae_real_stabilizer_bot_or_top
+#print axioms VV.BBEKLeafStabilizerDichotomy.ae_real_stabilizer_bot_or_top
+#check VV.BBEKLeafStabilizerDichotomy.ae_padic_stabilizer_bot_or_top
+#print axioms VV.BBEKLeafStabilizerDichotomy.ae_padic_stabilizer_bot_or_top
+#check VV.BBEKLeafStabilizerEscape.ae_stabilizer_ne_top_of_leaf_escape
+#print axioms VV.BBEKLeafStabilizerEscape.ae_stabilizer_ne_top_of_leaf_escape
+#check VV.BBEKLeafStabilizerEscape.ae_stabilizer_eq_bot_of_ne_top
+#print axioms VV.BBEKLeafStabilizerEscape.ae_stabilizer_eq_bot_of_ne_top
+#check VV.BBEKLeafStabilizerEscape.ae_real_lower_stabilizer_ne_top
+#print axioms VV.BBEKLeafStabilizerEscape.ae_real_lower_stabilizer_ne_top
+#check VV.BBEKLeafStabilizerEscape.ae_padic_lower_stabilizer_ne_top
+#print axioms VV.BBEKLeafStabilizerEscape.ae_padic_lower_stabilizer_ne_top
+#check VV.BBEKLeafStabilizerEscape.ae_real_upper_stabilizer_ne_top
+#print axioms VV.BBEKLeafStabilizerEscape.ae_real_upper_stabilizer_ne_top
+#check VV.BBEKLeafStabilizerEscape.ae_padic_upper_stabilizer_ne_top
+#print axioms VV.BBEKLeafStabilizerEscape.ae_padic_upper_stabilizer_ne_top
+#check VV.BBEKRootContraction.inverse_projective_covariance
+#print axioms VV.BBEKRootContraction.inverse_projective_covariance
+#check VV.BBEKLeafEntropyDisintegration.condDistrib_snd_fst
+#print axioms VV.BBEKLeafEntropyDisintegration.condDistrib_snd_fst
+#check VV.BBEKLeafEntropyDisintegration.condExpKernel_fst_apply
+#print axioms VV.BBEKLeafEntropyDisintegration.condExpKernel_fst_apply
+#check VV.BBEKLeafEntropyDisintegration.condEntropy_fst_eq
+#print axioms VV.BBEKLeafEntropyDisintegration.condEntropy_fst_eq
+#check VV.BBEKLeafEntropyDisintegration.not_ae_dirac_of_pos_condEntropy_fst
+#print axioms VV.BBEKLeafEntropyDisintegration.not_ae_dirac_of_pos_condEntropy_fst
+#check VV.BBEKLeafEntropyDisintegration.centeredKernel_eq_dirac_zero_iff
+#print axioms VV.BBEKLeafEntropyDisintegration.centeredKernel_eq_dirac_zero_iff
+#check VV.BBEKLeafEntropyDisintegration.not_ae_centered_dirac_of_pos_condEntropy_fst
+#print axioms VV.BBEKLeafEntropyDisintegration.not_ae_centered_dirac_of_pos_condEntropy_fst
+#check VV.BBEKLeafEntropyDisintegration.ae_local_dirac_iff
+#print axioms VV.BBEKLeafEntropyDisintegration.ae_local_dirac_iff
+#check VV.BBEKLeafEntropyDisintegration.not_ae_local_dirac_of_pos_condEntropy
+#print axioms VV.BBEKLeafEntropyDisintegration.not_ae_local_dirac_of_pos_condEntropy
+#check VV.BBEKCompactLeafStabilizers.exists_real_lower_trivial_stabilizer_data
+#print axioms VV.BBEKCompactLeafStabilizers.exists_real_lower_trivial_stabilizer_data
+#check VV.BBEKCompactLeafStabilizers.exists_real_upper_trivial_stabilizer_data
+#print axioms VV.BBEKCompactLeafStabilizers.exists_real_upper_trivial_stabilizer_data
+#check VV.BBEKCompactLeafStabilizers.exists_padic_lower_trivial_stabilizer_data
+#print axioms VV.BBEKCompactLeafStabilizers.exists_padic_lower_trivial_stabilizer_data
+#check VV.BBEKCompactLeafStabilizers.exists_padic_upper_trivial_stabilizer_data
+#print axioms VV.BBEKCompactLeafStabilizers.exists_padic_upper_trivial_stabilizer_data
+
+open Lean in
+run_cmd do
+  let env ← getEnv
+  let allowed : Array Name := #[`propext, `Classical.choice, `Quot.sound]
+  let endpoints : Array Name := #[`VV.BBEKLeafMeasureTests.ext_of_compact_integrals, `VV.BBEKLeafMeasureTests.continuous_integral_translate, `VV.BBEKLeafMeasureTests.continuous_integral_supported, `VV.BBEKLeafMeasureTests.measurable_integral_family, `VV.BBEKLeafMeasureTests.testFunction_compact, `VV.BBEKLeafMeasureTests.ext_of_test_integrals, `VV.BBEKLeafStabilizerMeasurable.measurable_testDifference, `VV.BBEKLeafStabilizerMeasurable.continuous_testDifference, `VV.BBEKLeafStabilizerMeasurable.mem_stabilizer_iff_tests, `VV.BBEKLeafStabilizerMeasurable.measurableSet_stabilizer_hit, `VV.BBEKLeafStabilizerDichotomy.exists_regular_hit_version, `VV.BBEKLeafStabilizerDichotomy.stabilizer_covariance_of_ae_eq, `VV.BBEKLeafStabilizerDichotomy.ae_real_stabilizer_bot_or_top, `VV.BBEKLeafStabilizerDichotomy.ae_padic_stabilizer_bot_or_top, `VV.BBEKLeafStabilizerEscape.ae_stabilizer_ne_top_of_leaf_escape, `VV.BBEKLeafStabilizerEscape.ae_stabilizer_eq_bot_of_ne_top, `VV.BBEKLeafStabilizerEscape.ae_real_lower_stabilizer_ne_top, `VV.BBEKLeafStabilizerEscape.ae_padic_lower_stabilizer_ne_top, `VV.BBEKLeafStabilizerEscape.ae_real_upper_stabilizer_ne_top, `VV.BBEKLeafStabilizerEscape.ae_padic_upper_stabilizer_ne_top, `VV.BBEKRootContraction.inverse_projective_covariance, `VV.BBEKLeafEntropyDisintegration.condDistrib_snd_fst, `VV.BBEKLeafEntropyDisintegration.condExpKernel_fst_apply, `VV.BBEKLeafEntropyDisintegration.condEntropy_fst_eq, `VV.BBEKLeafEntropyDisintegration.not_ae_dirac_of_pos_condEntropy_fst, `VV.BBEKLeafEntropyDisintegration.centeredKernel_eq_dirac_zero_iff, `VV.BBEKLeafEntropyDisintegration.not_ae_centered_dirac_of_pos_condEntropy_fst, `VV.BBEKLeafEntropyDisintegration.ae_local_dirac_iff, `VV.BBEKLeafEntropyDisintegration.not_ae_local_dirac_of_pos_condEntropy, `VV.BBEKCompactLeafStabilizers.exists_real_lower_trivial_stabilizer_data, `VV.BBEKCompactLeafStabilizers.exists_real_upper_trivial_stabilizer_data, `VV.BBEKCompactLeafStabilizers.exists_padic_lower_trivial_stabilizer_data, `VV.BBEKCompactLeafStabilizers.exists_padic_upper_trivial_stabilizer_data]
+  let mut rawState : CollectAxioms.State := {}
+  for name in endpoints do
+    let (_, nextState) := ((CollectAxioms.collect name).run env).run rawState
+    rawState := nextState
+    for a in rawState.axioms do
+      unless allowed.contains a do
+        throwError "EL increment theorem {name} depends on forbidden axiom {a}"
+  logInfo m!"UNCONDITIONAL EL INCREMENT ENDPOINTS: {endpoints.size}; no proof abstractions; {rawState.axioms}"

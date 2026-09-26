@@ -41,7 +41,7 @@ The conditional real-number proof connects actual continued-fraction transformat
 
 Its conclusion `RootAlternative μ` is invariance under one nonzero element of a real lower, real upper, 2-adic lower or 2-adic upper root group. The admission covers the leafwise entropy bridge, low-entropy shearing and exceptional-branch elimination. The current canonical leaf-measure results do not complete that argument. In particular, local proportionality with finite conditional probabilities does not allow replacing them by globally translation-invariant probabilities.
 
-For the new compact-support route, the remaining technical connections also include measurability of open-hit events `{q | ∃ u ∈ translationStabilizer (η q), u ∈ O}` for the actual Radon leaf family, and the exact hypotheses needed to apply the existing subgroup-field recurrence/ergodicity results. Measurability of `η` alone has not been substituted for that open-hit argument. The support-escape lemmas avoid ambient reconstruction in this special application; they do not remove the entropy or shearing obligations.
+For the compact-support route, the 2026-09-27 increment proves measurability of open-hit events `{q | ∃ u ∈ translationStabilizer (η q), u ∈ O}` for the actual Radon leaf family and supplies the exact contraction and normalization hypotheses. The four constructed canonical root families now have almost-everywhere trivial exact and projective stabilizers. This specialized support-escape argument avoids ambient reconstruction and ergodic promotion. The positive KS-to-root entropy bridge, paired-return/non-transience theorem and exceptional-centralizer-to-rational-closed-orbit passage remain unproved.
 
 The project separately proves generation of the full corresponding root group, all four Mahler escape cases, the compact-support contradiction, entropy production and averaging, the reductive-orbit exclusion at the application point, Proposition 5.1, and the box-dimension and Hausdorff-dimension reductions.
 
@@ -70,3 +70,18 @@ The toolchain is `leanprover/lean4:v4.20.1`, whose [official release](https://gi
 - Supply and verify the precise Problem 5 certificate or a mathematically justified replacement proof.
 - Prove the stated EL root-invariance core, including the entropy and shearing bridges.
 - Independently reproduce the build and review correspondence between formal and informal mathematics.
+
+
+## EL increment, 2026-09-27
+
+The latest increment proves actual leaf-stabilizer hit measurability,
+radius-preserving contraction dichotomies, almost-everywhere root escape,
+and trivial exact/projective stabilizers for the four constructed canonical
+root families on a Mahler compact. It also identifies transverse conditional
+entropy with the actual chart kernels. See
+[the detailed progress and remaining gaps](verification/EL-progress-20260927.md).
+
+**EL is still incomplete; the two named admissions remain.** Positive KS
+entropy has not yet been connected to the needed root entropy, and the
+low-entropy paired-return and exceptional-orbit arguments are not proved.
+The finite-computation trial scheduled after EL completion was not started.

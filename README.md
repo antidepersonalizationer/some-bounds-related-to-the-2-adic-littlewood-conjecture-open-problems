@@ -76,3 +76,18 @@ This checkpoint includes a fresh local project build and recursive audit, using 
 The BBEK input is [Badziahin–Bugeaud–Einsiedler–Kleinbock, Theorem 4.2 and Section 5](https://arxiv.org/html/1405.5545v2), specialized to `p = 2`. The project does not claim a complete formalization of Einsiedler–Lindenstrauss or Ratner–Tomanov.
 
 Imported and adapted entropy sources retain their Apache-2.0 license and attribution. **No project-wide license has been specified for original contributions.** See [THIRD_PARTY.md](THIRD_PARTY.md). AI-assisted development and review limits are disclosed in [AI_DISCLOSURE.md](AI_DISCLOSURE.md).
+
+
+## EL increment, 2026-09-27
+
+The latest increment proves actual leaf-stabilizer hit measurability,
+radius-preserving contraction dichotomies, almost-everywhere root escape,
+and trivial exact/projective stabilizers for the four constructed canonical
+root families on a Mahler compact. It also identifies transverse conditional
+entropy with the actual chart kernels. See
+[the detailed progress and remaining gaps](verification/EL-progress-20260927.md).
+
+**EL is still incomplete; the two named admissions remain.** Positive KS
+entropy has not yet been connected to the needed root entropy, and the
+low-entropy paired-return and exceptional-orbit arguments are not proved.
+The finite-computation trial scheduled after EL completion was not started.

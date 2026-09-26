@@ -50,3 +50,15 @@ Windows PowerShell 7 可运行 `./Check-VV.ps1`，生成审计与源码哈希报
 本次快照包含新的本地工程构建与递归审计，复用了版本及完整性经过核验的依赖缓存。数量、时间、源码哈希见 [verification/report.json](verification/report.json)，公理输出见 [verification/final-axioms.txt](verification/final-axioms.txt)。这不等于空缓存干净克隆、跨平台验证或独立数学审稿。
 
 详细边界见 [PROOF_STATUS.md](PROOF_STATUS.md)，AI 辅助开发说明见 [AI_DISCLOSURE.md](AI_DISCLOSURE.md)。第三方源码保留 Apache-2.0 与作者署名；**原创贡献尚未指定项目级许可证**，见 [THIRD_PARTY.md](THIRD_PARTY.md)。仓库不包含私人聊天或工作档案。
+
+
+## 2026-09-27：EL 形式化增量
+
+本次补齐了实际叶稳定子的开集命中可测性、保留原半径的收缩复归二分、
+几乎处处根逃逸，以及 Mahler 紧支撑下四种实际 canonical 根族的精确／
+射影稳定子平凡性；另证明横截面条件熵与字面图册条件核的对应公式。
+详见 [进展与剩余缺口](verification/EL-progress-20260927.md)。
+
+**EL 核心仍未完成，两个指定的 sorry 均保留。** 正 KS 熵到根熵贡献的连接、
+低熵联合返回和异常轨道分支仍缺证明。按“先完成 EL，再限时尝试有限计算”
+的顺序，本次没有启动有限计算尝试，也没有执行庞大枚举。

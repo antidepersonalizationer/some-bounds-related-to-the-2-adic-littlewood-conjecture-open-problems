@@ -117,7 +117,7 @@ try {
         ([regex]::Matches($vvAudit, "(?m)^'[^']+' depends on axioms:\s*\[[^\]]*\]") |
             ForEach-Object { $_.Value -replace '\s+', ' ' })
         ($vvAudit -split '\r?\n' | Where-Object {
-            $_ -match 'THEORY AXIOMS AFTER|^PASS:|UNCONDITIONAL CHECKPOINT ENDPOINTS:'
+            $_ -match 'THEORY AXIOMS AFTER|^PASS:|UNCONDITIONAL CHECKPOINT ENDPOINTS:|UNCONDITIONAL EL INCREMENT ENDPOINTS:'
         })
     ) | Set-Content -LiteralPath 'verification/final-axioms.txt' -Encoding utf8
     $vvAdmits = @(Get-ChildItem -LiteralPath 'VV' -Filter '*.lean' -Recurse |
