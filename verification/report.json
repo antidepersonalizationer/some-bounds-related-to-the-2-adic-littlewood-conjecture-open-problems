@@ -1,16 +1,18 @@
 {
-  "checkedUtc": "2026-09-23T09:16:48.1990514Z",
+  "checkedUtc": "2026-09-26T17:59:09.5121487Z",
   "status": "verified-with-two-specified-admissions",
   "buildPassed": true,
   "trustAuditPassed": true,
+  "allPaperOpenProblemsSolved": false,
   "fullySorryFree": false,
   "leanToolchain": "leanprover/lean4:v4.20.1",
   "compilerVersionOutput": "Lean (version 4.20.0, x86_64-w64-windows-gnu, commit b02228b03f65, Release)",
   "compilerCommit": "b02228b03f655c0cd051d82280ad5758359ec8ba",
   "mathlibCommit": "5c0c94b3f563ed756b48b9439788c53b0d56a897",
   "dependencyPackagesReused": true,
-  "auditedTheoremDeclarations": 3392,
-  "auditedDefinitions": 837,
+  "auditedSourceModules": 284,
+  "auditedTheoremDeclarations": 3899,
+  "auditedDefinitions": 879,
   "permittedAxioms": [
     "propext",
     "Classical.choice",
@@ -24,8 +26,8 @@
   "finiteComputationExecuted": false,
   "theoryAuditMethod": "Validate the exact types of the finite check and EL core; abstract only those two proof declarations; audit every other project declaration and transitive dependency.",
   "problem3": "closed: VV.problem3_classification",
-  "problem4": "partial answer: VV.Problem4.problem4_all_periods; finiteness and class count <= 3*l*4^l; not a complete answer to the paper question",
-  "problem5": "all theory closed; one unexecuted finite check: VV.P5FiniteCheck.rank_check_10_14",
+  "problem4": "partial answer: finiteness and count <= 3*l*4^l; N(3)=N(4)=1, with B=3 and B=5 respectively; exact alphabets at periods 3 and 4; a common finite eventual digit alphabet; general exact counting remains open",
+  "problem5": "bound 11 conditional on the unexecuted VV.P5FiniteCheck.rank_check_10_14; unconditional small bound-3 certificate checked by the kernel; sparse, compression and SCC certificate reductions proved",
   "problem7": "VV.problem7 : VV.Problem7.Statement; no external hypotheses; depends only on the named EL-core admission beyond the standard axioms",
   "bbekTheorem42": "VV.bbekTheorem42 : VV.P7BoxCover.BBEKTheorem42; internally constructed",
   "problem7Axioms": [
@@ -45,11 +47,11 @@
   "sourceHashes": [
     {
       "file": "VV.lean",
-      "sha256": "C7BE66A0F1DA415D2C094CCB1BEC4CD9BDBC0CD09DF4965F5A014CBE8EE375BA"
+      "sha256": "8D6F476BD67C1FDFCBB000FADEC99AEC328A4AD661D5247AAC37672581A6B5E1"
     },
     {
       "file": "VV\\Audit.lean",
-      "sha256": "AA48FBA6989729A12DDC3054948A0EF33A08A848770AA90EB44B9696BC938CF7"
+      "sha256": "ACC3BB900571196AF3A86F06DC589B7401A6DA81A8D120BEB73E9E05A701E963"
     },
     {
       "file": "VV\\BBEKActualKernelOverlap.lean",
@@ -388,6 +390,10 @@
       "sha256": "9D00FFEE24AFE1329FD31C2766F89A6869B532A154C4977DE9D834B77B54B4E6"
     },
     {
+      "file": "VV\\BBEKOneRootAtoms.lean",
+      "sha256": "BC73EEF60159366E6DBC30B023E62FEE898FDCFB49BE33C910D90B0C9C13DE69"
+    },
+    {
       "file": "VV\\BBEKOneRootChartAgreement.lean",
       "sha256": "AB58A33F43633EA7448F08BC3EB657E4DC49E3C5ADC17B7BA830C8AB0CB871E9"
     },
@@ -412,8 +418,16 @@
       "sha256": "FF4F16A4A995EF79EA22A138BE6D0F1BB90C214DE945C28229653A2F2F7CBCCB"
     },
     {
+      "file": "VV\\BBEKOneRootLocalInvariance.lean",
+      "sha256": "FC910DDFF08083C12238C8D5B107FB03E9F516EBBC62C73E5501A82550DA7FA7"
+    },
+    {
       "file": "VV\\BBEKOneRootOverlap.lean",
       "sha256": "7ED3B623FEE66754294B6F1011DCFFCBD6DAFA19B74220E10130C1AA85E55D2A"
+    },
+    {
+      "file": "VV\\BBEKOneRootRecurrence.lean",
+      "sha256": "6A7458C8BA88B7829462960AE8F110387FF64FE59942E0510C3F10BDCF36F81B"
     },
     {
       "file": "VV\\BBEKOneRootSafe.lean",
@@ -422,6 +436,14 @@
     {
       "file": "VV\\BBEKOneRootSelectedDiagonal.lean",
       "sha256": "A829CAEEBD9C320BFECE1D7454A85FAA97C569CEE4E3D7AF74027A214583CD23"
+    },
+    {
+      "file": "VV\\BBEKOneRootSupport.lean",
+      "sha256": "0730201EEDAA9E49D9AAF7D26B20690E37C5D3922CE298052692E0B132C1FCFC"
+    },
+    {
+      "file": "VV\\BBEKOneRootSupportEscape.lean",
+      "sha256": "82CDEC1824D875F74B0BF03AE03880A85973C2F2A7272D706EBA87A000551A04"
     },
     {
       "file": "VV\\BBEKOneRootUpper.lean",
@@ -692,6 +714,34 @@
       "sha256": "FB29ABF558FD8053E200E471837F88C10DFF3579C7664E643EE92BB938916249"
     },
     {
+      "file": "VV\\P4PeriodFour.lean",
+      "sha256": "05F90C0EF66A7025C1F0DAACEB6313D983CD8E65E3A143ADD8D0A44D006CC212"
+    },
+    {
+      "file": "VV\\P4PeriodFourClassification.lean",
+      "sha256": "5308196DEB3B1668CC426CE6905BCD947E088127173FBC8D25189DE1A340A944"
+    },
+    {
+      "file": "VV\\P4PeriodFourEvenCases.lean",
+      "sha256": "1C60D1311F54CD0C4B0763DE15D2605E57EFC6B55638DF0EDD9E99372E3A9C02"
+    },
+    {
+      "file": "VV\\P4PeriodFourEvenOddCases.lean",
+      "sha256": "74BA2997AA0D765DAE5736CADC9ACA4EF713C61BD0879C33DFBB4946DB7D1BC4"
+    },
+    {
+      "file": "VV\\P4PeriodFourHelpers.lean",
+      "sha256": "3C25F9CEED59503F358C149D6782F42C98AFD879E4B66D47A4AAE12C6AC3EB18"
+    },
+    {
+      "file": "VV\\P4PeriodFourOddCases.lean",
+      "sha256": "82F648F885FF20C347D2540070E3692D95FD249B06005515147C97A386297AD6"
+    },
+    {
+      "file": "VV\\P4PeriodThree.lean",
+      "sha256": "A773DED5D9EDD7330668429ADB0BDD8DF87D6246222F622798FAEB26C5CF8E0A"
+    },
+    {
       "file": "VV\\P4SmallPeriods.lean",
       "sha256": "E336019254447BCC88F4EFAE065642194D0B5EE5BB318928262BEA1006ACB38F"
     },
@@ -712,6 +762,10 @@
       "sha256": "F9CC6B1B1F526ADB672694488986C914EB588535F8FE57760DBF39D0D015C5D8"
     },
     {
+      "file": "VV\\P4UniformDigits.lean",
+      "sha256": "5F6863122417F9A81FA8E18AD1A6D52AC22413DAB8FC3C8161F90B7FFBB3B4F6"
+    },
+    {
       "file": "VV\\P5Buffer.lean",
       "sha256": "7EB0AE1D104F6D1B958B0BBB550825212D56D82D5F0B4DC7D16274B4264A2890"
     },
@@ -729,11 +783,19 @@
     },
     {
       "file": "VV\\P5FiniteCheck.lean",
-      "sha256": "692A206DC9DEBA3164D5704504DF548E74EB8B54EF756D05D0020334945E8F38"
+      "sha256": "726679CF208FB7FBE15B5DE43402560591AD65D391A57FD4745AA104C7F5292C"
+    },
+    {
+      "file": "VV\\P5GeneralWindow.lean",
+      "sha256": "F94ABB9E23838E2C2962D43E56D7C231609C2486BC25C0EA00737EEB32C18912"
     },
     {
       "file": "VV\\P5Graph.lean",
       "sha256": "25AA1138BA819962934280420012F7FF308B970DDA955EA41FC95F4000ED2B55"
+    },
+    {
+      "file": "VV\\P5GraphSimulation.lean",
+      "sha256": "BD873EFE20A8D45347D22EEE476A632B1966CE68C35EE649A9013F848670DD94"
     },
     {
       "file": "VV\\P5Machine.lean",
@@ -748,8 +810,36 @@
       "sha256": "34EC06909BE8077A73E00A107BCE0BAC6F88F908DA55CE01804E32DC2359B7AE"
     },
     {
+      "file": "VV\\P5PrunedCertificate.lean",
+      "sha256": "859758744F657C7B9143CAEC814C3BEC35125851C5291C9BDE579C93C96893DA"
+    },
+    {
+      "file": "VV\\P5QuotientCertificate.lean",
+      "sha256": "E730CBD561787E6F1EC4E73C9A6AA0E3EFF4007DEBAD6E12D4EA8E4A97D7055B"
+    },
+    {
       "file": "VV\\P5RealCursor.lean",
       "sha256": "6FD6E0FF18C3718E945E2F1E9783BEE0CBC52A617578D7E68083D0E23153FD66"
+    },
+    {
+      "file": "VV\\P5SCCCertificate.lean",
+      "sha256": "B6D4EF0BB16B55FBCB4B3164F3164274F12F24880337EDA1215EF5FCD8BBBF64"
+    },
+    {
+      "file": "VV\\P5SmallCertificate.lean",
+      "sha256": "365D191A59C3C1D5419E65826FA050E14B9F45EBD31112D3C3816BA330A33B18"
+    },
+    {
+      "file": "VV\\P5SmallObstruction.lean",
+      "sha256": "53A7C5088A876A0B371DECCAF8946C3259F832F7C2D6A0A317082BC51E161C1D"
+    },
+    {
+      "file": "VV\\P5SparseCertificate.lean",
+      "sha256": "69A6D3600FA2DA5DFD7BFE1249FD03874CE999D4273E650E7A058756816BDE89"
+    },
+    {
+      "file": "VV\\P5StateSize.lean",
+      "sha256": "ACB3E43AF7E4FA07BCC850344688B0AAE760BB33B4FAC0EF7BD4AD52A163761B"
     },
     {
       "file": "VV\\P5Stream.lean",
@@ -1105,7 +1195,7 @@
     },
     {
       "file": "Check-VV.ps1",
-      "sha256": "E3C26C13B3FAD42BEC8D3855897E7925301FF6AD4E2C832D0F7F2918F1073618"
+      "sha256": "B40291C0DE4D82DAB350BA95C4935BE5D8A4B800270CAAC52D59033F2947B5AD"
     },
     {
       "file": "VV\\Entropy\\LICENSE",
@@ -1115,6 +1205,5 @@
       "file": "VV\\Entropy\\NOTICE",
       "sha256": "2B33489EE6C57DB4131037F89B52802758ECD74E58A714AADDEED3C8646B3234"
     }
-  ],
-  "publicationNote": "Historical local build report. The private dependency path was replaced by a boolean and the task-specific requestedClosureComplete field omitted; Problem 4 wording was narrowed to its proved scope. All 268 recorded source hashes were preserved and matched the publication sources. This is not a new clean-clone build or a proof of the admitted assertions."
+  ]
 }

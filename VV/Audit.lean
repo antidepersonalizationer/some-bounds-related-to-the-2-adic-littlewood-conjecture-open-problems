@@ -1,5 +1,4 @@
 import VV
-import VV.BBEKFinal
 import Lean.Util.CollectAxioms
 import Lean.DeclarationRange
 
@@ -205,3 +204,99 @@ run_cmd do
 #print axioms VV.BBEKMautnerLp.quotient_psi_ergodic
 #print axioms VV.BBEKEntropyTrapped.trappedEntropy_pos_of_not_zero_box
 #print axioms VV.BBEKDiagonalAverage.averaged_diagonal_ergodic
+
+-- Checkpoint additions: all endpoints below must remain free of admissions.
+#check VV.Problem4.rootedClassWordEquiv
+#print axioms VV.Problem4.rootedClassWordEquiv
+#check VV.Problem4.card_rootedWord
+#print axioms VV.Problem4.card_rootedWord
+#check VV.Problem4.card_uniformAlphabet_le
+#print axioms VV.Problem4.card_uniformAlphabet_le
+#check VV.Problem4.exists_uniform_eventual_bound
+#print axioms VV.Problem4.exists_uniform_eventual_bound
+#check VV.Problem4.card_class_three
+#print axioms VV.Problem4.card_class_three
+#check VV.Problem4.period_three_iff
+#print axioms VV.Problem4.period_three_iff
+#check VV.Problem4.uniformDigitBound_three
+#print axioms VV.Problem4.uniformDigitBound_three
+#check VV.Problem4.B_eq_three_of_period_three
+#print axioms VV.Problem4.B_eq_three_of_period_three
+#check VV.Problem4.period_four_example
+#print axioms VV.Problem4.period_four_example
+#check VV.Problem4.card_class_four_pos
+#print axioms VV.Problem4.card_class_four_pos
+#check VV.Problem4.card_class_four
+#print axioms VV.Problem4.card_class_four
+#check VV.Problem4.period_four_iff
+#print axioms VV.Problem4.period_four_iff
+#check VV.Problem4.B_eq_five_of_period_four
+#print axioms VV.Problem4.B_eq_five_of_period_four
+#check VV.Problem4.uniformDigitBound_four
+#print axioms VV.Problem4.uniformDigitBound_four
+#check VV.P5GeneralWindow.eventual_every_window
+#print axioms VV.P5GeneralWindow.eventual_every_window
+#check VV.P5GeneralWindow.classification_of_window_check
+#print axioms VV.P5GeneralWindow.classification_of_window_check
+#check VV.P5Graph.Graph.Realizes.map_ranked
+#print axioms VV.P5Graph.Graph.Realizes.map_ranked
+#check VV.P5GeneralWindow.classification_of_pruned_window
+#print axioms VV.P5GeneralWindow.classification_of_pruned_window
+#check VV.P5SparseCertificate.original_check_of_sparse_check
+#print axioms VV.P5SparseCertificate.original_check_of_sparse_check
+#check VV.P5StateSize.windowGraph_ten_fourteen_size
+#print axioms VV.P5StateSize.windowGraph_ten_fourteen_size
+#check VV.P5SmallCertificate.rank_check_two_zero
+#print axioms VV.P5SmallCertificate.rank_check_two_zero
+#check VV.P5SmallCertificate.frequently_three_within_two
+#print axioms VV.P5SmallCertificate.frequently_three_within_two
+#check VV.P5QuotientCertificate.window_check_of_sparse_compression
+#print axioms VV.P5QuotientCertificate.window_check_of_sparse_compression
+#check VV.P5SCCCertificate.check_iff_cyclicDeterministic
+#print axioms VV.P5SCCCertificate.check_iff_cyclicDeterministic
+#check VV.P5PrunedCertificate.window_check_of_sparse_pruned_compression
+#print axioms VV.P5PrunedCertificate.window_check_of_sparse_pruned_compression
+#check VV.P5SmallObstruction.rank_check_three_zero_eq_false
+#print axioms VV.P5SmallObstruction.rank_check_three_zero_eq_false
+#check VV.BBEKOneRootRecurrence.exists_real_lower_exact_stabilizer_data
+#print axioms VV.BBEKOneRootRecurrence.exists_real_lower_exact_stabilizer_data
+#check VV.BBEKOneRootRecurrence.exists_padic_lower_exact_stabilizer_data
+#print axioms VV.BBEKOneRootRecurrence.exists_padic_lower_exact_stabilizer_data
+#check VV.BBEKOneRootRecurrence.exists_real_upper_exact_stabilizer_data
+#print axioms VV.BBEKOneRootRecurrence.exists_real_upper_exact_stabilizer_data
+#check VV.BBEKOneRootRecurrence.exists_padic_upper_exact_stabilizer_data
+#print axioms VV.BBEKOneRootRecurrence.exists_padic_upper_exact_stabilizer_data
+#check VV.BBEKOneRootLocalInvariance.canonical_local_invariance
+#print axioms VV.BBEKOneRootLocalInvariance.canonical_local_invariance
+#check VV.BBEKOneRootSupport.canonical_real_lower_supported
+#print axioms VV.BBEKOneRootSupport.canonical_real_lower_supported
+#check VV.BBEKOneRootSupport.canonical_padic_lower_supported
+#print axioms VV.BBEKOneRootSupport.canonical_padic_lower_supported
+#check VV.BBEKOneRootSupport.canonical_real_upper_supported
+#print axioms VV.BBEKOneRootSupport.canonical_real_upper_supported
+#check VV.BBEKOneRootSupport.canonical_padic_upper_supported
+#print axioms VV.BBEKOneRootSupport.canonical_padic_upper_supported
+#check VV.BBEKOneRootSupportEscape.no_real_lower_top
+#print axioms VV.BBEKOneRootSupportEscape.no_real_lower_top
+#check VV.BBEKOneRootSupportEscape.no_padic_lower_top
+#print axioms VV.BBEKOneRootSupportEscape.no_padic_lower_top
+#check VV.BBEKOneRootSupportEscape.no_real_upper_top
+#print axioms VV.BBEKOneRootSupportEscape.no_real_upper_top
+#check VV.BBEKOneRootSupportEscape.no_padic_upper_top
+#print axioms VV.BBEKOneRootSupportEscape.no_padic_upper_top
+
+-- Unlike the whole-project audit, this check abstracts NO admitted proof.
+-- These selected new results are unconditional and must stay that way.
+open Lean in
+run_cmd do
+  let env ← getEnv
+  let allowed : Array Name := #[`propext, `Classical.choice, `Quot.sound]
+  let endpoints : Array Name :=    #[`VV.Problem4.rootedClassWordEquiv, `VV.Problem4.card_rootedWord, `VV.Problem4.card_uniformAlphabet_le, `VV.Problem4.exists_uniform_eventual_bound, `VV.Problem4.card_class_three, `VV.Problem4.period_three_iff, `VV.Problem4.uniformDigitBound_three, `VV.Problem4.B_eq_three_of_period_three, `VV.Problem4.period_four_example, `VV.Problem4.card_class_four_pos, `VV.Problem4.card_class_four, `VV.Problem4.period_four_iff, `VV.Problem4.B_eq_five_of_period_four, `VV.Problem4.uniformDigitBound_four, `VV.P5GeneralWindow.eventual_every_window, `VV.P5GeneralWindow.classification_of_window_check, `VV.P5Graph.Graph.Realizes.map_ranked, `VV.P5GeneralWindow.classification_of_pruned_window, `VV.P5SparseCertificate.original_check_of_sparse_check, `VV.P5StateSize.windowGraph_ten_fourteen_size, `VV.P5SmallCertificate.rank_check_two_zero, `VV.P5SmallCertificate.frequently_three_within_two, `VV.P5QuotientCertificate.window_check_of_sparse_compression, `VV.P5SCCCertificate.check_iff_cyclicDeterministic, `VV.P5PrunedCertificate.window_check_of_sparse_pruned_compression, `VV.P5SmallObstruction.rank_check_three_zero_eq_false, `VV.BBEKOneRootRecurrence.exists_real_lower_exact_stabilizer_data, `VV.BBEKOneRootRecurrence.exists_padic_lower_exact_stabilizer_data, `VV.BBEKOneRootRecurrence.exists_real_upper_exact_stabilizer_data, `VV.BBEKOneRootRecurrence.exists_padic_upper_exact_stabilizer_data, `VV.BBEKOneRootLocalInvariance.canonical_local_invariance, `VV.BBEKOneRootSupport.canonical_real_lower_supported, `VV.BBEKOneRootSupport.canonical_padic_lower_supported, `VV.BBEKOneRootSupport.canonical_real_upper_supported, `VV.BBEKOneRootSupport.canonical_padic_upper_supported, `VV.BBEKOneRootSupportEscape.no_real_lower_top, `VV.BBEKOneRootSupportEscape.no_padic_lower_top, `VV.BBEKOneRootSupportEscape.no_real_upper_top, `VV.BBEKOneRootSupportEscape.no_padic_upper_top]
+  let mut rawState : CollectAxioms.State := {}
+  for name in endpoints do
+    let (_, nextState) := ((CollectAxioms.collect name).run env).run rawState
+    rawState := nextState
+    for a in rawState.axioms do
+      unless allowed.contains a do
+        throwError "New unconditional endpoint {name} depends on forbidden axiom {a}"
+  logInfo m!"UNCONDITIONAL CHECKPOINT ENDPOINTS: {endpoints.size}; no proof abstractions; {rawState.axioms}"

@@ -1,4 +1,4 @@
--- All completed source modules in dependency order; VV.Audit imports this entry point.
+-- Every project source module in dependency order; VV.Audit checks this entry point.
 import VV.BBEKDyadic
 import VV.BBEKDynamics
 import VV.BBEKFiniteQuotients
@@ -238,6 +238,7 @@ import VV.P5Machine
 import VV.P5Coverage
 import VV.P5TailAlignment
 import VV.P5Window
+import VV.P5GeneralWindow
 import VV.P5FiniteCheck
 import VV.P7Approximation
 import VV.P7Convergents
@@ -259,3 +260,24 @@ import VV.BBEKPositiveFullDiagonal
 import VV.BBEKPositiveExclusion
 import VV.BBEKLowEntropyCore
 import VV.BBEKFinal
+import VV.BBEKOneRootAtoms
+import VV.BBEKOneRootRecurrence
+import VV.BBEKOneRootLocalInvariance
+import VV.BBEKOneRootSupport
+import VV.BBEKOneRootSupportEscape
+import VV.P4UniformDigits
+import VV.P4PeriodFour
+import VV.P4PeriodThree
+import VV.P4PeriodFourHelpers
+import VV.P4PeriodFourEvenCases
+import VV.P4PeriodFourOddCases
+import VV.P4PeriodFourEvenOddCases
+import VV.P4PeriodFourClassification
+import VV.P5GraphSimulation
+import VV.P5SparseCertificate
+import VV.P5QuotientCertificate
+import VV.P5SCCCertificate
+import VV.P5PrunedCertificate
+import VV.P5StateSize
+import VV.P5SmallCertificate
+import VV.P5SmallObstruction

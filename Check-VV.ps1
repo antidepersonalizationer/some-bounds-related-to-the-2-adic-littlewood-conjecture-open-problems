@@ -7,6 +7,36 @@ $ErrorActionPreference = 'Stop'
 $vvOriginalLeanPath = $env:LEAN_PATH
 Push-Location $PSScriptRoot
 try {
+    # Every project source must enter the build/audit import closure. This
+    # prevents a new, unimported theorem file from escaping the kernel audit.
+    $vvModuleFiles = @{}
+    $vvModuleFiles['VV'] = Join-Path $PSScriptRoot 'VV.lean'
+    foreach ($vvFile in Get-ChildItem -LiteralPath 'VV' -Filter '*.lean' -Recurse) {
+        $vvRelative = [IO.Path]::GetRelativePath($PSScriptRoot, $vvFile.FullName)
+        $vvModule = $vvRelative.Substring(0, $vvRelative.Length - 5).Replace('\','.').Replace('/','.')
+        $vvModuleFiles[$vvModule] = $vvFile.FullName
+    }
+    $vvReachedModules = [Collections.Generic.HashSet[string]]::new()
+    $vvPendingModules = [Collections.Generic.Stack[string]]::new()
+    $vvPendingModules.Push('VV')
+    $vvPendingModules.Push('VV.Audit')
+    while ($vvPendingModules.Count -gt 0) {
+        $vvModule = $vvPendingModules.Pop()
+        if (-not $vvReachedModules.Add($vvModule)) { continue }
+        foreach ($vvLine in Get-Content -LiteralPath $vvModuleFiles[$vvModule]) {
+            if ($vvLine -match '^\s*import\s+(.+)$') {
+                $vvImportLine = ($Matches[1] -split '--',2)[0]
+                foreach ($vvImport in ($vvImportLine -split '\s+' | Where-Object { $_ })) {
+                    if ($vvModuleFiles.ContainsKey($vvImport)) { $vvPendingModules.Push($vvImport) }
+                }
+            }
+        }
+    }
+    $vvUnreachedModules = @($vvModuleFiles.Keys | Where-Object { -not $vvReachedModules.Contains($_) })
+    if ($vvUnreachedModules.Count -ne 0) {
+        throw ('Project sources absent from the build/audit import closure: ' + ($vvUnreachedModules -join ', '))
+    }
+
     # Lake must resolve project imports from its own build, never from stale
     # ad-hoc .olean files left in a source directory by an interactive session.
     $env:LEAN_PATH = ''
@@ -19,7 +49,7 @@ try {
         status = 'checking'
         buildPassed = $false
         trustAuditPassed = $false
-        requestedClosureComplete = $false
+        allPaperOpenProblemsSolved = $false
     } | ConvertTo-Json | Set-Content -LiteralPath 'verification/report.json' -Encoding utf8
 
     $vvVersion = (& lean --version | Out-String).Trim()
@@ -82,12 +112,12 @@ try {
         throw 'Unexpected actual Problem 7 axiom list.'
     }
     @(
-        'Generated from the successful VV/Audit.lean run. The complete transient log is axioms.log.'
+        'Generated from the successful VV/Audit.lean run. The full transient log is retained locally and is not part of the public source export.'
         'Allowed proof admissions: VV.P5FiniteCheck.rank_check_10_14; VV.BBEKLowEntropyCore.rootAlternative_of_positive_entropy.'
         ([regex]::Matches($vvAudit, "(?m)^'[^']+' depends on axioms:\s*\[[^\]]*\]") |
             ForEach-Object { $_.Value -replace '\s+', ' ' })
         ($vvAudit -split '\r?\n' | Where-Object {
-            $_ -match 'THEORY AXIOMS AFTER|^PASS:'
+            $_ -match 'THEORY AXIOMS AFTER|^PASS:|UNCONDITIONAL CHECKPOINT ENDPOINTS:'
         })
     ) | Set-Content -LiteralPath 'verification/final-axioms.txt' -Encoding utf8
     $vvAdmits = @(Get-ChildItem -LiteralPath 'VV' -Filter '*.lean' -Recurse |
@@ -117,13 +147,14 @@ try {
         status = 'verified-with-two-specified-admissions'
         buildPassed = $true
         trustAuditPassed = $true
-        requestedClosureComplete = $true
+        allPaperOpenProblemsSolved = $false
         fullySorryFree = $false
         leanToolchain = 'leanprover/lean4:v4.20.1'
         compilerVersionOutput = $vvVersion
         compilerCommit = $vvLeanCommit
         mathlibCommit = '5c0c94b3f563ed756b48b9439788c53b0d56a897'
-        dependencyPackagesReused = $DependencyPackages
+        dependencyPackagesReused = [bool]$DependencyPackages
+        auditedSourceModules = $vvReachedModules.Count
         auditedTheoremDeclarations = $vvTheorems
         auditedDefinitions = $vvDefinitions
         permittedAxioms = @('propext','Classical.choice','Quot.sound')
@@ -135,8 +166,8 @@ try {
         finiteComputationExecuted = $false
         theoryAuditMethod = 'Validate the exact types of the finite check and EL core; abstract only those two proof declarations; audit every other project declaration and transitive dependency.'
         problem3 = 'closed: VV.problem3_classification'
-        problem4 = 'closed: VV.Problem4.problem4_all_periods; finiteness and class count <= 3*l*4^l'
-        problem5 = 'all theory closed; one unexecuted finite check: VV.P5FiniteCheck.rank_check_10_14'
+        problem4 = 'partial answer: finiteness and count <= 3*l*4^l; N(3)=N(4)=1, with B=3 and B=5 respectively; exact alphabets at periods 3 and 4; a common finite eventual digit alphabet; general exact counting remains open'
+        problem5 = 'bound 11 conditional on the unexecuted VV.P5FiniteCheck.rank_check_10_14; unconditional small bound-3 certificate checked by the kernel; sparse, compression and SCC certificate reductions proved'
         problem7 = 'VV.problem7 : VV.Problem7.Statement; no external hypotheses; depends only on the named EL-core admission beyond the standard axioms'
         bbekTheorem42 = 'VV.bbekTheorem42 : VV.P7BoxCover.BBEKTheorem42; internally constructed'
         problem7Axioms = $vvProblem7Axioms
@@ -149,7 +180,7 @@ try {
         sourceHashes = $vvHashes
     } | ConvertTo-Json -Depth 7 | Set-Content -LiteralPath 'verification/report.json' -Encoding utf8
     Write-Output "PASS: build and trust audit; $vvTheorems theorem declarations and $vvDefinitions definitions."
-    Write-Output 'Problems 3 and 4 are closed. Problem 5 retains its finite check. VV.problem7 has no external hypotheses and retains only the specified EL-core admission.'
+    Write-Output 'Problem 3 is formalized. Problem 4 has a partial answer. Problem 5 retains its unexecuted finite check; Problem 7 retains its EL-core admission. The full set of paper questions remains open.'
 } finally {
     $env:LEAN_PATH = $vvOriginalLeanPath
     Pop-Location

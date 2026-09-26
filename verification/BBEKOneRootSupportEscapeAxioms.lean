@@ -1,0 +1,8 @@
+import VV.BBEKOneRootSupportEscape
+#print axioms VV.BBEKOneRootSupportEscape.closed_conull_eq_univ
+#print axioms VV.BBEKOneRootSupportEscape.orbit_subset_of_supported
+#print axioms VV.BBEKOneRootSupportEscape.no_supported_of_leaf_escape
+#print axioms VV.BBEKOneRootSupportEscape.no_real_lower_top
+#print axioms VV.BBEKOneRootSupportEscape.no_padic_lower_top
+#print axioms VV.BBEKOneRootSupportEscape.no_real_upper_top
+#print axioms VV.BBEKOneRootSupportEscape.no_padic_upper_top
