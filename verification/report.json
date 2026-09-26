@@ -1,5 +1,5 @@
 {
-  "checkedUtc": "2026-09-26T19:02:38.8509826Z",
+  "checkedUtc": "2026-09-26T20:46:52.9486254Z",
   "status": "verified-with-two-specified-admissions",
   "buildPassed": true,
   "trustAuditPassed": true,
@@ -10,9 +10,9 @@
   "compilerCommit": "b02228b03f655c0cd051d82280ad5758359ec8ba",
   "mathlibCommit": "5c0c94b3f563ed756b48b9439788c53b0d56a897",
   "dependencyPackagesReused": true,
-  "auditedSourceModules": 291,
-  "auditedTheoremDeclarations": 3943,
-  "auditedDefinitions": 884,
+  "auditedSourceModules": 338,
+  "auditedTheoremDeclarations": 4467,
+  "auditedDefinitions": 947,
   "permittedAxioms": [
     "propext",
     "Classical.choice",
@@ -47,11 +47,11 @@
   "sourceHashes": [
     {
       "file": "VV.lean",
-      "sha256": "3E30E2FA47406DC9E46CB58618D0F9039271BF00FF0DC7ED88AE9A631F43B468"
+      "sha256": "54BE33FAFFAA37E39DE6F378A173062BA1565214F7F465B65102095CD56B74A8"
     },
     {
       "file": "VV\\Audit.lean",
-      "sha256": "A242C7983D7D9060A178ADAD7303642635753D12EF979180E8F176828394BD36"
+      "sha256": "D3C460814DFE61B92A45EFB26ADF40C4F2A6855A5B4146FD806FABFDBFB99809"
     },
     {
       "file": "VV\\BBEKActualKernelOverlap.lean",
@@ -60,6 +60,10 @@
     {
       "file": "VV\\BBEKAlgebraicOrbit.lean",
       "sha256": "6A673A11485A26445C1BF3D3FB1FD13CCDD72ACB79385CA1B52A63CDB2924B3A"
+    },
+    {
+      "file": "VV\\BBEKAlgebraicRootSupport.lean",
+      "sha256": "4289258144E95840C5DCD01BF75DCEE5E0EE5D86311356D2C808C071C5B9AE0D"
     },
     {
       "file": "VV\\BBEKAlgebraicTangent.lean",
@@ -90,12 +94,24 @@
       "sha256": "3AEA4730EB72B196105DA4DFC2C8A66ADCDF7FA343A41D406488C8E8B5146A7E"
     },
     {
+      "file": "VV\\BBEKCanonicalCovariance.lean",
+      "sha256": "29227702B2995663E3B8AFFB92B47DAB004F44E036FB310F66C5428A4D2DD17F"
+    },
+    {
+      "file": "VV\\BBEKCanonicalExceptional.lean",
+      "sha256": "1BD1ABA22444B53495A08F07F596548290361C55FAD7F5D2D872F182D661DE18"
+    },
+    {
       "file": "VV\\BBEKCenteredOverlap.lean",
       "sha256": "9497A35FC99FBD6200D699E7BC33B3A657EBE5979B056ADA2AC4A7F8F91CCF26"
     },
     {
       "file": "VV\\BBEKChartMeasureOverlap.lean",
       "sha256": "0EE0E0BF6EC3CBEEDD8D5333F4068E446FCA5EBE56CC6308B6351CD212B0A84B"
+    },
+    {
+      "file": "VV\\BBEKCodeMaximal.lean",
+      "sha256": "6A853389CC628C77B9569760DE1D190D1BA52854F913584883313BA614825286"
     },
     {
       "file": "VV\\BBEKCompactEntropy.lean",
@@ -116,6 +132,10 @@
     {
       "file": "VV\\BBEKConditionalInvariance.lean",
       "sha256": "437A7703509599FE81BC671AA7C1B690A31A59380A30F9591E4675D5071E9124"
+    },
+    {
+      "file": "VV\\BBEKConditionalLeafFibres.lean",
+      "sha256": "93B8ADBE18416C467FD5FC3D83CEB81BE011C18D906BD37293BD899250A54DFD"
     },
     {
       "file": "VV\\BBEKConeAverage.lean",
@@ -190,6 +210,18 @@
       "sha256": "EA6F746172863ABD5F5ACB23995DB64A42ED509873109C3B53B844F14B631C34"
     },
     {
+      "file": "VV\\BBEKExceptionalCentralizer.lean",
+      "sha256": "B4DE718E9F80D99C0E98AF6E1D88B217EB9035F4B9A49972A7C0D3EF5AAECC58"
+    },
+    {
+      "file": "VV\\BBEKExceptionalFactorOrbit.lean",
+      "sha256": "D3E566BEE8CAC0D112F6E734AB52B41E97793ACBF39782BC30BCC194FAE66C98"
+    },
+    {
+      "file": "VV\\BBEKExceptionalOrbitNull.lean",
+      "sha256": "A54E68A03A76286AD6581E0688AC9ACD2AC6C1D6C9EB510AF1C80079FA2B3542"
+    },
+    {
       "file": "VV\\BBEKExpandedPlaques.lean",
       "sha256": "6EA5A27D8B3F6194C7A119340C63689E563E26BDF7BAA7CD05D97803ABA80A5F"
     },
@@ -246,6 +278,10 @@
       "sha256": "F6C7325CAD6EDC5029E8A18CD17099C493EF03459009FBB687947B40D66B73BF"
     },
     {
+      "file": "VV\\BBEKInvariantConditionals.lean",
+      "sha256": "DED7E9857770D9BB3650B409DD47C4AF8E83016B56594BFAFB057067AC010407"
+    },
+    {
       "file": "VV\\BBEKInvariantSupport.lean",
       "sha256": "3661FCB7EE7CA2E62065FC01A1EED06A73D973D9CA20A7DAB96BA5984ECC1650"
     },
@@ -282,8 +318,60 @@
       "sha256": "812ADAE5D317D2EEDC6C990D9AC6C28AA6CF9AD65F9505C9544D60F81F52F0AF"
     },
     {
+      "file": "VV\\BBEKLeafEntropyBoundary.lean",
+      "sha256": "0BAE0871DEC07098DBAA12A5CEACD761AF680E4B9E320FFBC7602FB7F2D82A41"
+    },
+    {
+      "file": "VV\\BBEKLeafEntropyCanonicalConditionals.lean",
+      "sha256": "C0C83EAFD47277BDFC97D7B5ABB8B34D82CEAF6FCEEB5F52767776C68D2EBF0A"
+    },
+    {
+      "file": "VV\\BBEKLeafEntropyChartConditionals.lean",
+      "sha256": "F9E336EE195C464A0FE875DAFBFC94D0524B005191CF132130C83DB3B2587F0F"
+    },
+    {
+      "file": "VV\\BBEKLeafEntropyCodeConditioning.lean",
+      "sha256": "8BC92462A7B4C3B86FADB6992D62033348BC8B21D3AD81D5074EDF8FC401AA71"
+    },
+    {
       "file": "VV\\BBEKLeafEntropyDisintegration.lean",
       "sha256": "C0683D437D3965EAA036DED3262979BB8BDD1FA31B29A5EFAC163472DF8841BF"
+    },
+    {
+      "file": "VV\\BBEKLeafEntropyGlobalConditionals.lean",
+      "sha256": "0B238BA4274A94DC85223C8E8536547E75E0BF0C10B18F8B9ECDB094129F7C8B"
+    },
+    {
+      "file": "VV\\BBEKLeafEntropyGoodPartition.lean",
+      "sha256": "12E628442E523F9A48276E318DCBA69134DB0DC9755531812B73DC32D7AA6883"
+    },
+    {
+      "file": "VV\\BBEKLeafEntropyRefinement.lean",
+      "sha256": "9FBDFC8C4A6DD8735D5834EA48599CD5550B53AAB0D44036A73197F6F4519187"
+    },
+    {
+      "file": "VV\\BBEKLeafEntropySafety.lean",
+      "sha256": "6E3A554920ED77CB80BB8244A0B7283D32E4448388CCEB7E9B166958E7DDF675"
+    },
+    {
+      "file": "VV\\BBEKLeafEntropySafetyCuts.lean",
+      "sha256": "B674BB7CDABAED118E6F15116648BC099513DBCA5CA670F3DFDED4302F0547A3"
+    },
+    {
+      "file": "VV\\BBEKLeafEntropySubordinate.lean",
+      "sha256": "E2866417AF6E1CF276F4A5E80C38F8EF1674291A8EA42C2E6EC09AF29BA6DA97"
+    },
+    {
+      "file": "VV\\BBEKLeafEntropySubordinateCharts.lean",
+      "sha256": "0D1B688E7BBEADEC57494EEC8720E40AD7A553D1D4D8FD4E41D8C11E279EF718"
+    },
+    {
+      "file": "VV\\BBEKLeafEntropySubordinateTime.lean",
+      "sha256": "62AF1607BE12CB6D4497E8D8DFA16034AC2BECEF89EFBD19B3312A1883875CBD"
+    },
+    {
+      "file": "VV\\BBEKLeafFieldTransport.lean",
+      "sha256": "077C8A1AFFB4D3145179A79027CEF26AC87438961AFCBACDE22AE7BC5CDAB302"
     },
     {
       "file": "VV\\BBEKLeafMeasureTests.lean",
@@ -300,6 +388,10 @@
     {
       "file": "VV\\BBEKLeafStabilizerMeasurable.lean",
       "sha256": "2E5D0AB3E07E60BAF42AFEC7039D94BA7D059123AD732459E4579B1B3677C254"
+    },
+    {
+      "file": "VV\\BBEKLeafSupportGeneration.lean",
+      "sha256": "FF78075168179F809689757F34821DBCC126CB618ACF14B6F24E9AB5718F3B76"
     },
     {
       "file": "VV\\BBEKLeafwiseAtlas.lean",
@@ -342,12 +434,32 @@
       "sha256": "2B16EEDFA8E7F47AE37CBD76FB999500F47A50F5FBE2E95BADCA54C6B30A6D48"
     },
     {
+      "file": "VV\\BBEKLocalExceptional.lean",
+      "sha256": "785BB6479AA849BDCBC5718E6B26B6C98AFE735C3C7DDAA5D11101B4D45CC8D1"
+    },
+    {
       "file": "VV\\BBEKLocalRootFamily.lean",
       "sha256": "6EB7BC9FDF7D1CDF93CE7C4D181A0A91A9F9F4540A5DF2BBDA0D9AFA4215EC9B"
     },
     {
+      "file": "VV\\BBEKLowEntropyBackend.lean",
+      "sha256": "6CD0C013E9505837F7C8E0814317046E273DEA75EB7EDAE445FB680FD5201F90"
+    },
+    {
       "file": "VV\\BBEKLowEntropyCore.lean",
       "sha256": "ADD99332445771CC131F87F2DFC8081F62303AF74AAACE8126A439CCCC56BF2F"
+    },
+    {
+      "file": "VV\\BBEKLusin.lean",
+      "sha256": "AAAF06B0627ACFB2DC351D2A2DA1954C351954B04B5C52EFAF873B6C221E07F5"
+    },
+    {
+      "file": "VV\\BBEKLusinPairedShear.lean",
+      "sha256": "37DE0DE615F5492619151D01F8AAC44D64E047FAC0B68BC8E79679D37566C2A3"
+    },
+    {
+      "file": "VV\\BBEKLusinRootLimit.lean",
+      "sha256": "B59BDA189C635768EB64B3E0EB338A0A9048BF18404CDAD8E8D47246A6FC26F0"
     },
     {
       "file": "VV\\BBEKMahler.lean",
@@ -402,8 +514,16 @@
       "sha256": "A94BC96DFAE6D5E831310A04AC7CE35AF70BFF681E740ADEB0CFF6DC1FFBADCB"
     },
     {
+      "file": "VV\\BBEKNoncentralSequence.lean",
+      "sha256": "0D58A928A24AE21B3B47E7A74929C51B8A47AC6C93E69F3E9988BB83CA51CE29"
+    },
+    {
       "file": "VV\\BBEKNoncompact.lean",
       "sha256": "82FE292455BC9C7ECDD79AA4105B505950483DA4B642426C86008E62494BED1C"
+    },
+    {
+      "file": "VV\\BBEKNormalizedRestriction.lean",
+      "sha256": "3F57CC1CB2073849F3A2019F8206035B45EF7D2943C6B41F4D5F5BF14400AE3D"
     },
     {
       "file": "VV\\BBEKNormalizerExclusion.lean",
@@ -426,6 +546,14 @@
       "sha256": "C29B8725838C4D9B2088F9103C5E3EFC147A52E6DAC94C55396781DF6DA3808E"
     },
     {
+      "file": "VV\\BBEKOneRootDiagonalNatural.lean",
+      "sha256": "F08771943DF1761FA84915F2F70A2A784383F3D29604194867A12A35D92512A7"
+    },
+    {
+      "file": "VV\\BBEKOneRootFullSupport.lean",
+      "sha256": "1F9D1A16B6B33F68248298ACEB48A3AF900314BAAD64C03C1D8C766ABE627083"
+    },
+    {
       "file": "VV\\BBEKOneRootGeometry.lean",
       "sha256": "DF77C8F218FAF9A43A1C8157B85513FC0EB915FA8C85B9678E5C51172097183F"
     },
@@ -444,6 +572,10 @@
     {
       "file": "VV\\BBEKOneRootLocalInvariance.lean",
       "sha256": "FC910DDFF08083C12238C8D5B107FB03E9F516EBBC62C73E5501A82550DA7FA7"
+    },
+    {
+      "file": "VV\\BBEKOneRootNoAtoms.lean",
+      "sha256": "EC36B1CF9E8E6C322041E6B493CC60C592DD9EB6315D94D1810C5E264E0598A4"
     },
     {
       "file": "VV\\BBEKOneRootOverlap.lean",
@@ -470,6 +602,10 @@
       "sha256": "82CDEC1824D875F74B0BF03AE03880A85973C2F2A7272D706EBA87A000551A04"
     },
     {
+      "file": "VV\\BBEKOneRootTranslation.lean",
+      "sha256": "03F77449B0B8127C6E5E784A20AD4275312B56106B47B89CE44790573D6ECC6D"
+    },
+    {
       "file": "VV\\BBEKOneRootUpper.lean",
       "sha256": "681B21D4B75149F9F001B335903A2C9C836EA889C398C81A09D410B786890393"
     },
@@ -492,6 +628,22 @@
     {
       "file": "VV\\BBEKPadicStabilizerField.lean",
       "sha256": "90AA5E4963B9D46BE4CCD62B49050880FE3826B3AF8BF4AEBB704CC5426D70C1"
+    },
+    {
+      "file": "VV\\BBEKPairedReturnMaximal.lean",
+      "sha256": "2D7780D6740A1C158A24D4E525009AFE569EDD668861F7C5B66595B7735CE880"
+    },
+    {
+      "file": "VV\\BBEKPairedReturnTimes.lean",
+      "sha256": "F6342B449FCB8344BA18A6A50A5E3E8AA9879263BE0909F7A89C211C5A1B3DFC"
+    },
+    {
+      "file": "VV\\BBEKPairedShear.lean",
+      "sha256": "96456C0D689DFD45F48C3410FC4925EFBF163E65E0EBB1A94BCAEADCA195C925"
+    },
+    {
+      "file": "VV\\BBEKPairExceptional.lean",
+      "sha256": "038306D69DB60ADEE7380FCC6012337CFFB60A90CCF47A9FC372642183ADABF3"
     },
     {
       "file": "VV\\BBEKParameter.lean",
@@ -546,6 +698,14 @@
       "sha256": "FDFAE57E8C2B0E8DDF41D9452620C3F1940BAACA4C39AA3F37030D19ED115884"
     },
     {
+      "file": "VV\\BBEKPureRootShear.lean",
+      "sha256": "564C5933E164BE2C1D6A29DB4EDEDDBF4527EAB57336442158655E122B312F60"
+    },
+    {
+      "file": "VV\\BBEKQuadraticScale.lean",
+      "sha256": "D2471A49FF36D921FB4B6D0EA614ECE1140329B770CEB60BE73AB05EE18816CE"
+    },
+    {
       "file": "VV\\BBEKQuotient.lean",
       "sha256": "98C1106EFF2DFFA3B847D1E7F52A26A0078DD5C3FE85352E83646CDE4318207E"
     },
@@ -570,6 +730,10 @@
       "sha256": "A8AE654C125F1C82124DE0328439E73C6C72D226C9FC68BDDD8DA0347F4E41FC"
     },
     {
+      "file": "VV\\BBEKReverseMaximal.lean",
+      "sha256": "39864E571A0E04823EEA9413F0130568C75EE6B51CBC7F4B291DF7F4CFAE6FF3"
+    },
+    {
       "file": "VV\\BBEKRigidityEscape.lean",
       "sha256": "29C754A697BACB63CF77F2387AC2D70F17325E53ABC472163DD9DE19EBA569FB"
     },
@@ -580,6 +744,10 @@
     {
       "file": "VV\\BBEKRootEscape.lean",
       "sha256": "71BADF6D0B0271526C91585FE42849F49F84ED7A5E06B02CC8EA3DA93A30C66E"
+    },
+    {
+      "file": "VV\\BBEKRootFieldSeparation.lean",
+      "sha256": "44ED6B313EE07A34EED3447EFA49651188816F4AF9794D3A592094884AEF6D46"
     },
     {
       "file": "VV\\BBEKRootGrowingGlue.lean",
@@ -612,6 +780,18 @@
     {
       "file": "VV\\BBEKSelectedPlaques.lean",
       "sha256": "7271991ED1D5D4AD4D23097BB930BA072AAF9199804DD161AE3829ED8A1156FA"
+    },
+    {
+      "file": "VV\\BBEKShearFamilyNonconcentration.lean",
+      "sha256": "3C2BFDBFC315E72F3D6138B99732F47020B992A0C8986AF544A78046A40EE97D"
+    },
+    {
+      "file": "VV\\BBEKShearLimit.lean",
+      "sha256": "6B9C78203AF17A33312D0620A76FC270D0C09A5846664044595D4A0EF0A9C744"
+    },
+    {
+      "file": "VV\\BBEKShearNonconcentration.lean",
+      "sha256": "48EB7C4BA24E9A507BE3625D1A1A64E7C809CFC5618AC8ECC41359CD602EFAC0"
     },
     {
       "file": "VV\\BBEKShortVector.lean",
@@ -658,12 +838,20 @@
       "sha256": "A1C6F481746DC7A8C45B118234E5E487919167C102D7606C794B4DB45ECD7AEE"
     },
     {
+      "file": "VV\\BBEKUnifiedRootData.lean",
+      "sha256": "869BE676CD2C2FA6F9F15D066EB29BFC84ED6D1DFD642CBFBA4918E19F0D5A95"
+    },
+    {
       "file": "VV\\BBEKUniformPlaques.lean",
       "sha256": "C2BEF17C3CE15E419DAAFF1D3273D78E90C8267B460B6768E7474A55760721FF"
     },
     {
       "file": "VV\\BBEKUpperRootSubgroups.lean",
       "sha256": "EDF05E61DD88A7F42704B23FBA35B3B9BB99A0F82615BFBDCFEA0003F157A3F1"
+    },
+    {
+      "file": "VV\\BBEKUpperRootTranslation.lean",
+      "sha256": "633518CE902DB7B6E6B1DB6E152D359F18B62E3CEF7D23DFC42220E80AD3625E"
     },
     {
       "file": "VV\\BBEKVariational.lean",
@@ -1223,7 +1411,7 @@
     },
     {
       "file": "Check-VV.ps1",
-      "sha256": "EA640371923EEC31557AF95481FC396B9F8FA9C73B446ECA3A4A908D1B201B2E"
+      "sha256": "B3B9048B671E52D8847B1284736B4777CBFFDCA54E1563564F1A6C42D7A6B517"
     },
     {
       "file": "VV\\Entropy\\LICENSE",

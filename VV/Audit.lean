@@ -382,3 +382,41 @@ run_cmd do
       unless allowed.contains a do
         throwError "EL increment theorem {name} depends on forbidden axiom {a}"
   logInfo m!"UNCONDITIONAL EL INCREMENT ENDPOINTS: {endpoints.size}; no proof abstractions; {rawState.axioms}"
+
+-- Every theorem in this attempt is audited with NO admission abstraction.
+open Lean in
+run_cmd do
+  let env ← getEnv
+  let modules : Array Name := #[`VV.BBEKCanonicalCovariance, `VV.BBEKExceptionalFactorOrbit, `VV.BBEKLeafEntropyBoundary, `VV.BBEKLeafSupportGeneration, `VV.BBEKLusin, `VV.BBEKNormalizedRestriction, `VV.BBEKOneRootTranslation, `VV.BBEKPairedReturnMaximal, `VV.BBEKExceptionalCentralizer, `VV.BBEKLeafEntropyGoodPartition, `VV.BBEKLeafEntropySafety, `VV.BBEKLeafFieldTransport, `VV.BBEKOneRootDiagonalNatural, `VV.BBEKOneRootFullSupport, `VV.BBEKPairedReturnTimes, `VV.BBEKAlgebraicRootSupport, `VV.BBEKExceptionalOrbitNull, `VV.BBEKInvariantConditionals, `VV.BBEKLeafEntropySafetyCuts, `VV.BBEKOneRootNoAtoms, `VV.BBEKQuadraticScale, `VV.BBEKUpperRootTranslation, `VV.BBEKCanonicalExceptional, `VV.BBEKConditionalLeafFibres, `VV.BBEKLeafEntropySubordinate, `VV.BBEKRootFieldSeparation, `VV.BBEKShearNonconcentration, `VV.BBEKUnifiedRootData, `VV.BBEKLeafEntropySubordinateTime, `VV.BBEKLusinRootLimit, `VV.BBEKPairExceptional, `VV.BBEKReverseMaximal, `VV.BBEKShearFamilyNonconcentration, `VV.BBEKCodeMaximal, `VV.BBEKLeafEntropySubordinateCharts, `VV.BBEKLocalExceptional, `VV.BBEKShearLimit, `VV.BBEKLeafEntropyRefinement, `VV.BBEKLowEntropyBackend, `VV.BBEKPairedShear, `VV.BBEKPureRootShear, `VV.BBEKLeafEntropyChartConditionals, `VV.BBEKLusinPairedShear, `VV.BBEKNoncentralSequence, `VV.BBEKLeafEntropyCodeConditioning, `VV.BBEKLeafEntropyGlobalConditionals, `VV.BBEKLeafEntropyCanonicalConditionals]
+  let allowed : Array Name := #[`propext, `Classical.choice, `Quot.sound]
+  let mut rawState : CollectAxioms.State := {}
+  let mut count := 0
+  for (name, info) in env.constants.toList do
+    let inModule := match env.getModuleIdxFor? name with
+      | some idx => modules.contains env.header.moduleNames[idx.toNat]!
+      | none => false
+    if inModule then
+      match info with
+      | .thmInfo _ =>
+        let (_, nextState) := ((CollectAxioms.collect name).run env).run rawState
+        rawState := nextState
+        for a in rawState.axioms do
+          unless allowed.contains a do
+            throwError "EL second-attempt theorem {name} depends on forbidden axiom {a}"
+        count := count + 1
+      | _ => pure ()
+  if count = 0 then throwError "No second-attempt theorem found"
+  logInfo m!"UNABSTRACTED EL SECOND-ATTEMPT THEOREMS: {count}; {rawState.axioms}"
+
+#check VV.BBEKOneRootTranslation.canonical_translation_on_conull_set
+#print axioms VV.BBEKOneRootTranslation.canonical_translation_on_conull_set
+#check VV.BBEKCodeMaximal.tail_code_condDistrib_maximal
+#print axioms VV.BBEKCodeMaximal.tail_code_condDistrib_maximal
+#check VV.BBEKPureRootShear.real_paired_shear_relation
+#print axioms VV.BBEKPureRootShear.real_paired_shear_relation
+#check VV.BBEKPureRootShear.padic_paired_shear_relation
+#print axioms VV.BBEKPureRootShear.padic_paired_shear_relation
+#check VV.bbekTheorem42
+#print axioms VV.bbekTheorem42
+#check VV.problem7
+#print axioms VV.problem7

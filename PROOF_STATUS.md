@@ -41,7 +41,7 @@ The conditional real-number proof connects actual continued-fraction transformat
 
 Its conclusion `RootAlternative μ` is invariance under one nonzero element of a real lower, real upper, 2-adic lower or 2-adic upper root group. The admission covers the leafwise entropy bridge, low-entropy shearing and exceptional-branch elimination. The current canonical leaf-measure results do not complete that argument. In particular, local proportionality with finite conditional probabilities does not allow replacing them by globally translation-invariant probabilities.
 
-For the compact-support route, the 2026-09-27 increment proves measurability of open-hit events `{q | ∃ u ∈ translationStabilizer (η q), u ∈ O}` for the actual Radon leaf family and supplies the exact contraction and normalization hypotheses. The four constructed canonical root families now have almost-everywhere trivial exact and projective stabilizers. This specialized support-escape argument avoids ambient reconstruction and ergodic promotion. The positive KS-to-root entropy bridge, paired-return/non-transience theorem and exceptional-centralizer-to-rational-closed-orbit passage remain unproved.
+For the compact-support route, the 2026-09-27 increment proves measurability of open-hit events `{q | ∃ u ∈ translationStabilizer (η q), u ∈ O}` for the actual Radon leaf family and supplies the exact contraction and normalization hypotheses. The four constructed canonical root families now have almost-everywhere trivial exact and projective stabilizers. This specialized support-escape argument avoids ambient reconstruction and ergodic promotion. The second attempt adds genuine paired-return estimates and bypasses the general exceptional-centralizer-to-rational-closed-orbit passage by proving a specialized orbit-null theorem. Positive KS-to-root entropy and the full canonical-measure shearing application remain unproved; see the latest status below.
 
 The project separately proves generation of the full corresponding root group, all four Mahler escape cases, the compact-support contradiction, entropy production and averaging, the reductive-orbit exclusion at the application point, Proposition 5.1, and the box-dimension and Hausdorff-dimension reductions.
 
@@ -71,17 +71,21 @@ The toolchain is `leanprover/lean4:v4.20.1`, whose [official release](https://gi
 - Prove the stated EL root-invariance core, including the entropy and shearing bridges.
 - Independently reproduce the build and review correspondence between formal and informal mathematics.
 
+## EL second attempt, 2026-09-27
 
-## EL increment, 2026-09-27
+**The EL core remains admitted; Problem 7 is not sorry-free.** This attempt
+proves stronger covariance of the actual canonical leaf measures, paired
+returns and quantitative shearing, compact continuity/limit comparisons,
+and a direct exceptional-orbit exclusion for this arithmetic quotient.
+It also constructs subordinate past codes and advances their actual
+conditional-measure and maximal-inequality connections. Every theorem
+added in this attempt is recursively audited without abstracting either
+admission.
 
-The latest increment proves actual leaf-stabilizer hit measurability,
-radius-preserving contraction dichotomies, almost-everywhere root escape,
-and trivial exact/projective stabilizers for the four constructed canonical
-root families on a Mahler compact. It also identifies transverse conditional
-entropy with the actual chart kernels. See
-[the detailed progress and remaining gaps](verification/EL-progress-20260927.md).
-
-**EL is still incomplete; the two named admissions remain.** Positive KS
-entropy has not yet been connected to the needed root entropy, and the
-low-entropy paired-return and exceptional-orbit arguments are not proved.
+The positive KS-to-one-root entropy bridge and the complete application of
+leafwise return estimates to the same canonical families remain unfinished.
+The former requirement to formalize a general rational closed-orbit passage
+is bypassed by the new specialized exceptional-orbit argument; that argument
+alone does not produce the full low-entropy alternative. See
+[the exact completed interfaces and remaining gaps](verification/EL-second-attempt-20260927.md).
 The finite-computation trial scheduled after EL completion was not started.

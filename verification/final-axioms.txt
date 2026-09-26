@@ -93,7 +93,14 @@ Allowed proof admissions: VV.P5FiniteCheck.rank_check_10_14; VV.BBEKLowEntropyCo
 'VV.BBEKCompactLeafStabilizers.exists_real_upper_trivial_stabilizer_data' depends on axioms: [propext, Classical.choice, Quot.sound]
 'VV.BBEKCompactLeafStabilizers.exists_padic_lower_trivial_stabilizer_data' depends on axioms: [propext, Classical.choice, Quot.sound]
 'VV.BBEKCompactLeafStabilizers.exists_padic_upper_trivial_stabilizer_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+'VV.BBEKOneRootTranslation.canonical_translation_on_conull_set' depends on axioms: [propext, Classical.choice, Quot.sound]
+'VV.BBEKCodeMaximal.tail_code_condDistrib_maximal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'VV.BBEKPureRootShear.real_paired_shear_relation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'VV.BBEKPureRootShear.padic_paired_shear_relation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'VV.bbekTheorem42' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'VV.problem7' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
 THEORY AXIOMS AFTER THE TWO EXACT PROOF ABSTRACTIONS: [propext, Quot.sound, Classical.choice]
-PASS: 3943 theorem declarations and 884 definitions audited.
+PASS: 4467 theorem declarations and 947 definitions audited.
 UNCONDITIONAL CHECKPOINT ENDPOINTS: 39; no proof abstractions; [propext, Quot.sound, Classical.choice]
 UNCONDITIONAL EL INCREMENT ENDPOINTS: 33; no proof abstractions; [propext, Quot.sound, Classical.choice]
+UNABSTRACTED EL SECOND-ATTEMPT THEOREMS: 524; [propext, Quot.sound, Classical.choice]

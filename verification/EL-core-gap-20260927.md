@@ -1,3 +1,5 @@
+> Historical review, superseded in part by [the second attempt](EL-second-attempt-20260927.md). The general rational closed-orbit passage discussed below is now bypassed for this quotient; the entropy and full low-entropy application remain incomplete.
+
 # EL core gap and leaf-stabilizer escape review — 2026-09-27
 
 This is an independent source review, not a completion of the low-entropy theorem. No Lean source or admitted proof was changed for this review.

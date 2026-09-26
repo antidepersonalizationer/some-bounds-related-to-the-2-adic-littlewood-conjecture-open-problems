@@ -77,17 +77,21 @@ The BBEK input is [Badziahin–Bugeaud–Einsiedler–Kleinbock, Theorem 4.2 and
 
 Imported and adapted entropy sources retain their Apache-2.0 license and attribution. **No project-wide license has been specified for original contributions.** See [THIRD_PARTY.md](THIRD_PARTY.md). AI-assisted development and review limits are disclosed in [AI_DISCLOSURE.md](AI_DISCLOSURE.md).
 
+## EL second attempt, 2026-09-27
 
-## EL increment, 2026-09-27
+**The EL core remains admitted; Problem 7 is not sorry-free.** This attempt
+proves stronger covariance of the actual canonical leaf measures, paired
+returns and quantitative shearing, compact continuity/limit comparisons,
+and a direct exceptional-orbit exclusion for this arithmetic quotient.
+It also constructs subordinate past codes and advances their actual
+conditional-measure and maximal-inequality connections. Every theorem
+added in this attempt is recursively audited without abstracting either
+admission.
 
-The latest increment proves actual leaf-stabilizer hit measurability,
-radius-preserving contraction dichotomies, almost-everywhere root escape,
-and trivial exact/projective stabilizers for the four constructed canonical
-root families on a Mahler compact. It also identifies transverse conditional
-entropy with the actual chart kernels. See
-[the detailed progress and remaining gaps](verification/EL-progress-20260927.md).
-
-**EL is still incomplete; the two named admissions remain.** Positive KS
-entropy has not yet been connected to the needed root entropy, and the
-low-entropy paired-return and exceptional-orbit arguments are not proved.
+The positive KS-to-one-root entropy bridge and the complete application of
+leafwise return estimates to the same canonical families remain unfinished.
+The former requirement to formalize a general rational closed-orbit passage
+is bypassed by the new specialized exceptional-orbit argument; that argument
+alone does not produce the full low-entropy alternative. See
+[the exact completed interfaces and remaining gaps](verification/EL-second-attempt-20260927.md).
 The finite-computation trial scheduled after EL completion was not started.
