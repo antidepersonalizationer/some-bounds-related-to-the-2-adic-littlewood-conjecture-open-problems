@@ -1,97 +1,59 @@
 # Some Bounds Related to the 2-adic Littlewood Conjecture — Open Problems
 
-A Lean research project addressing the open problems in [Dinis Vitorino and Ingrid Vukusic, *Some Bounds Related to the 2-adic Littlewood Conjecture*, Section 8](https://arxiv.org/html/2506.04110v2#S8). The goal is a complete answer to all of the paper's open problems. **This research checkpoint does not achieve that goal.** The current results concern Problems 3, 4, 5 and 7, using actual real continued fractions and their tail-equivalence classes.
+A Lean research project addressing the open problems in Dinis Vitorino and Ingrid Vukusic, [*Some Bounds Related to the 2-adic Littlewood Conjecture*, Section 8](https://arxiv.org/html/2506.04110v2#S8).
+The aim is to answer all the open problems. **This checkpoint does not achieve that aim.** Problems 1, 2 and 6 are not solved; Problem 4 is partial; the bound 11 in Problem 5 and the dimension-zero conclusion in Problem 7 remain conditional on explicitly admitted inputs.
 
-**Problems 1, 2 and 6 are not solved here. Problem 4 remains partial. The bound 11 for Problem 5 and the dimension-zero result for Problem 7 still depend on two explicitly identified admissions.** The new small Problem 5 certificate is fully checked, but does not verify the larger bound 11 calculation.
+[中文说明](README.zh.md) · [Proof status](PROOF_STATUS.md) · [Module inventory](docs/MODULES.md) · [AI disclosure](AI_DISCLOSURE.md) · [Licensing](THIRD_PARTY.md)
 
-[中文说明](README.zh.md) · [Proof status](PROOF_STATUS.md) · [AI disclosure](AI_DISCLOSURE.md) · [Third-party sources](THIRD_PARTY.md)
+## Results
 
-## Results and boundaries
-
-| Problem | Formalized result | Entry point and remaining obligation |
+| Problem | Result in this project | Status / entry point |
 |---|---|---|
-| 1, 2, 6 | No solution supplied. | Open work for this project. |
-| 3 | A tail class has a representative satisfying `x ~ x/2 ~ (x+1)/2` exactly when it has a primitive quadratic equation whose discriminant `D` satisfies `t² − Dv² = ±8` for odd integers `t,v`. Quadraticity and Serret's theorem are proved internally. | `VV.problem3_classification`; no admission. |
-| 4 | Successful classes of least eventual period `ℓ` are finite, with count at most `3 * ℓ * 4^ℓ`. Periods 0, 1 and 2 are empty. Periods 3 and 4 each have exactly one class, with `B = 3` and `B = 5` respectively. A finite common eventual digit alphabet exists for every `ℓ`. | `VV.Problem4.problem4_all_periods`, `card_class_three`, `card_class_four`, `period_three_iff`, `period_four_iff`, `exists_uniform_eventual_bound`; no admission. A general exact counting formula and an explicit general numerical digit bound remain open here. |
-| 5, checked small instance | For every irrational `x`, one of `x`, `2x`, `4x` has partial quotients at least 3 infinitely often. | `VV.P5SmallCertificate.frequently_three_within_two`; no admission. This validates the certificate method and does not improve the paper's bound 5. |
-| 5, stronger conditional result | For every irrational `x`, some fixed `k ≥ 0` has infinitely many partial quotients of `2^k x` at least 11. | `VV.P5FiniteCheck.problem5_bound_eleven`; still depends on the large finite-check admission. |
-| 7 | The exceptional set `VV.BExceptional` has Hausdorff dimension zero. | `VV.problem7`; no external parameter, but depends on the EL-core admission. |
+| 3 | Tail-class classification by a primitive quadratic discriminant and an odd-integer equation `t² − Dv² = ±8`. | Proved: `VV.problem3_classification`. |
+| 4 | Finiteness for each least eventual period; at most `3 * ℓ * 4^ℓ` classes. Periods 0, 1, 2 are empty; periods 3 and 4 each have one class. A finite common eventual digit alphabet exists for each period. | Proved: `VV.Problem4.problem4_all_periods`, `card_class_three`, `card_class_four`, `exists_uniform_eventual_bound`. General exact counts and an explicit numerical digit bound remain open here. |
+| 5, small certificate | One of `x`, `2x`, `4x` has partial quotients at least 3 infinitely often, for each irrational `x`. | Proved: `VV.P5SmallCertificate.frequently_three_within_two`. Does not improve the paper's bound 5. |
+| 5, bound 11 | Some fixed power-of-two multiple of each irrational has partial quotients at least 11 infinitely often. | Conditional: `VV.P5FiniteCheck.problem5_bound_eleven`. The large finite check is unverified. |
+| 7 | The exceptional set `VV.BExceptional` has Hausdorff dimension zero. | Conditional: `VV.problem7`. The compact entropy exclusion below is unproved. |
 
-The discriminant in Problem 3 belongs to a primitive integer quadratic equation; it must not be silently replaced by a number field's fundamental discriminant. For a fixed representative, the criterion additionally requires an odd leading coefficient.
+The discriminant in Problem 3 is that of a primitive integer quadratic equation; it is not silently replaced by a number field's fundamental discriminant. Periods 3 and 4 have representatives `(3 + √17)/2` and `(5 + √33)/2`, respectively. The finite alphabet in the general Problem 4 result is noncomputable; no general evaluated maximum is supplied.
 
-The new Problem 4 alphabet has at most `3 * ℓ² * 4^ℓ` elements. Its maximum is defined noncomputably from a proved finite set; this is not an evaluated formula for the largest digit. The new Problem 5 graph simulation, pruning and sparse certificate lemmas are proved for their stated finite hypotheses. No concrete compression of the bound-10, depth-14 graph is supplied.
+## Shortened Problem 7 route
 
-The certificate framework includes both a positive small instance and a negative one: the original zero-depth bound-3 graph fails its rank check, witnessed by eight kernel-checked transitions. Certified transient pruning can now discharge the original check through `VV.P5PrunedCertificate.window_check_of_sparse_pruned_compression`; the large input data remain to be found and verified.
+Failure of zero upper box dimension gives a full-diagonal invariant, ergodic probability measure with positive designated entropy and mass one on a positive Mahler compact `K δ`. The remaining theoretical input says this is impossible. The project then proves zero upper box dimension and performs the BBEK/continued-fraction reductions to Problem 7.
 
-The unique period-3 class is represented by `(3 + √17)/2`, with periodic word `[3,1,1]`. The unique period-4 class is represented by `(5 + √33)/2`, with word `[5,2,1,2]`. The corresponding common eventual alphabets are exactly `{1,3}` and `{1,2,5}`. `VV/P4PeriodFourClassification.lean` assembles the period-4 proof from 48 symbolic parity/size branches covering unbounded integer digits; it is not an enumeration up to a numerical digit cutoff.
-
-## Exactly two admitted declarations
-
-1. `VV.P5FiniteCheck.rank_check_10_14`, in [VV/P5FiniteCheck.lean](VV/P5FiniteCheck.lean):
-
-   ```lean
-   (VV.P5Window.windowGraph 10 14).checkEventuallyDeterministic = true
-   ```
-
-   This precise assertion has **not been executed or independently verified**. The raw graph has `10 * 2400 ^ 4782969` vertices, proved symbolically without evaluating the power. Its original numbering uses a noncomputable finite equivalence, and its Boolean definition decides existence of an entire rank assignment. Finiteness alone does not make this an efficient executable calculation. The new certificate interfaces connect supplied finite data back to the original graph; the required large certificate is still missing.
-
-2. `VV.BBEKLowEntropyCore.rootAlternative_of_positive_entropy`, in [VV/BBEKLowEntropyCore.lean](VV/BBEKLowEntropyCore.lean): positive entropy, full split-diagonal invariance and ergodicity, and the stated reductive-orbit exclusion imply invariance under one nonzero real or 2-adic root element. The unformalized input covers the leafwise entropy argument, low-entropy shearing and exceptional-branch elimination. It is a theoretical admission.
-
-Canonical one-root families now have proved atomic/Dirac alternatives, equality of projective and exact leaf translation stabilizers, and local conditional-measure invariance on overlapping chart domains. `BBEKOneRootSupport.lean` also transfers full ambient measure on a measurable set to almost-everywhere support of each of the four actual root families on the corresponding root-orbit preimage. These are preparatory lemmas, not a proof of the EL core. In particular, local leaf invariance has not been silently identified with global ambient measure invariance.
-
-`BBEKOneRootSupportEscape.lean` completes a further conditional route: a canonical root family whose leaf translation stabilizers are the whole root group contradicts full-diagonal invariance and support in a positive Mahler compact set. All four branches are proved, without assuming ambient root invariance. Obtaining that leaf symmetry from the entropy hypotheses is still missing.
-
-Root-group generation, all four root-escape branches, the entropy/box-dimension reductions and final assembly are outside the EL admission. [VV/BBEKFinal.lean](VV/BBEKFinal.lean) constructs:
-
-```lean
-VV.bbekTheorem42 : VV.P7BoxCover.BBEKTheorem42
-VV.problem7 : VV.Problem7.Statement
+```text
+nonzero trapped box dimension
+    → compactly supported full-diagonal positive-entropy ergodic probability [proved]
+    → contradiction [ADMITTED compact entropy exclusion]
+    → trapped zero box dimension → BBEK Theorem 4.2 → Problem 7 [proved reductions]
 ```
 
-The raw axiom list for `VV.problem7` is `[propext, sorryAx, Classical.choice, Quot.sound]`. [VV/Audit.lean](VV/Audit.lean) validates the exact types of the two admissions and abstracts only their proof bodies. Every other project declaration is checked transitively against `propext`, `Classical.choice` and `Quot.sound`. A successful audit does not prove either admitted statement.
+Exactly two proof bodies are admitted:
+
+1. `VV.P5FiniteCheck.rank_check_10_14`, in [VV/P5FiniteCheck.lean](VV/P5FiniteCheck.lean).
+2. `VV.BBEKCompactEntropyCore.no_positive_entropy_supported_K`, in [VV/BBEKCompactEntropyCore.lean](VV/BBEKCompactEntropyCore.lean).
+
+The second is a **changed admission boundary, not a newly proved theorem**. It replaces the previous, more general root-alternative admission in this application. The large finite check has not been executed. See [exact signatures and limitations](PROOF_STATUS.md).
+
+The parameter-free entries `VV.bbekTheorem42` and `VV.problem7` are constructed internally in [VV/BBEKFinal.lean](VV/BBEKFinal.lean). Their raw axiom lists still include `sorryAx`.
+
+## Separated theory development
+
+The [S-arithmetic dynamics foundations repository](https://github.com/antidepersonalizationer/s-arithmetic-dynamics-lean) preserves 180 source modules outside the shortened application's import closure, plus their dependencies. It organizes entropy, leafwise measures, shearing, arithmetic dynamics and algebraic-orbit work. Its proved entry point has no admitted proofs; its optional EL research target has one.
+
+Removal from this application is not evidence that a lemma is mathematically useless or unnecessary for a future proof of the compact entropy exclusion. In particular, canonical leafwise-measure and return-estimate tools may still be needed. This split does not claim a formalization of the entire EL or Ratner–Tomanov theory. [Split method and provenance](docs/SPLIT.md).
 
 ## Build and audit
-
-The pinned toolchain is `leanprover/lean4:v4.20.1`, whose [official release](https://github.com/leanprover/lean4/releases/tag/v4.20.1) uses compiler commit `b02228b03f655c0cd051d82280ad5758359ec8ba`. Its release assets are named `lean-4.20.0-*`, and the compiler identifies itself as **Lean 4.20.0**. This is the official tag/version discrepancy. Mathlib is pinned to `5c0c94b3f563ed756b48b9439788c53b0d56a897`, with transitive dependencies in `lake-manifest.json`.
-
-With the matching compiler and dependencies available, run from the repository root:
 
 ```sh
 lake build
 lake env lean VV/Audit.lean
 ```
 
-On Windows with PowerShell 7, the reporting wrapper also checks compiler identity, import coverage of every project Lean source, and the allowed admissions:
+With PowerShell 7, `./Check-Project.ps1` runs the build, checks complete import coverage, verifies the exact admitted signatures and recursively audits project declarations. `./Check-VV.ps1` is an equivalent compatibility entry point. Optional `-DependencyPackages PATH` reuses clean dependency checkouts after checking their locked revisions.
 
-```powershell
-./Check-VV.ps1
-```
+The toolchain label is `leanprover/lean4:v4.20.1`; the compiler reports Lean 4.20.0 and commit `b02228b03f655c0cd051d82280ad5758359ec8ba`. Mathlib is pinned to `5c0c94b3f563ed756b48b9439788c53b0d56a897`. See [BUILD.md](BUILD.md) for the version-label discrepancy and setup.
 
-An existing dependency checkout can be supplied using `-DependencyPackages`; the wrapper verifies its locked revisions and tracked-file cleanliness. Ordinary builds do not execute the large Problem 5 check. The small certificate uses ordinary kernel-checked `decide`, not `native_decide`.
+The published [verification report](verification/report.json) and [axiom output](verification/final-axioms.txt) report local builds using pinned caches. They are not an empty-cache clean-clone test or independent mathematical review. No compiled caches are published. An audit pass does not discharge an admission.
 
-This checkpoint includes a fresh local project build and recursive audit, using pinned dependency caches. The counts, time and source hashes are in [verification/report.json](verification/report.json), with actual axiom output in [verification/final-axioms.txt](verification/final-axioms.txt). This is not an empty-cache clean-clone build, a cross-platform test or independent mathematical review. Public file hashes are recorded separately in [verification/publication-manifest.json](verification/publication-manifest.json).
-
-## Sources and reuse
-
-The BBEK input is [Badziahin–Bugeaud–Einsiedler–Kleinbock, Theorem 4.2 and Section 5](https://arxiv.org/html/1405.5545v2), specialized to `p = 2`. The project does not claim a complete formalization of Einsiedler–Lindenstrauss or Ratner–Tomanov.
-
-Imported and adapted entropy sources retain their Apache-2.0 license and attribution. **No project-wide license has been specified for original contributions.** See [THIRD_PARTY.md](THIRD_PARTY.md). AI-assisted development and review limits are disclosed in [AI_DISCLOSURE.md](AI_DISCLOSURE.md).
-
-## EL second attempt, 2026-09-27
-
-**The EL core remains admitted; Problem 7 is not sorry-free.** This attempt
-proves stronger covariance of the actual canonical leaf measures, paired
-returns and quantitative shearing, compact continuity/limit comparisons,
-and a direct exceptional-orbit exclusion for this arithmetic quotient.
-It also constructs subordinate past codes and advances their actual
-conditional-measure and maximal-inequality connections. Every theorem
-added in this attempt is recursively audited without abstracting either
-admission.
-
-The positive KS-to-one-root entropy bridge and the complete application of
-leafwise return estimates to the same canonical families remain unfinished.
-The former requirement to formalize a general rational closed-orbit passage
-is bypassed by the new specialized exceptional-orbit argument; that argument
-alone does not produce the full low-entropy alternative. See
-[the exact completed interfaces and remaining gaps](verification/EL-second-attempt-20260927.md).
-The finite-computation trial scheduled after EL completion was not started.
+Adapted third-party sources retain their licenses. No project-wide license has been specified for original contributions. See [THIRD_PARTY.md](THIRD_PARTY.md).

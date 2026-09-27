@@ -48,3 +48,7 @@ ConditionalEntropy.lean, KSEntropyFuture.lean and
 ConditionalEntropyNontrivial.lean are newly written for this project.
 FutureKernelSupport.lean and SmallPositivePartition.lean are also newly
 written for this project, not copied upstream.
+
+2026-09-27 repository split: the preceding notice records the original
+combined project history; only files actually present in this repository are
+included. No third-party file was relicensed. See docs/MODULES.md.

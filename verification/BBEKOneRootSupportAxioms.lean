@@ -1,8 +1,0 @@
-import VV.BBEKOneRootSupport
-#print axioms VV.BBEKOneRootSupport.local_supported
-#print axioms VV.BBEKOneRootSupport.canonical_supported
-#print axioms VV.BBEKOneRootSupport.canonical_real_lower_supported
-#print axioms VV.BBEKOneRootSupport.canonical_padic_lower_supported
-#print axioms VV.BBEKOneRootSupport.upper_support_transport
-#print axioms VV.BBEKOneRootSupport.canonical_real_upper_supported
-#print axioms VV.BBEKOneRootSupport.canonical_padic_upper_supported

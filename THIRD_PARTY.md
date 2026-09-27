@@ -13,7 +13,7 @@ Selected modules under `VV/Entropy/` are adapted from Marcel Morgenstern's [lean
 
 The original upstream environment used Lean 4.30.0-rc2 and mathlib commit `34f7a6cd150fd7a166958d989d5abab56e9e3d15`; its compiled binaries are not part of this project. The existence of adapted files in this directory does not imply that every local entropy module came from upstream. The notice identifies imported modules and locally written additions.
 
-`KSEntropyInverse.lean` is a local extension written for this project on top of the vendored entropy API. There is no corresponding module at upstream commit `040fec2e0ddf4fcba49af9f76c866d295308dd7f`. The inverse-transformation proof uses definitions and lemmas from upstream `KSEntropy.lean` and `KSEntropySystem.lean`, together with their finite-partition and subadditive-limit dependencies. Its pre-existing Marcel Morgenstern / Apache-2.0 header has been retained as an attribution notice for that upstream foundation; it must not be read as attributing the locally added inverse proof to the upstream author or implying upstream review.
+The local extension `KSEntropyInverse.lean` is now preserved in the companion theory repository, not this shortened application. The retained NOTICE records historical attribution; its file list must be read together with the current module catalogue.
 
 ## Compact probability measures
 

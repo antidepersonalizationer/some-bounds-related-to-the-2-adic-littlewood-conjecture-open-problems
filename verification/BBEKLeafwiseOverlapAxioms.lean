@@ -1,3 +1,0 @@
-import VV.BBEKLeafwiseOverlap
-#print axioms VV.BBEKLeafwiseOverlap.condKernel_transition
-#print axioms VV.BBEKLeafwiseOverlap.quotient_map_transition

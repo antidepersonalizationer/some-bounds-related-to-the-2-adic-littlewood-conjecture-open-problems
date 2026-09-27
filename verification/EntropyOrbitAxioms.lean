@@ -1,7 +1,0 @@
-import VV.Entropy.OrbitAverage
-#print axioms ErgodicTheory.Entropy.isCompact_setOf_finiteMeasure_le_of_compactSpace
-#print axioms ErgodicTheory.Entropy.probability_exists_tendsto_subseq
-#print axioms ErgodicTheory.Entropy.orbitAverage_apply
-#print axioms ErgodicTheory.Entropy.integral_orbitAverage_sub
-#print axioms ErgodicTheory.Entropy.orbitAverage_limit_measurePreserving
-#print axioms ErgodicTheory.Entropy.exists_invariant_orbitAverage_subseq

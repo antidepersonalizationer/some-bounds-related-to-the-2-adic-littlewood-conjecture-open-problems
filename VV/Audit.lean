@@ -2,421 +2,113 @@ import VV
 import Lean.Util.CollectAxioms
 import Lean.DeclarationRange
 
-/-!
-Audit every imported project declaration, including private declarations.
-Exactly two named theorem proofs may be abstracted:
-
-* `VV.P5FiniteCheck.rank_check_10_14`: the unexecuted finite Boolean check;
-* `VV.BBEKLowEntropyCore.rootAlternative_of_positive_entropy`: the explicitly
-  unfinished theoretical EL low-entropy input.
-
-Both signatures are checked against fixed expressions. Their type dependencies
-are recursively audited WITHOUT either abstraction, so a `sorry` in a type,
-instance, or definition used by either signature is rejected. Only after this
-check are the two proof declarations excluded from the recursive theory audit.
-All remaining mathematical dependencies must use only `propext`,
-`Classical.choice`, and `Quot.sound`. Every project source `axiom` or `opaque`
-is rejected, even if it is unused. This audit proves neither admitted statement.
-
-Lean compiler-stage implementation declarations (`_cstage`, `_spec_`, `_elambda`)
-are not mathematical definitions: code generation erases proofs using
-`lcProof`. The old compiler also exports unsafe `axiomInfo` implementation
-placeholders. Only unsafe definitions or axiom placeholders with these compiler
-names AND no source declaration range are skipped as audit roots; source
-axioms and every opaque declaration are rejected. `Check-VV.ps1` separately
-rejects source-level axiom/opaque commands. All mathematical dependencies,
-including dependencies on any implementation copy, are still audited;
-neither these placeholders nor `lcProof` are allowed mathematical axioms.
--/
+/-! All imported project declarations are audited, including private ones.
+Only the listed proof bodies may be abstracted. Their types are checked first
+without any admission abstraction. No user axiom or opaque interface is allowed.
+Unsafe, sourceless compiler implementation copies are excluded only as roots.
+A passed audit is not a proof of any admitted statement. -/
 open Lean in
 run_cmd do
   let env ← getEnv
   let allowed : Array Name := #[`propext, `Classical.choice, `Quot.sound]
-  let finiteCheck := `VV.P5FiniteCheck.rank_check_10_14
-  let lowEntropyCore := `VV.BBEKLowEntropyCore.rootAlternative_of_positive_entropy
-  let admissions := #[finiteCheck, lowEntropyCore]
-  let finiteInfo ← getConstInfo finiteCheck
-  let coreInfo ← getConstInfo lowEntropyCore
-  for name in admissions do
-    match ← getConstInfo name with
+  let admissions : Array Name := #[`VV.P5FiniteCheck.rank_check_10_14, `VV.BBEKCompactEntropyCore.no_positive_entropy_supported_K]
+  do
+    let info ← getConstInfo `VV.P5FiniteCheck.rank_check_10_14
+    match info with
     | .thmInfo _ => pure ()
-    | _ => throwError "Allowed proof declaration is not a theorem: {name}"
-  Lean.Elab.Command.liftTermElabM do
-    let finiteExpected ← Lean.Elab.Term.elabTerm
-      (← `((VV.P5Window.windowGraph 10 14).checkEventuallyDeterministic = true)) none
-    unless ← Lean.Meta.isDefEq finiteInfo.type finiteExpected do
-      throwError "Admitted finite check has an unexpected type."
-    let coreExpected ← Lean.Elab.Term.elabTerm
-      (← `(∀ (μ : MeasureTheory.Measure VV.BBEKQuotient.X)
-          [MeasureTheory.IsProbabilityMeasure μ]
-          [MeasureTheory.SMulInvariantMeasure VV.BBEKDiagonal.A VV.BBEKQuotient.X μ]
-          [ErgodicSMul VV.BBEKDiagonal.A VV.BBEKQuotient.X μ]
-          (hμT : MeasureTheory.MeasurePreserving
-            (VV.BBEKEntropyExpansion.timeMap VV.BBEKDynamics.time0) μ μ),
-          0 < ErgodicTheory.Entropy.ksEntropy hμT →
-          VV.BBEKPositiveExclusion.NoProperReductiveClosedOrbit μ →
-          VV.BBEKLowEntropyCore.RootAlternative μ)) none
-    unless ← Lean.Meta.isDefEq coreInfo.type coreExpected do
-      throwError "Admitted low-entropy core has an unexpected type."
-    for expected in #[finiteExpected, coreExpected] do
+    | _ => throwError "Admitted proof is not a theorem: VV.P5FiniteCheck.rank_check_10_14"
+    Lean.Elab.Command.liftTermElabM do
+      let expected ← Lean.Elab.Term.elabTerm (← `(((VV.P5Window.windowGraph 10 14).checkEventuallyDeterministic = true))) none
+      unless ← Lean.Meta.isDefEq info.type expected do
+        throwError "Unexpected admitted signature: VV.P5FiniteCheck.rank_check_10_14"
       let expected ← Lean.instantiateMVars expected
-      if expected.hasMVar then
-        throwError "An audited expected signature contains an unresolved metavariable."
-  -- No admission is in this visited set. In particular, a reference from a
-  -- signature to either admitted proof is followed and its sorry is rejected.
+      if expected.hasMVar then throwError "Unresolved metavariable in admitted signature"
+  do
+    let info ← getConstInfo `VV.BBEKCompactEntropyCore.no_positive_entropy_supported_K
+    match info with
+    | .thmInfo _ => pure ()
+    | _ => throwError "Admitted proof is not a theorem: VV.BBEKCompactEntropyCore.no_positive_entropy_supported_K"
+    Lean.Elab.Command.liftTermElabM do
+      let expected ← Lean.Elab.Term.elabTerm (← `((∀ (μ : MeasureTheory.Measure VV.BBEKQuotient.X)
+    [MeasureTheory.IsProbabilityMeasure μ]
+    [MeasureTheory.SMulInvariantMeasure VV.BBEKDiagonal.A VV.BBEKQuotient.X μ]
+    [ErgodicSMul VV.BBEKDiagonal.A VV.BBEKQuotient.X μ]
+    {δ : ℝ}, 0 < δ → μ (VV.BBEKOrbit.K δ) = 1 →
+    ∀ (hμT : MeasureTheory.MeasurePreserving
+      (VV.BBEKEntropyExpansion.timeMap VV.BBEKDynamics.time0) μ μ),
+      0 < ErgodicTheory.Entropy.ksEntropy hμT → False))) none
+      unless ← Lean.Meta.isDefEq info.type expected do
+        throwError "Unexpected admitted signature: VV.BBEKCompactEntropyCore.no_positive_entropy_supported_K"
+      let expected ← Lean.instantiateMVars expected
+      if expected.hasMVar then throwError "Unresolved metavariable in admitted signature"
+
   let mut typeState : CollectAxioms.State := {}
   for name in admissions do
     let info ← getConstInfo name
     for dependency in info.type.getUsedConstants do
-      let (_, nextState) := ((CollectAxioms.collect dependency).run env).run typeState
-      typeState := nextState
+      let (_,next) := ((CollectAxioms.collect dependency).run env).run typeState
+      typeState := next
     for a in typeState.axioms do
       unless allowed.contains a do
-        throwError "Forbidden dependency in the TYPE of {name}: {a}"
-    logInfo m!"ADMITTED SIGNATURE VERIFIED WITHOUT ABSTRACTION: {name}: {info.type}"
-    let proofAxioms ← collectAxioms name
-    for a in proofAxioms do
+        throwError "Forbidden axiom in admitted signature {name}: {a}"
+    logInfo m!"ADMITTED SIGNATURE CHECKED WITHOUT ABSTRACTION: {name}: {info.type}"
+    let raw ← collectAxioms name
+    for a in raw do
       unless allowed.contains a || a == `sorryAx do
-        throwError "Forbidden dependency in admitted proof {name}: {a}"
-    logInfo m!"RAW ADMITTED PROOF AXIOMS {name}: {proofAxioms}"
-  logInfo m!"FINITE CHECK NOT EXECUTED: {finiteCheck}: {finiteInfo.type}"
-  logInfo m!"EL LOW-ENTROPY THEORY NOT FORMALIZED: {lowEntropyCore}"
-  logInfo m!"ADMITTED TYPE DEPENDENCIES: {typeState.axioms}"
-  -- Share the visited set across declarations. This traverses every
-  -- dependency once; only the two exact proof bodies are now abstracted.
-  let mut auditState := { typeState with visited :=
-    (typeState.visited.insert finiteCheck).insert lowEntropyCore }
+        throwError "Forbidden axiom in admitted proof {name}: {a}"
+    logInfo m!"RAW ADMISSION AXIOMS {name}: {raw}"
+  let mut state := typeState
+  for name in admissions do
+    state := { state with visited := state.visited.insert name }
   let mut theorems := 0
   let mut definitions := 0
-  let mut otherDeclarations := 0
   let mut compilerCopies := 0
-  for (name, info) in env.constants.toList do
-    let fromProjectModule := match env.getModuleIdxFor? name with
-      | some idx => (`VV).isPrefixOf env.header.moduleNames[idx.toNat]!
+  for (name,info) in env.constants.toList do
+    let fromProject := match env.getModuleIdxFor? name with
+      | some idx =>
+        let m := env.header.moduleNames[idx.toNat]!
+        (`VV).isPrefixOf m || (`Foundations).isPrefixOf m || (`Research).isPrefixOf m
       | none => false
-    if (`VV).isPrefixOf name || fromProjectModule then
+    if (`VV).isPrefixOf name || fromProject then
       let compilerName : Bool := match name with
-        | .str _ s =>
-          (s.startsWith "_cstage" || s.startsWith "_spec_" || s.startsWith "_elambda")
+        | .str _ s => s.startsWith "_cstage" || s.startsWith "_spec_" || s.startsWith "_elambda"
         | _ => false
       let compilerKind : Bool := match info with
         | .defnInfo _ | .axiomInfo _ => true
         | _ => false
-      let codegenCopy : Bool := compilerName && compilerKind && info.isUnsafe &&
+      let codegenCopy := compilerName && compilerKind && info.isUnsafe &&
         (← findDeclarationRangesCore? name).isNone
       match info with
       | .axiomInfo _ => unless codegenCopy do
           throwError "Forbidden project axiom: {name}"
-      | .opaqueInfo _ => throwError "Forbidden project opaque declaration: {name}"
+      | .opaqueInfo _ => throwError "Forbidden project opaque: {name}"
       | _ => pure ()
       if codegenCopy then
         compilerCopies := compilerCopies + 1
       else
-        let (_, nextState) := ((CollectAxioms.collect name).run env).run auditState
-        auditState := nextState
-        for a in auditState.axioms do
+        let (_,next) := ((CollectAxioms.collect name).run env).run state
+        state := next
+        for a in state.axioms do
           unless allowed.contains a do
             throwError "Forbidden dependency of {name}: {a}"
         match info with
-        | .thmInfo _ =>
-          if admissions.contains name then
-            logInfo m!"ADMITTED PROOF ABSTRACTED, TYPE CHECKED: {name}"
-          else
-            logInfo m!"THEOREM {name}: checked (only the two named proofs abstracted)"
-          theorems := theorems + 1
+        | .thmInfo _ => theorems := theorems + 1
         | .defnInfo _ => definitions := definitions + 1
-        | _ => otherDeclarations := otherDeclarations + 1
-  if theorems = 0 then throwError "No project theorem was audited."
-  logInfo m!"THEORY AXIOMS AFTER THE TWO EXACT PROOF ABSTRACTIONS: {auditState.axioms}"
+        | _ => pure ()
+  if theorems = 0 then throwError "No project theorem audited."
+  logInfo m!"THEORY AXIOMS AFTER EXACT PROOF ABSTRACTIONS: {state.axioms}"
   logInfo m!"PASS: {theorems} theorem declarations and {definitions} definitions audited."
-  logInfo m!"ADDITIONAL COVERAGE: {otherDeclarations} inductive/constructor/recursor declarations audited; \
-    {compilerCopies} unsafe compiler implementation copies excluded as roots."
-
--- Closed original Problem 3 classification.
+  logInfo m!"ADMISSION COUNT: {admissions.size}; unsafe compiler roots excluded: {compilerCopies}"
 #check VV.problem3_classification
-#check VV.problem3_fixed_representative
-#check VV.serret
-
--- Genuine class roots and the closed finite-template theorem.
-#check VV.Problem4.finite_class_of_rooted_encoding
-#check VV.Problem4.actual_class_count_le
-#check VV.Problem4.rootedClassWord_injective
-#check VV.Problem4.hasRootedEncoding
-#check VV.Problem4.problem4_finiteness_and_bound
 #check VV.Problem4.problem4_all_periods
--- Theory closed; one finite Boolean computation explicitly admitted.
-#check VV.P5FiniteCheck.rank_check_10_14
-#check VV.P5Window.problem5_of_finite_window_check
-#check VV.P5FiniteCheck.problem5_bound_eleven
-#check VV.P5FiniteCheck.eventual_every_31
--- The remaining low-entropy input is the second and sole theoretical admission.
-#check VV.BBEKLowEntropyCore.rootAlternative_of_positive_entropy
-#check VV.bbekTheorem42
-#check VV.problem7
-#check VV.P7RigidityReduction.RigidityCoverInput
-#check VV.P7RigidityReduction.problem7_of_rigidity_cover
-#check VV.P7BoxCover.BBEKTheorem42
-#check VV.P7BoxCover.problem7_of_BBEK
--- BBEK Section 5: actual definitions and separately proved ingredients.
-#check VV.BBEKDyadic.dyadic_integral_iff
-#check VV.BBEKDynamics.cone_difference_all
-#check VV.BBEKDynamics.time0_cone_unstable
-#check VV.BBEKFiniteQuotients.prod_sl2_finiteIndex_eq_top
-#check VV.BBEKOrbit.proposition51
-#check VV.BBEKOrbit.isClosed_K
-#check VV.BBEKNoncompact.K_ssubset_univ
-#check VV.BBEKDiscrete.gamma_inter_ball_one
-#check VV.BBEKDiscrete.gamma_discreteTopology
-#check VV.BBEKDiscrete.gamma_isClosed
-#check VV.BBEKDiscrete.quotient_t2Space
-#check VV.BBEKDiscrete.quotient_locallyCompactSpace
-#check VV.BBEKLocalChart.exists_open_injOn_mk
-#check VV.BBEKLocalChart.chartHomeomorph
-#check VV.BBEKLocalChart.isLocalHomeomorph_mk
-#check VV.BBEKReduction.trappedParameters_compact
-#check VV.BBEKReduction.BBEK_of_trapped_zero_box
-#check VV.BBEKReduction.problem7_of_trapped_zero_box
-#print axioms VV.P5FiniteCheck.problem5_bound_eleven
-#print axioms VV.P5FiniteCheck.rank_check_10_14
-#print axioms VV.BBEKLowEntropyCore.rootAlternative_of_positive_entropy
-#print axioms VV.bbekTheorem42
-#print axioms VV.problem7
-#print axioms VV.BBEKFinal.full_root_of_rootAlternative
-#print axioms VV.BBEKRootEscape.no_supported_of_any_nonzero_root
-#print axioms VV.Problem4.problem4_finiteness_and_bound
-#print axioms VV.Problem4.problem4_all_periods
-#print axioms VV.P7RigidityReduction.problem7_of_rigidity_cover
-#print axioms VV.P7BoxCover.problem7_of_BBEK
-#print axioms VV.BBEKOrbit.proposition51
-#print axioms VV.BBEKNoncompact.K_ssubset_univ
-#print axioms VV.BBEKFiniteQuotients.prod_sl2_finiteIndex_eq_top
-#print axioms VV.BBEKReduction.problem7_of_trapped_zero_box
-#print axioms VV.BBEKDiscrete.gamma_inter_ball_one
-#print axioms VV.BBEKLocalChart.isLocalHomeomorph_mk
-#check VV.BBEKMahler.compact_K
-#check VV.BBEKMahler.joint_orbit_closure_compact
-#check VV.BBEKMautnerLp.quotient_psi_ergodic
-#check VV.BBEKEntropyTrapped.trappedEntropy_pos_of_not_zero_box
-#check VV.BBEKDiagonal.diagonal_decomposition
-#check VV.BBEKDiagonalAverage.averaged_diagonal_ergodic
-#check VV.BBEKCompactPreservation.compact_preimage_K
-#print axioms VV.BBEKMahler.compact_K
-#print axioms VV.BBEKMautnerLp.quotient_psi_ergodic
-#print axioms VV.BBEKEntropyTrapped.trappedEntropy_pos_of_not_zero_box
-#print axioms VV.BBEKDiagonalAverage.averaged_diagonal_ergodic
-
--- Checkpoint additions: all endpoints below must remain free of admissions.
-#check VV.Problem4.rootedClassWordEquiv
-#print axioms VV.Problem4.rootedClassWordEquiv
-#check VV.Problem4.card_rootedWord
-#print axioms VV.Problem4.card_rootedWord
-#check VV.Problem4.card_uniformAlphabet_le
-#print axioms VV.Problem4.card_uniformAlphabet_le
-#check VV.Problem4.exists_uniform_eventual_bound
-#print axioms VV.Problem4.exists_uniform_eventual_bound
 #check VV.Problem4.card_class_three
-#print axioms VV.Problem4.card_class_three
-#check VV.Problem4.period_three_iff
-#print axioms VV.Problem4.period_three_iff
-#check VV.Problem4.uniformDigitBound_three
-#print axioms VV.Problem4.uniformDigitBound_three
-#check VV.Problem4.B_eq_three_of_period_three
-#print axioms VV.Problem4.B_eq_three_of_period_three
-#check VV.Problem4.period_four_example
-#print axioms VV.Problem4.period_four_example
-#check VV.Problem4.card_class_four_pos
-#print axioms VV.Problem4.card_class_four_pos
 #check VV.Problem4.card_class_four
-#print axioms VV.Problem4.card_class_four
-#check VV.Problem4.period_four_iff
-#print axioms VV.Problem4.period_four_iff
-#check VV.Problem4.B_eq_five_of_period_four
-#print axioms VV.Problem4.B_eq_five_of_period_four
-#check VV.Problem4.uniformDigitBound_four
-#print axioms VV.Problem4.uniformDigitBound_four
-#check VV.P5GeneralWindow.eventual_every_window
-#print axioms VV.P5GeneralWindow.eventual_every_window
-#check VV.P5GeneralWindow.classification_of_window_check
-#print axioms VV.P5GeneralWindow.classification_of_window_check
-#check VV.P5Graph.Graph.Realizes.map_ranked
-#print axioms VV.P5Graph.Graph.Realizes.map_ranked
-#check VV.P5GeneralWindow.classification_of_pruned_window
-#print axioms VV.P5GeneralWindow.classification_of_pruned_window
-#check VV.P5SparseCertificate.original_check_of_sparse_check
-#print axioms VV.P5SparseCertificate.original_check_of_sparse_check
-#check VV.P5StateSize.windowGraph_ten_fourteen_size
-#print axioms VV.P5StateSize.windowGraph_ten_fourteen_size
-#check VV.P5SmallCertificate.rank_check_two_zero
-#print axioms VV.P5SmallCertificate.rank_check_two_zero
 #check VV.P5SmallCertificate.frequently_three_within_two
-#print axioms VV.P5SmallCertificate.frequently_three_within_two
-#check VV.P5QuotientCertificate.window_check_of_sparse_compression
-#print axioms VV.P5QuotientCertificate.window_check_of_sparse_compression
-#check VV.P5SCCCertificate.check_iff_cyclicDeterministic
-#print axioms VV.P5SCCCertificate.check_iff_cyclicDeterministic
-#check VV.P5PrunedCertificate.window_check_of_sparse_pruned_compression
-#print axioms VV.P5PrunedCertificate.window_check_of_sparse_pruned_compression
-#check VV.P5SmallObstruction.rank_check_three_zero_eq_false
-#print axioms VV.P5SmallObstruction.rank_check_three_zero_eq_false
-#check VV.BBEKOneRootRecurrence.exists_real_lower_exact_stabilizer_data
-#print axioms VV.BBEKOneRootRecurrence.exists_real_lower_exact_stabilizer_data
-#check VV.BBEKOneRootRecurrence.exists_padic_lower_exact_stabilizer_data
-#print axioms VV.BBEKOneRootRecurrence.exists_padic_lower_exact_stabilizer_data
-#check VV.BBEKOneRootRecurrence.exists_real_upper_exact_stabilizer_data
-#print axioms VV.BBEKOneRootRecurrence.exists_real_upper_exact_stabilizer_data
-#check VV.BBEKOneRootRecurrence.exists_padic_upper_exact_stabilizer_data
-#print axioms VV.BBEKOneRootRecurrence.exists_padic_upper_exact_stabilizer_data
-#check VV.BBEKOneRootLocalInvariance.canonical_local_invariance
-#print axioms VV.BBEKOneRootLocalInvariance.canonical_local_invariance
-#check VV.BBEKOneRootSupport.canonical_real_lower_supported
-#print axioms VV.BBEKOneRootSupport.canonical_real_lower_supported
-#check VV.BBEKOneRootSupport.canonical_padic_lower_supported
-#print axioms VV.BBEKOneRootSupport.canonical_padic_lower_supported
-#check VV.BBEKOneRootSupport.canonical_real_upper_supported
-#print axioms VV.BBEKOneRootSupport.canonical_real_upper_supported
-#check VV.BBEKOneRootSupport.canonical_padic_upper_supported
-#print axioms VV.BBEKOneRootSupport.canonical_padic_upper_supported
-#check VV.BBEKOneRootSupportEscape.no_real_lower_top
-#print axioms VV.BBEKOneRootSupportEscape.no_real_lower_top
-#check VV.BBEKOneRootSupportEscape.no_padic_lower_top
-#print axioms VV.BBEKOneRootSupportEscape.no_padic_lower_top
-#check VV.BBEKOneRootSupportEscape.no_real_upper_top
-#print axioms VV.BBEKOneRootSupportEscape.no_real_upper_top
-#check VV.BBEKOneRootSupportEscape.no_padic_upper_top
-#print axioms VV.BBEKOneRootSupportEscape.no_padic_upper_top
-
--- Unlike the whole-project audit, this check abstracts NO admitted proof.
--- These selected new results are unconditional and must stay that way.
-open Lean in
-run_cmd do
-  let env ← getEnv
-  let allowed : Array Name := #[`propext, `Classical.choice, `Quot.sound]
-  let endpoints : Array Name :=    #[`VV.Problem4.rootedClassWordEquiv, `VV.Problem4.card_rootedWord, `VV.Problem4.card_uniformAlphabet_le, `VV.Problem4.exists_uniform_eventual_bound, `VV.Problem4.card_class_three, `VV.Problem4.period_three_iff, `VV.Problem4.uniformDigitBound_three, `VV.Problem4.B_eq_three_of_period_three, `VV.Problem4.period_four_example, `VV.Problem4.card_class_four_pos, `VV.Problem4.card_class_four, `VV.Problem4.period_four_iff, `VV.Problem4.B_eq_five_of_period_four, `VV.Problem4.uniformDigitBound_four, `VV.P5GeneralWindow.eventual_every_window, `VV.P5GeneralWindow.classification_of_window_check, `VV.P5Graph.Graph.Realizes.map_ranked, `VV.P5GeneralWindow.classification_of_pruned_window, `VV.P5SparseCertificate.original_check_of_sparse_check, `VV.P5StateSize.windowGraph_ten_fourteen_size, `VV.P5SmallCertificate.rank_check_two_zero, `VV.P5SmallCertificate.frequently_three_within_two, `VV.P5QuotientCertificate.window_check_of_sparse_compression, `VV.P5SCCCertificate.check_iff_cyclicDeterministic, `VV.P5PrunedCertificate.window_check_of_sparse_pruned_compression, `VV.P5SmallObstruction.rank_check_three_zero_eq_false, `VV.BBEKOneRootRecurrence.exists_real_lower_exact_stabilizer_data, `VV.BBEKOneRootRecurrence.exists_padic_lower_exact_stabilizer_data, `VV.BBEKOneRootRecurrence.exists_real_upper_exact_stabilizer_data, `VV.BBEKOneRootRecurrence.exists_padic_upper_exact_stabilizer_data, `VV.BBEKOneRootLocalInvariance.canonical_local_invariance, `VV.BBEKOneRootSupport.canonical_real_lower_supported, `VV.BBEKOneRootSupport.canonical_padic_lower_supported, `VV.BBEKOneRootSupport.canonical_real_upper_supported, `VV.BBEKOneRootSupport.canonical_padic_upper_supported, `VV.BBEKOneRootSupportEscape.no_real_lower_top, `VV.BBEKOneRootSupportEscape.no_padic_lower_top, `VV.BBEKOneRootSupportEscape.no_real_upper_top, `VV.BBEKOneRootSupportEscape.no_padic_upper_top]
-  let mut rawState : CollectAxioms.State := {}
-  for name in endpoints do
-    let (_, nextState) := ((CollectAxioms.collect name).run env).run rawState
-    rawState := nextState
-    for a in rawState.axioms do
-      unless allowed.contains a do
-        throwError "New unconditional endpoint {name} depends on forbidden axiom {a}"
-  logInfo m!"UNCONDITIONAL CHECKPOINT ENDPOINTS: {endpoints.size}; no proof abstractions; {rawState.axioms}"
-
--- EL increment: every new theorem is checked without abstracting either admission.
-#check VV.BBEKLeafMeasureTests.ext_of_compact_integrals
-#print axioms VV.BBEKLeafMeasureTests.ext_of_compact_integrals
-#check VV.BBEKLeafMeasureTests.continuous_integral_translate
-#print axioms VV.BBEKLeafMeasureTests.continuous_integral_translate
-#check VV.BBEKLeafMeasureTests.continuous_integral_supported
-#print axioms VV.BBEKLeafMeasureTests.continuous_integral_supported
-#check VV.BBEKLeafMeasureTests.measurable_integral_family
-#print axioms VV.BBEKLeafMeasureTests.measurable_integral_family
-#check VV.BBEKLeafMeasureTests.testFunction_compact
-#print axioms VV.BBEKLeafMeasureTests.testFunction_compact
-#check VV.BBEKLeafMeasureTests.ext_of_test_integrals
-#print axioms VV.BBEKLeafMeasureTests.ext_of_test_integrals
-#check VV.BBEKLeafStabilizerMeasurable.measurable_testDifference
-#print axioms VV.BBEKLeafStabilizerMeasurable.measurable_testDifference
-#check VV.BBEKLeafStabilizerMeasurable.continuous_testDifference
-#print axioms VV.BBEKLeafStabilizerMeasurable.continuous_testDifference
-#check VV.BBEKLeafStabilizerMeasurable.mem_stabilizer_iff_tests
-#print axioms VV.BBEKLeafStabilizerMeasurable.mem_stabilizer_iff_tests
-#check VV.BBEKLeafStabilizerMeasurable.measurableSet_stabilizer_hit
-#print axioms VV.BBEKLeafStabilizerMeasurable.measurableSet_stabilizer_hit
-#check VV.BBEKLeafStabilizerDichotomy.exists_regular_hit_version
-#print axioms VV.BBEKLeafStabilizerDichotomy.exists_regular_hit_version
-#check VV.BBEKLeafStabilizerDichotomy.stabilizer_covariance_of_ae_eq
-#print axioms VV.BBEKLeafStabilizerDichotomy.stabilizer_covariance_of_ae_eq
-#check VV.BBEKLeafStabilizerDichotomy.ae_real_stabilizer_bot_or_top
-#print axioms VV.BBEKLeafStabilizerDichotomy.ae_real_stabilizer_bot_or_top
-#check VV.BBEKLeafStabilizerDichotomy.ae_padic_stabilizer_bot_or_top
-#print axioms VV.BBEKLeafStabilizerDichotomy.ae_padic_stabilizer_bot_or_top
-#check VV.BBEKLeafStabilizerEscape.ae_stabilizer_ne_top_of_leaf_escape
-#print axioms VV.BBEKLeafStabilizerEscape.ae_stabilizer_ne_top_of_leaf_escape
-#check VV.BBEKLeafStabilizerEscape.ae_stabilizer_eq_bot_of_ne_top
-#print axioms VV.BBEKLeafStabilizerEscape.ae_stabilizer_eq_bot_of_ne_top
-#check VV.BBEKLeafStabilizerEscape.ae_real_lower_stabilizer_ne_top
-#print axioms VV.BBEKLeafStabilizerEscape.ae_real_lower_stabilizer_ne_top
-#check VV.BBEKLeafStabilizerEscape.ae_padic_lower_stabilizer_ne_top
-#print axioms VV.BBEKLeafStabilizerEscape.ae_padic_lower_stabilizer_ne_top
-#check VV.BBEKLeafStabilizerEscape.ae_real_upper_stabilizer_ne_top
-#print axioms VV.BBEKLeafStabilizerEscape.ae_real_upper_stabilizer_ne_top
-#check VV.BBEKLeafStabilizerEscape.ae_padic_upper_stabilizer_ne_top
-#print axioms VV.BBEKLeafStabilizerEscape.ae_padic_upper_stabilizer_ne_top
-#check VV.BBEKRootContraction.inverse_projective_covariance
-#print axioms VV.BBEKRootContraction.inverse_projective_covariance
-#check VV.BBEKLeafEntropyDisintegration.condDistrib_snd_fst
-#print axioms VV.BBEKLeafEntropyDisintegration.condDistrib_snd_fst
-#check VV.BBEKLeafEntropyDisintegration.condExpKernel_fst_apply
-#print axioms VV.BBEKLeafEntropyDisintegration.condExpKernel_fst_apply
-#check VV.BBEKLeafEntropyDisintegration.condEntropy_fst_eq
-#print axioms VV.BBEKLeafEntropyDisintegration.condEntropy_fst_eq
-#check VV.BBEKLeafEntropyDisintegration.not_ae_dirac_of_pos_condEntropy_fst
-#print axioms VV.BBEKLeafEntropyDisintegration.not_ae_dirac_of_pos_condEntropy_fst
-#check VV.BBEKLeafEntropyDisintegration.centeredKernel_eq_dirac_zero_iff
-#print axioms VV.BBEKLeafEntropyDisintegration.centeredKernel_eq_dirac_zero_iff
-#check VV.BBEKLeafEntropyDisintegration.not_ae_centered_dirac_of_pos_condEntropy_fst
-#print axioms VV.BBEKLeafEntropyDisintegration.not_ae_centered_dirac_of_pos_condEntropy_fst
-#check VV.BBEKLeafEntropyDisintegration.ae_local_dirac_iff
-#print axioms VV.BBEKLeafEntropyDisintegration.ae_local_dirac_iff
-#check VV.BBEKLeafEntropyDisintegration.not_ae_local_dirac_of_pos_condEntropy
-#print axioms VV.BBEKLeafEntropyDisintegration.not_ae_local_dirac_of_pos_condEntropy
-#check VV.BBEKCompactLeafStabilizers.exists_real_lower_trivial_stabilizer_data
-#print axioms VV.BBEKCompactLeafStabilizers.exists_real_lower_trivial_stabilizer_data
-#check VV.BBEKCompactLeafStabilizers.exists_real_upper_trivial_stabilizer_data
-#print axioms VV.BBEKCompactLeafStabilizers.exists_real_upper_trivial_stabilizer_data
-#check VV.BBEKCompactLeafStabilizers.exists_padic_lower_trivial_stabilizer_data
-#print axioms VV.BBEKCompactLeafStabilizers.exists_padic_lower_trivial_stabilizer_data
-#check VV.BBEKCompactLeafStabilizers.exists_padic_upper_trivial_stabilizer_data
-#print axioms VV.BBEKCompactLeafStabilizers.exists_padic_upper_trivial_stabilizer_data
-
-open Lean in
-run_cmd do
-  let env ← getEnv
-  let allowed : Array Name := #[`propext, `Classical.choice, `Quot.sound]
-  let endpoints : Array Name := #[`VV.BBEKLeafMeasureTests.ext_of_compact_integrals, `VV.BBEKLeafMeasureTests.continuous_integral_translate, `VV.BBEKLeafMeasureTests.continuous_integral_supported, `VV.BBEKLeafMeasureTests.measurable_integral_family, `VV.BBEKLeafMeasureTests.testFunction_compact, `VV.BBEKLeafMeasureTests.ext_of_test_integrals, `VV.BBEKLeafStabilizerMeasurable.measurable_testDifference, `VV.BBEKLeafStabilizerMeasurable.continuous_testDifference, `VV.BBEKLeafStabilizerMeasurable.mem_stabilizer_iff_tests, `VV.BBEKLeafStabilizerMeasurable.measurableSet_stabilizer_hit, `VV.BBEKLeafStabilizerDichotomy.exists_regular_hit_version, `VV.BBEKLeafStabilizerDichotomy.stabilizer_covariance_of_ae_eq, `VV.BBEKLeafStabilizerDichotomy.ae_real_stabilizer_bot_or_top, `VV.BBEKLeafStabilizerDichotomy.ae_padic_stabilizer_bot_or_top, `VV.BBEKLeafStabilizerEscape.ae_stabilizer_ne_top_of_leaf_escape, `VV.BBEKLeafStabilizerEscape.ae_stabilizer_eq_bot_of_ne_top, `VV.BBEKLeafStabilizerEscape.ae_real_lower_stabilizer_ne_top, `VV.BBEKLeafStabilizerEscape.ae_padic_lower_stabilizer_ne_top, `VV.BBEKLeafStabilizerEscape.ae_real_upper_stabilizer_ne_top, `VV.BBEKLeafStabilizerEscape.ae_padic_upper_stabilizer_ne_top, `VV.BBEKRootContraction.inverse_projective_covariance, `VV.BBEKLeafEntropyDisintegration.condDistrib_snd_fst, `VV.BBEKLeafEntropyDisintegration.condExpKernel_fst_apply, `VV.BBEKLeafEntropyDisintegration.condEntropy_fst_eq, `VV.BBEKLeafEntropyDisintegration.not_ae_dirac_of_pos_condEntropy_fst, `VV.BBEKLeafEntropyDisintegration.centeredKernel_eq_dirac_zero_iff, `VV.BBEKLeafEntropyDisintegration.not_ae_centered_dirac_of_pos_condEntropy_fst, `VV.BBEKLeafEntropyDisintegration.ae_local_dirac_iff, `VV.BBEKLeafEntropyDisintegration.not_ae_local_dirac_of_pos_condEntropy, `VV.BBEKCompactLeafStabilizers.exists_real_lower_trivial_stabilizer_data, `VV.BBEKCompactLeafStabilizers.exists_real_upper_trivial_stabilizer_data, `VV.BBEKCompactLeafStabilizers.exists_padic_lower_trivial_stabilizer_data, `VV.BBEKCompactLeafStabilizers.exists_padic_upper_trivial_stabilizer_data]
-  let mut rawState : CollectAxioms.State := {}
-  for name in endpoints do
-    let (_, nextState) := ((CollectAxioms.collect name).run env).run rawState
-    rawState := nextState
-    for a in rawState.axioms do
-      unless allowed.contains a do
-        throwError "EL increment theorem {name} depends on forbidden axiom {a}"
-  logInfo m!"UNCONDITIONAL EL INCREMENT ENDPOINTS: {endpoints.size}; no proof abstractions; {rawState.axioms}"
-
--- Every theorem in this attempt is audited with NO admission abstraction.
-open Lean in
-run_cmd do
-  let env ← getEnv
-  let modules : Array Name := #[`VV.BBEKCanonicalCovariance, `VV.BBEKExceptionalFactorOrbit, `VV.BBEKLeafEntropyBoundary, `VV.BBEKLeafSupportGeneration, `VV.BBEKLusin, `VV.BBEKNormalizedRestriction, `VV.BBEKOneRootTranslation, `VV.BBEKPairedReturnMaximal, `VV.BBEKExceptionalCentralizer, `VV.BBEKLeafEntropyGoodPartition, `VV.BBEKLeafEntropySafety, `VV.BBEKLeafFieldTransport, `VV.BBEKOneRootDiagonalNatural, `VV.BBEKOneRootFullSupport, `VV.BBEKPairedReturnTimes, `VV.BBEKAlgebraicRootSupport, `VV.BBEKExceptionalOrbitNull, `VV.BBEKInvariantConditionals, `VV.BBEKLeafEntropySafetyCuts, `VV.BBEKOneRootNoAtoms, `VV.BBEKQuadraticScale, `VV.BBEKUpperRootTranslation, `VV.BBEKCanonicalExceptional, `VV.BBEKConditionalLeafFibres, `VV.BBEKLeafEntropySubordinate, `VV.BBEKRootFieldSeparation, `VV.BBEKShearNonconcentration, `VV.BBEKUnifiedRootData, `VV.BBEKLeafEntropySubordinateTime, `VV.BBEKLusinRootLimit, `VV.BBEKPairExceptional, `VV.BBEKReverseMaximal, `VV.BBEKShearFamilyNonconcentration, `VV.BBEKCodeMaximal, `VV.BBEKLeafEntropySubordinateCharts, `VV.BBEKLocalExceptional, `VV.BBEKShearLimit, `VV.BBEKLeafEntropyRefinement, `VV.BBEKLowEntropyBackend, `VV.BBEKPairedShear, `VV.BBEKPureRootShear, `VV.BBEKLeafEntropyChartConditionals, `VV.BBEKLusinPairedShear, `VV.BBEKNoncentralSequence, `VV.BBEKLeafEntropyCodeConditioning, `VV.BBEKLeafEntropyGlobalConditionals, `VV.BBEKLeafEntropyCanonicalConditionals]
-  let allowed : Array Name := #[`propext, `Classical.choice, `Quot.sound]
-  let mut rawState : CollectAxioms.State := {}
-  let mut count := 0
-  for (name, info) in env.constants.toList do
-    let inModule := match env.getModuleIdxFor? name with
-      | some idx => modules.contains env.header.moduleNames[idx.toNat]!
-      | none => false
-    if inModule then
-      match info with
-      | .thmInfo _ =>
-        let (_, nextState) := ((CollectAxioms.collect name).run env).run rawState
-        rawState := nextState
-        for a in rawState.axioms do
-          unless allowed.contains a do
-            throwError "EL second-attempt theorem {name} depends on forbidden axiom {a}"
-        count := count + 1
-      | _ => pure ()
-  if count = 0 then throwError "No second-attempt theorem found"
-  logInfo m!"UNABSTRACTED EL SECOND-ATTEMPT THEOREMS: {count}; {rawState.axioms}"
-
-#check VV.BBEKOneRootTranslation.canonical_translation_on_conull_set
-#print axioms VV.BBEKOneRootTranslation.canonical_translation_on_conull_set
-#check VV.BBEKCodeMaximal.tail_code_condDistrib_maximal
-#print axioms VV.BBEKCodeMaximal.tail_code_condDistrib_maximal
-#check VV.BBEKPureRootShear.real_paired_shear_relation
-#print axioms VV.BBEKPureRootShear.real_paired_shear_relation
-#check VV.BBEKPureRootShear.padic_paired_shear_relation
-#print axioms VV.BBEKPureRootShear.padic_paired_shear_relation
 #check VV.bbekTheorem42
-#print axioms VV.bbekTheorem42
 #check VV.problem7
+#print axioms VV.P5FiniteCheck.rank_check_10_14
+#print axioms VV.P5FiniteCheck.problem5_bound_eleven
+#print axioms VV.BBEKCompactEntropyCore.no_positive_entropy_supported_K
+#print axioms VV.bbekTheorem42
 #print axioms VV.problem7
+

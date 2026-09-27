@@ -1,4 +1,0 @@
-import VV.BBEKLeafwiseChart
-#print axioms VV.BBEKLeafwiseChart.exists_open_quotientCoordinates
-#print axioms VV.BBEKLeafwiseChart.map_localCoordinateMeasure
-#print axioms VV.BBEKLeafwiseChart.disintegrate_local_quotient

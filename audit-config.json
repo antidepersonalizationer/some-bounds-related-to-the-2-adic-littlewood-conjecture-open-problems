@@ -1,0 +1,11 @@
+{
+  "kind": "littlewood",
+  "entry": "VV",
+  "audits": [
+    "VV/Audit.lean"
+  ],
+  "admissions": {
+    "VV/P5FiniteCheck.lean": "VV.P5FiniteCheck.rank_check_10_14",
+    "VV/BBEKCompactEntropyCore.lean": "VV.BBEKCompactEntropyCore.no_positive_entropy_supported_K"
+  }
+}

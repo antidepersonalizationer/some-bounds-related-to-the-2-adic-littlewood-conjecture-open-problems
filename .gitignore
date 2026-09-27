@@ -2,16 +2,5 @@
 *.olean
 *.ilean
 *.trace
-*.log
-*.tmp
-*.bak
+verification/*.log
 __pycache__/
-.env
-.env.*
-!.env.example
-*.pem
-*.key
-work/
-outputs/
-.DS_Store
-Thumbs.db

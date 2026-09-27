@@ -1,8 +1,0 @@
-import VV.P5QuotientCertificate
-#print axioms VV.P5QuotientCertificate.graphWith_labelDeterministic
-#print axioms VV.P5QuotientCertificate.graph_labelDeterministic
-#print axioms VV.P5QuotientCertificate.rankCertificate_pullback
-#print axioms VV.P5QuotientCertificate.check_of_smaller_graph
-#print axioms VV.P5QuotientCertificate.windowGraph_labelDeterministic
-#print axioms VV.P5QuotientCertificate.window_check_of_compression
-#print axioms VV.P5QuotientCertificate.window_check_of_sparse_compression

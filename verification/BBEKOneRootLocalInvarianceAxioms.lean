@@ -1,6 +1,0 @@
-import VV.BBEKOneRootLocalInvariance
-
-#print axioms VV.BBEKOneRootLocalInvariance.mass_of_normalized_restriction
-#print axioms VV.BBEKOneRootLocalInvariance.local_preimage_mass_eq
-#print axioms VV.BBEKOneRootLocalInvariance.map_restrict_overlap_eq
-#print axioms VV.BBEKOneRootLocalInvariance.canonical_local_invariance
